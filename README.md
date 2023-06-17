@@ -61,10 +61,12 @@ git clone https://github.com/Daniiiiiiil/dotfiles
 
 ### **.bashrc**
 1. Move file to your home directory:
+
     ```bash
     cp dotfiles/.bashrc ~/
     ```
 2. Reopen terminal emulator or execute .bashrc to apply the changes:
+
     ```bash
     source ~/.bashrc
     ```
@@ -79,10 +81,12 @@ git clone https://github.com/Daniiiiiiil/dotfiles
 
 ### **.gitignore-global**
 1. Move file to your home directory:
+
     ```bash
     cp dotfiles/.gitignore-global ~/
     ```
 2. Include .gitignore-global to the global git configuration:
+
     ```bash
     git config --global core.excludesfile ~/.gitignore-global
     ```
@@ -91,6 +95,7 @@ git clone https://github.com/Daniiiiiiil/dotfiles
 
 ### **.vimrc**
 1. Move file to your home directory:
+
     ```bash
     cp dotfiles/.vimrc ~/
     ```
@@ -107,6 +112,7 @@ git clone https://github.com/Daniiiiiiil/dotfiles
 
 ### **micro**
 1. Move files to `.config/micro/` in your home directory:
+
     ```bash
     mkdir -p ~/.config/micro/
     cp dotfiles/micro/* ~/.config/micro/
