@@ -1,6 +1,9 @@
 # **Dotfiles**
 > *This repository contains my personal dotfiles and configurations that I use every day on my Linux machine.*
 
+> **Note**
+> Both, micro and vim configuration files contain language-specific settings and/or plugins, currently for Python and HTML.
+
 
 ## Table of contents
 - [Requirements](#requirements)
