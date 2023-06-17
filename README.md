@@ -25,6 +25,7 @@
 - **git** &mdash; a free and open source distributed version control system
 - **micro\*** &mdash; simple and convenient text editor for the terminal with syntax highlighting, plug-ins and flexible settings
 - **speedtest-cli** &mdash; a command-line tool for testing the speed of an Internet connection
+- **vim-x11** &mdash; vim version for the X Window System &ndash; GVim (x11 clipboard buffer integration & graphical mode)
 - **vscodium** &mdash; community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code
 &nbsp;
 

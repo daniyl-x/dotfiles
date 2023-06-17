@@ -74,7 +74,7 @@ alias mkdir="mkdir -pv"     # mkdir make parents if needed, verbose output
 # Editors
 alias edit="$EDITOR"        # 'edit' for default editor
 alias code="$CODEEDITOR"    # 'code' for default code editor
-alias vi="vim"              # vi for fim
+alias vim="vimx"            # vim for vimx (x11 clipboard support)
 
 # Installed
 alias speedtest="speedtest-cli"
