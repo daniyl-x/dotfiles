@@ -64,7 +64,7 @@ alias rm="rm -i"
 
 # Default commands flags
 alias cd..="cd .."          # cd up without space
-alias ll="ls -lah"          # ls all long human-readable
+alias ll="ls -lAh"          # ls all long human-readable
 alias la="ls -A"            # ls w/ hidden files
 alias l.="ls -d .*"         # ls only hidden
 alias mkdir="mkdir -pv"     # mkdir make parents if needed, verbose output
