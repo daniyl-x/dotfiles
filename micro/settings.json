@@ -3,7 +3,8 @@
         "tabsize": 2
     },
     "colorscheme": "gruvbox-tc",
+    "diffgutter": true,
     "mkparents": true,
     "softwrap": true,
-    "tabstospaces": true,
+    "tabstospaces": true
 }
