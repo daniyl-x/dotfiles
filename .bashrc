@@ -1,7 +1,9 @@
-#########################
-### My custom .bashrc ###
-#########################
-
+#    _               _              
+#   | |__   __ _ ___| |__  _ __ ___ 
+#   | '_ \ / _` / __| '_ \| '__/ __|
+#  _| |_) | (_| \__ \ | | | | | (__ 
+# (_)_.__/ \__,_|___/_| |_|_|  \___|
+                              
 
 # Enable fzf keybindings
 source /usr/share/fzf/shell/key-bindings.bash
@@ -74,3 +76,4 @@ alias vi="vim"              # vi for fim
 
 # Installed
 alias speedtest="speedtest-cli"
+
