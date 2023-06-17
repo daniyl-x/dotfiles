@@ -23,29 +23,16 @@ source $VIMRUNTIME/defaults.vim
 """ PLUGINS IMPORT
 call plug#begin()
 Plug 'vim-airline/vim-airline'              " airline statusbar
-Plug 'preservim/nerdtree'                   " NerdTree file manager
 Plug 'tpope/vim-commentary'                 " comment shortcut (gcc)
-Plug 'dense-analysis/ale'                   " ALE linter
 
 " Git
 Plug 'airblade/vim-gitgutter'               " gitgutter diff
-Plug 'tpope/vim-fugitive'                   " :Git commands
 
 " Themes
 Plug 'morhetz/gruvbox'			            " gruvbox
 Plug 'sainnhe/everforest'                   " everforest
 Plug 'dracula/vim',{'as':'dracula'}         " dracula
 call plug#end()
-
-
-""" ALE SETTINGS
-let g:ale_completion_enabled = 1            " enable completion
-let g:airline#extensions#ale#enabled = 1    " airline integration
-
-" Messages format
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 
 """ COLORSCHEME SETTINGS
