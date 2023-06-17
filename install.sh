@@ -24,8 +24,7 @@ cp .gitignore-global ~/
 check_last_status
 
 printf "\nmicro...\n"
-mkdir -p ~/.config/micro/
-cp micro/* ~/.config/micro/
+mkdir -p ~/.config/micro/ && cp micro/* ~/.config/micro/
 check_last_status
 
 
