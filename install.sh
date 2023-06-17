@@ -1,3 +1,5 @@
+#! /bin/bash
+
 # Print out message dependent on result of last command
 check_last_status(){
     [ $? -eq 0 ] && echo "Success :)" || echo "Fail :("
@@ -14,16 +16,16 @@ update_vim_plug(){
 printf "Copying files...\n\n"
 
 printf "\n.bashrc & .vimrc...\n"
-cp -v .*rc ~/
+cp .*rc ~/
 check_last_status
 
 printf "\n.gitignore-global...\n"
-cp -v .gitignore-global ~/
+cp .gitignore-global ~/
 check_last_status
 
 printf "\nmicro...\n"
-mkdir -vp ~/.config/micro/
-cp -v micro/* ~/.config/micro/
+mkdir -p ~/.config/micro/
+cp micro/* ~/.config/micro/
 check_last_status
 
 
