@@ -23,9 +23,9 @@ FDO="$FDO --preview 'bat --color=always {}'"   # fzf text preview w/ highlightin
 export FZF_DEFAULT_OPTS="$FDO"
 
 # Other
-export EDITOR=micro             # Default editor: micro
-export CODEEDITOR=codium        # Default IDE: codium
-export BAT_THEME=gruvbox-dark   # bat theme: gruvbox-dark
+export EDITOR=vim               # Default editor
+export CODEEDITOR=codium        # Default IDE
+export BAT_THEME=gruvbox-dark   # bat theme
 
 
 ### PROMPT ###
