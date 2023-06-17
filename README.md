@@ -13,7 +13,7 @@
 
 ## Requirements
 > **Note**
-> **&mdash; Is not required, but is used and recommended*
+> \*&mdash; Is not required, but is used and recommended
 &nbsp;
 
 - ### **.bashrc**
@@ -37,7 +37,7 @@
 
 ## Usage
 > **Warning**
-> *Make sure that all [requirements](#requirements) are installed, except those marked with \**
+> Make sure that all [requirements](#requirements) are installed, except those marked with \*
 &nbsp;
 
 1. Clone git repository to your machine:
