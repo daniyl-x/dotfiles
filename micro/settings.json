@@ -2,6 +2,9 @@
     "*.html": {
         "tabsize": 2
     },
+    "*.py": {
+        "colorcolumn": 80
+    },
     "colorscheme": "gruvbox-tc",
     "diffgutter": true,
     "mkparents": true,
