@@ -1,0 +1,10 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "CtrlUnderscore": "lua:comment.comment",
+
+    "Ctrl-w": "DeleteWordLeft",
+    "Ctrl-Delete": "DeleteWordRight",
+
+    "Alt-s": "Save,Quit",
+    "Alt-o": "AddTab,OpenFile",
+}

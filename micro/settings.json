@@ -1,0 +1,8 @@
+{
+    "*.html": {
+        "tabsize": 2
+    },
+    "colorscheme": "gruvbox-tc",
+    "mkparents": true,
+    "tabstospaces": true
+}
