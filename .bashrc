@@ -31,7 +31,7 @@ export BAT_THEME=gruvbox-dark   # bat theme
 ### PROMPT ###
 
 # Git branch script for prompt
-. /usr/share/git-core/contrib/completion/git-prompt.sh
+source /usr/share/git-core/contrib/completion/git-prompt.sh
 
 # Colors
 WHITE='\[\033[0m\]'
