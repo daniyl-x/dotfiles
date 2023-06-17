@@ -4,5 +4,6 @@
     },
     "colorscheme": "gruvbox-tc",
     "mkparents": true,
-    "tabstospaces": true
+    "softwrap": true,
+    "tabstospaces": true,
 }

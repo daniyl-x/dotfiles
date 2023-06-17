@@ -5,6 +5,8 @@
     "Ctrl-w": "DeleteWordLeft",
     "Ctrl-Delete": "DeleteWordRight",
 
+    "Alt-w": "NextSplit",
+    
     "Alt-s": "Save,Quit",
     "Alt-o": "AddTab,OpenFile",
 }
