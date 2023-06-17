@@ -51,6 +51,7 @@ export PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(declare -F 
 # Colorization
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+alias ip="ip --color=auto"
 
 # Interactive mode
 alias mv="mv -i"
