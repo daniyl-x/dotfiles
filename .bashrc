@@ -12,29 +12,10 @@ export PATH
 
 ### FUNCTIONS ###
 
-# Print out message dependent on result of last command
-check_last_status(){
-    [ $? -eq 0 ] && echo "Success :)" || echo "Fail :("
-}
-
-
 # Git branch function for prompt
 get_git_branch(){
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
-
-# Vim update plugins in background
-update_vim_plug(){
- printf "Vim-Plug: Cleaning unused plugins...\n"
- vim +PlugClean +q! +q! > /dev/null 2>&1
- check_last_status
- 
- printf "\nVim-Plug: Updating plugins...\n"
- vim +PlugInstall +q! +q! > /dev/null 2>&1
- check_last_status
-}
-
 
 
 ### PROMPT ###
@@ -86,25 +67,19 @@ alias nv="nvim"                 # nv for nvim
 # Installed
 alias speedtest="speedtest-cli"
 
-# Functions / Scripts
-alias lstatus="check_last_status"   # echo last execution status
-alias vimup="update_vim_plug"       # update function for vim plugins
-
-
 ### DEFAULTS ###
 export EDITOR=nvim              # Default editor
 export CODEEDITOR=codium        # Default IDE
 export BAT_THEME=gruvbox-dark   # bat theme
 
 
-### FZF SETTINGS ###
+### SCRIPTS EXECUTION ###
 
 # Enable fzf keybindings
 source /usr/share/fzf/shell/key-bindings.bash
 
 # Enable fzf bash completion
 source /usr/share/fzf/shell/completion.bash
-
 
 # Bash completion
 source /etc/profile.d/bash_completion.sh

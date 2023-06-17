@@ -16,7 +16,7 @@
 - **gvim** &mdash; vim graphical mode & clipboard buffer integration
 - **micro\*** &mdash; simple and convenient text editor for the terminal with syntax highlighting, plug-ins and flexible settings
 - **speedtest-cli\*** &mdash; a command-line tool for testing the speed of an Internet connection
-- **vscodium** &mdash; community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code
+- **vscodium\*** &mdash; community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code
 &nbsp;
 
 ### **.vimrc**
