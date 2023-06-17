@@ -31,6 +31,10 @@ printf "\nmicro...\n"
 mkdir -p ~/.config/micro/ && cp micro/* ~/.config/micro/
 check_last_status
 
+printf "\nkitty...\n"
+cp -r kitty ~/.config/
+check_last_status
+
 
 printf "\nApplying changes...\n\n"
 

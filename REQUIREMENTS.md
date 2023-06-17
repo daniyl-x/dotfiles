@@ -23,6 +23,10 @@
 - [**vim-plug**](https://github.com/junegunn/vim-plug) &mdash; a minimalist Vim plugin manager
 &nbsp;
 
+### **kitty**
+- **IBM Plex Mono Fonts** &mdash; IBM Plex monospace fonts
+&nbsp;
+
 ### **micro**
 - **filemanager\*** &mdash; filemanager plugin
 - **fzf\*** &mdash; fuzzy-finder plugin
