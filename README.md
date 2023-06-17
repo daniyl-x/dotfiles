@@ -7,10 +7,12 @@
     - [.bashrc](#bashrc)
     - [.vimrc](#vimrc)
     - [micro](#micro)
+- [Usage](#usage)
 &nbsp;
 
 
 ## Requirements
+> **Note**
 > **&mdash; Is not required, but is used and recommended*
 &nbsp;
 
@@ -31,3 +33,34 @@
     - **fzf\*** &mdash; fuzzy-finder plugin
     - **quoter\*** &mdash; plugin to add quotes or brackets around a text selection
 &nbsp;
+
+
+## Usage
+> **Warning**
+> *Make sure that all [requirements](#requirements) are installed, except those marked with \**
+&nbsp;
+
+1. Clone git repository to your machine:
+    ``` bash
+    git clone https://github.com/Daniiiiiiil/dotfiles
+    ```
+2. Move files to your home directory:
+    ```bash
+    mv dotfiles/.*rc ~/
+    mv dotfiles/micro/* ~/.config/micro/
+    ```
+3. Reopen terminal emulator or execute .bashrc to the changes work:
+    ```bash
+    source ~/.bashrc
+    ```
+
+    OR
+
+    ```bash
+    . ~/.bashrc
+    ```
+4. Open vim and install plugins:
+    ```bash
+    vim
+    ```
+    Execute `:PlugInstall`
