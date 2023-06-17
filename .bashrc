@@ -31,7 +31,9 @@ export BAT_THEME=gruvbox-dark   # bat theme
 ### PROMPT ###
 
 # Git branch script for prompt
-source /usr/share/git-core/contrib/completion/git-prompt.sh
+get_git_branch(){
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
 # Colors
 WHITE='\[\033[0m\]'
@@ -41,13 +43,13 @@ PURPLE='\[\033[35m\]'
 CYAN='\[\033[36m\]'
 
 # Git Bash Style Prompt
-export PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")'WHITE'\n\$ '
+# export PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
 
 # One Long Line Prompt
-export PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")'$WHITE'\$ '
+# export PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 
 # Fedora Style Prompt
-export PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")'$WHITE'\$ '
+export PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 
 
 ### ALIASES ###
