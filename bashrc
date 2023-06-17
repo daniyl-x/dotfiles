@@ -2,16 +2,26 @@
 ### My custom .bashrc ###
 #########################
 
+
+# Enable fzf keybindings
+source /usr/share/fzf/shell/key-bindings.bash
+
+
+### DEFAULTS ###
+
 # PATH variable
 PATH="$HOME/.local/bin:$HOME/bin:/usr/bin:$PATH"
 export PATH
 
-shopt -s autocd             # Allow to cd without cd command
+# fzf default options
+FDO="-m"                        # fzf enable multiple selection
+FDO="$FDO --preview 'bat --color=always {}'"   # fzf text preview w/ highlighting
+export FZF_DEFAULT_OPTS="$FDO"
 
-
-### DEFAULTS ###
-export EDITOR=micro         # Default editor: micro
-export CODEEDITOR=codium    # Default IDE: codium
+# Other
+export EDITOR=micro             # Default editor: micro
+export CODEEDITOR=codium        # Default IDE: codium
+export BAT_THEME=gruvbox-dark   # bat theme: gruvbox-dark
 
 
 ### PROMPT ###
