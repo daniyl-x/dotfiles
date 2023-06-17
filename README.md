@@ -12,10 +12,12 @@
     - [.vimrc](#vimrc)
     - [micro](#micro)
 - [Installation](#installation)
-    - [.bashrc](#bashrc-1)
-    - [.gitignore-global](#gitignore-global)
-    - [.vimrc](#vimrc-1)
-    - [micro](#micro-1)
+    - [Full Installation](#full-installation)
+    - [File-specific Installation](#file-specific-installation)
+        - [.bashrc](#bashrc-1)
+        - [.gitignore-global](#gitignore-global)
+        - [.vimrc](#vimrc-1)
+        - [micro](#micro-1)
 &nbsp;
 
 
@@ -29,9 +31,9 @@
 - **bat** &mdash; cat alternative with syntax highlighting
 - **fzf** &mdash; fuzzy-finder for convenient search and auto-completion of commands from the terminal
 - **git** &mdash; a free and open source distributed version control system
+- **gvim** &mdash; vim graphical mode & clipboard buffer integration
 - **micro\*** &mdash; simple and convenient text editor for the terminal with syntax highlighting, plug-ins and flexible settings
 - **speedtest-cli** &mdash; a command-line tool for testing the speed of an Internet connection
-- **vim-x11** &mdash; vim version for the X Window System &ndash; GVim (x11 clipboard buffer integration & graphical mode)
 - **vscodium** &mdash; community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code
 &nbsp;
 
@@ -52,6 +54,10 @@
 > Make sure that all [requirements](#requirements) for specific file are installed, except those marked with \*
 &nbsp;
 
+[Clone git repository to your machine](#clone-git-repository-to-your-machine) and follow [full](#install-all-dotfiles) or file-specific installation
+&nbsp;
+
+
 ### **Clone git repository to your machine:**
 ``` bash
 git clone https://github.com/Daniiiiiiil/dotfiles
@@ -59,7 +65,20 @@ git clone https://github.com/Daniiiiiiil/dotfiles
 &nbsp;
 
 
-### **.bashrc**
+### **Full Installation:**
+Full dotfiles installation. All dotfiles from this repository will be automatically installed for current user.
+
+```bash
+cd dotfiles && sudo chmod +x install.sh && source install.sh && cd ..
+```
+&nbsp;
+
+
+### **File-specific installation:**
+Installation instructions for specific dotfiles.
+
+
+#### **.bashrc**
 1. Move file to your home directory:
 
     ```bash
@@ -79,7 +98,7 @@ git clone https://github.com/Daniiiiiiil/dotfiles
 &nbsp;
 
 
-### **.gitignore-global**
+#### **.gitignore-global**
 1. Move file to your home directory:
 
     ```bash
@@ -93,25 +112,24 @@ git clone https://github.com/Daniiiiiiil/dotfiles
 &nbsp;
 
 
-### **.vimrc**
+#### **.vimrc**
 1. Move file to your home directory:
 
     ```bash
     cp dotfiles/.vimrc ~/
     ```
-2. Open vim and install plugins:
+2. Run vim and install plugins:
     > **Note** at the first start of the vim you will get some errors, which you can ignore, they appear due to the presence of settings related to not yet installed plug-ins
     &nbsp;
 
     ```bash
-    vim
+    vim +Pluginstall
     ```
-3. Execute `:PlugInstall`
 &nbsp;
 
 
-### **micro**
-1. Move files to `.config/micro/` in your home directory:
+#### **micro**
+1. Copy all files from `micro/` to `~/.config/micro/`:
 
     ```bash
     mkdir -p ~/.config/micro/
