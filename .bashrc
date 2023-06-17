@@ -5,6 +5,8 @@
 
 # Enable fzf keybindings
 source /usr/share/fzf/shell/key-bindings.bash
+# Enable fzf bash completion
+source /usr/share/fzf/shell/completion.bash
 
 
 ### DEFAULTS ###
