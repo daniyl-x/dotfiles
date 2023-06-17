@@ -19,6 +19,10 @@ printf "\n.bashrc & .vimrc...\n"
 cp .*rc ~/
 check_last_status
 
+printf "\n.tmux.conf\n"
+cp .tmux.conf ~/
+check_last_status
+
 printf "\n.gitignore-global...\n"
 cp .gitignore-global ~/
 check_last_status
