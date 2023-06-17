@@ -1,3 +1,8 @@
+### Environment files
+.env
+.env.local
+
+
 ### IDE's & code editors
 
 # JetBrains
@@ -16,4 +21,7 @@
 # Cache
 __pycache__/
 *.py[cod]
+
+# Virtual environment
+*env/
 
