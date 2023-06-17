@@ -1,7 +1,7 @@
 # **Dotfiles**
 *This repository contains my personal dotfiles and configurations that I use every day on my Linux machine.*
 
-Both, micro and vim configuration files contain language-specific settings and/or plugins, currently for Python and HTML.
+All text editors configurations may contain language-specific settings and/or plugins (currently for Python and HTML).
 
 
 
@@ -22,8 +22,6 @@ See [REQUIREMENTS.md](REQUIREMENTS.md) for detailed information.
 > Make sure that all [requirements](REQUIREMENTS.md) for specific file are installed, except those marked with \*
 &nbsp;
 
-Next command will install all dotfiles for current user:
-```bash
-git clone https://github.com/Daniiiiiiil/dotfiles && cd dotfiles && sudo chmod +x install.sh && source install.sh && cd ..
-```
+Just clone repo, copy required files or dirs to your `$HOME` and have fun!\
+Some configs may require to restart app or will have command to execute just under the ASCII art.
 &nbsp;
