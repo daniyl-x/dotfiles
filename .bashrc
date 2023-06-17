@@ -79,6 +79,7 @@ alias mkdir="mkdir -pv"         # mkdir make parents & verbose output
 alias edit="$EDITOR"            # edit for default editor
 alias code="$CODEEDITOR"        # code for default code editor
 alias vim="vimx"                # gvim: vim + system clipboard
+alias nv="nvim"                 # nv for nvim
 
 # Installed
 alias speedtest="speedtest-cli"
@@ -89,7 +90,7 @@ alias vimup="update_vim_plug"       # update function for vim plugins
 
 
 ### DEFAULTS ###
-export EDITOR=vim               # Default editor
+export EDITOR=nvim              # Default editor
 export CODEEDITOR=codium        # Default IDE
 export BAT_THEME=gruvbox-dark   # bat theme
 
