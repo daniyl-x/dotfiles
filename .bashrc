@@ -62,6 +62,7 @@ export PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_bra
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias ip="ip --color=auto"
+alias tree="tree -C"
 
 # Set interactive mode
 alias mv="mv -i"
@@ -74,6 +75,7 @@ alias ll="ls -lAh"              # ls all long human-readable
 alias la="ls -A"                # ls w/ hidden files
 alias l.="ls -d .*"             # ls only hidden
 alias mkdir="mkdir -pv"         # mkdir make parents & verbose output
+alias diff="diff -s"            # report identical files
 
 # Editors
 alias edit="$EDITOR"            # edit for default editor
