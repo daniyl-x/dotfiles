@@ -105,3 +105,7 @@ source /usr/share/fzf/shell/key-bindings.bash
 # Enable fzf bash completion
 source /usr/share/fzf/shell/completion.bash
 
+
+# Bash completion
+source /etc/profile.d/bash_completion.sh
+
