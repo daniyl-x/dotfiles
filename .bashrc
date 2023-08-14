@@ -27,6 +27,11 @@ BLUE='\[\033[34m\]'
 PURPLE='\[\033[35m\]'
 CYAN='\[\033[36m\]'
 
+# Unicode symbols
+BOX_H=$'\u2500'
+BOX_DR=$'\u250c'
+BOX_UR=$'\u2514'
+
 # Git Bash Style Prompt
 # export PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
 
@@ -34,7 +39,10 @@ CYAN='\[\033[36m\]'
 # export PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 
 # Fedora Style Prompt
-export PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
+# export PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
+
+# Two line, square boxes, time
+export PS1='\n'$WHITE$BOX_DR$BOX_H$BLUE'['$PURPLE'\t'$BLUE'] ['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)\n'$WHITE$BOX_UR$BLUE'\$ '$WHITE
 
 
 ### ALIASES ###
