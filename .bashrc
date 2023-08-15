@@ -22,6 +22,7 @@ get_git_branch(){
 
 # Colors
 WHITE='\[\033[0m\]'
+RED='\[\033[31m\]'
 GREEN='\[\033[32m\]'
 BLUE='\[\033[34m\]'
 PURPLE='\[\033[35m\]'
@@ -33,16 +34,23 @@ BOX_DR=$'\u250c'
 BOX_UR=$'\u2514'
 
 # Git Bash Style Prompt
-# export PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
+# PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
 
 # One Long Line Prompt
-# export PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
+# PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 
 # Fedora Style Prompt
-# export PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
+# PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 
 # Two line, square boxes, time
-export PS1='\n'$WHITE$BOX_DR$BOX_H$BLUE'['$PURPLE'\t'$BLUE'] ['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)\n'$WHITE$BOX_UR$BLUE'\$ '$WHITE
+PS1='\n'$WHITE$BOX_DR$BOX_H$BLUE'['$PURPLE'\t'$BLUE'] ['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)\n'$WHITE$BOX_UR$BLUE'\$ '$WHITE
+
+# Replace green color with red for root
+if [ "$(id -u)" -eq 0 ]; then
+    PS1=$(tr $GREEN $RED <<< $PS1)
+fi
+
+export PS1
 
 
 ### ALIASES ###
