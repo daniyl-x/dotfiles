@@ -83,7 +83,9 @@ alias nv="nvim"                 # nv for nvim
 # Installed
 alias speedtest="speedtest-cli"
 
-### DEFAULTS ###
+
+### VARIABLES ###
+export MANPAGER="nvim +Man!"    # Display manpages with neovim
 export EDITOR=nvim              # Default editor
 export CODEEDITOR=codium        # Default IDE
 export BAT_THEME=gruvbox-dark   # bat theme
