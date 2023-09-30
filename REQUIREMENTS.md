@@ -10,14 +10,16 @@
 > \*&mdash; Is not required, but is used and recommended
 &nbsp;
 
+Most of listed software should be available in your distro's repositories. I've also tried to provide all links so you can get software that isn't available in your distro's repository or if you're using other OS.
+
 ### **.bashrc**
-- **bat** &mdash; cat alternative with syntax highlighting
-- **fzf** &mdash; fuzzy-finder for convenient search and auto-completion of commands from the terminal
-- **git** &mdash; a free and open source distributed version control system
+- [**bat**](https://github.com/sharkdp/bat) &mdash; cat alternative with syntax highlighting
+- [**fzf**](https://github.com/junegunn/fzf) &mdash; fuzzy-finder for convenient search and auto-completion of commands from the terminal
+- [**git**](https://git-scm.com/) &mdash; a free and open source distributed version control system
 - **gvim (vim-gui)** &mdash; vim graphical mode & clipboard buffer integration
-- **micro\*** &mdash; simple and convenient text editor for the terminal with syntax highlighting, plug-ins and flexible settings
-- **speedtest-cli\*** &mdash; a command-line tool for testing the speed of an Internet connection
-- **vscodium\*** &mdash; community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code
+- [**micro\***](https://micro-editor.github.io/) &mdash; simple and convenient text editor for the terminal with syntax highlighting, plug-ins and flexible settings
+- [**speedtest-cli\***](https://www.speedtest.net/apps/cli) &mdash; a command-line tool for testing the speed of an Internet connection
+- [**vscodium\***](https://vscodium.com/) &mdash; community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code
 &nbsp;
 
 ### **.vimrc**
@@ -25,7 +27,7 @@
 &nbsp;
 
 ### **kitty**
-- **IBM Plex Mono Fonts** &mdash; IBM Plex monospace fonts
+- [**IBM Plex**](https://github.com/IBM/plex) &mdash; IBM Plex fonts
 &nbsp;
 
 ### **micro**
