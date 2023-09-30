@@ -33,3 +33,17 @@
 - **fzf\*** &mdash; fuzzy-finder plugin
 - **quoter\*** &mdash; plugin to add quotes or brackets around a text selection
 &nbsp;
+
+### **qtile**
+> **Warning**
+> You should change browser variable in [config.py](.config/qtile/config.py) and customize [autostart.sh](.config/qtile/autostart.sh) to run programs that you want. Also, used keys can be device-specific, so you probably should change them too
+
+- [**Blueman**](https://github.com/blueman-project/blueman) &mdash; GTK+ Bluetooth Manager
+- [**brightnessctl**](https://github.com/Hummer12007/brightnessctl) &mdash; CLI tool for controlling brightness
+- [**Flameshot**](https://flameshot.org) &mdash; screenshot tool that allows in-app editing
+- [**Noto Nerd Font**](https://nerdfonts.com) &mdash; patched Noto fonts with multiple icons
+- [**playerctl**](https://github.com/altdesktop/playerctl) &mdash; CLI tool for controlling media players that implement the MPRIS D-Bus Interface Specification
+- [**Rofi**](https://github.com/DaveDavenport/rofi) &mdash; application launcher and dmenu replacement
+- [**Rofi Power Menu**](https://github.com/jluttine/rofi-power-menu) &mdash; Rofi extension for basic power menu operations such as shutting down, logging out, rebooting and suspending
+- **xinput** &mdash; utility to configure X input devices, such as mouses, keyboards, and touchpads
+- [**XScreenSaver**](https://www.jwz.org/xscreensaver/) &mdash; X screen saver program and collection of screen savers
