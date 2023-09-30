@@ -141,7 +141,7 @@ keys = [
     ),
     Key(
         [mod, "control"], "q",
-        lazy.spawn("rofi -show power-menu -modi 'power-menu:rofi-power-menu --no-symbols --choices=lockscreen/logout/reboot/shutdown'"),
+        lazy.spawn("rofi -show power-menu -modi 'power-menu:rofi-power-menu --choices=lockscreen/logout/reboot/shutdown'"),
         desc="Run power menu"
     ),
 
