@@ -38,7 +38,7 @@ Most of listed software should be available in your distro's repositories. I've 
 
 ### **qtile**
 > **Warning**
-> You should change browser variable in [config.py](.config/qtile/config.py) and customize [autostart.sh](.config/qtile/autostart.sh) to run programs that you want. Also, used keys can be device-specific, so you probably should change them too
+> You should change default apps variables in [config.py](.config/qtile/config.py) and customize [autostart.sh](.config/qtile/autostart.sh) to run programs that you want. Also, used keys can be device-specific, so you probably should change them too
 
 - [**Blueman**](https://github.com/blueman-project/blueman) &mdash; GTK+ Bluetooth Manager
 - [**brightnessctl**](https://github.com/Hummer12007/brightnessctl) &mdash; CLI tool for controlling brightness

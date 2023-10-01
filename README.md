@@ -1,7 +1,8 @@
 # **Dotfiles**
 *This repository contains my personal dotfiles and configurations that I use every day on my Linux machine.*
 
-All text editors configurations may contain language-specific settings and/or plugins (currently for Python and HTML).
+All text editors configurations may contain language-specific settings and/or plugins.
+Some of this dofiles (window managers configurations, for example) are configured specifically for my needs and convinience, so you should use them as a base or example.
 
 
 
