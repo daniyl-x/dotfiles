@@ -252,31 +252,35 @@ screens = [
                 widget.Spacer(),
 
                 widget.KeyboardLayout(
-                    fmt="  {}",
+                    fmt="󰥻 {}",
                     configured_keyboards=["us", "ru", "ua"],
                     display_map={"us": "EN", "ua": "UK"},
                 ),
                 widget.Clipboard(
                     foreground=colors[3],
-                    fmt="󱉨: {}",
+                    fmt="󱉨 {}",
                     blacklist=["keepassxc"],
                     timeout=None,
                 ),
-                widget.CheckUpdates(
-                    display_format="Upd: {updates}",
-                    distro="Fedora",
-                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -- sudo dnf update")},
-                ),
 
                 widget.WidgetBox(
-                    text_closed="󰞗 ",
-                    text_open="󰞘 ",
+                    text_closed="",
+                    text_open="",
                     widgets=[
-                        widget.Systray(),
+                        widget.Systray(padding=4),
                     ]
                 ),
                 
-                widget.NetGraph(interface="wlp7s0"),
+                widget.NetGraph(
+                    border_width=1,
+                    border_color=colors[8],
+                    fill_color=colors[4],
+                    graph_color=colors[4],
+                    line_width=2,
+                    margin_x=1,
+                    samples=75,
+                    type="line",
+                ),
 
                 widget.Memory(
                     fmt=" {}",
@@ -296,7 +300,7 @@ screens = [
                     step=1,
                 ),
                 widget.Volume(
-                    fmt=" {}",
+                    fmt=" {}",
                     emoji=False
                 ),
 
@@ -315,7 +319,14 @@ screens = [
                     format="{percent:2.0%} {char} {hour:d}h{min:02d}m",
                     low_foreground=colors[1],
                     low_percentage=0.2,
-                    update_interval=10,
+                    update_interval=6,
+                ),
+
+                widget.CheckUpdates(
+                    colour_have_updates=colors[2],
+                    display_format="Up:{updates}",
+                    distro="Fedora",
+                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -- sudo dnf update")},
                 ),
             ],
             24,
