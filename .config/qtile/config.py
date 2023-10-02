@@ -231,11 +231,16 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(),
-                widget.Prompt(),
+                widget.Prompt(
+                    foreground=colors[1],
+                ),
 
                 widget.GroupBox(
+                    active=widget_defaults["foreground"],
                     hide_unused=True,
+                    highlight_color=widget_defaults["background"],
                     highlight_method="line",
+                    inactive=colors[8],
                     this_current_screen_border=colors[4],
                     this_screen_border=colors[4],
                     urgent_border=colors[1],

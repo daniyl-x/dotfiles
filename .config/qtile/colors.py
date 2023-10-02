@@ -8,7 +8,7 @@ everforest = [
     "#83c092", # color6
     "#d3c6aa", # color7
 
-    "#2d353b", # color8
+    "#7a8478", # color8
     "#e67e80", # color9
     "#a7c080", # color10
     "#e69875", # color11
@@ -28,7 +28,7 @@ palenight = [
     "#89ddff", # color6
     "#acafb9", # color7
 
-    "#292d3e", # color8
+    "#676e95", # color8
     "#ff8b92", # color9
     "#ddffa7", # color10
     "#ffe585", # color11
