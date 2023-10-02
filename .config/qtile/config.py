@@ -40,7 +40,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.widget import backlight
 
-from colors import palenight as colors
+from colors import everforest as colors
 
 
 # Mod key
@@ -332,7 +332,7 @@ screens = [
             24,
         ),
 
-        wallpaper="~/Pictures/wallpapers/nature/mountains-w-water.jpg",
+        wallpaper="~/Pictures/wallpapers/nature/green-hill.jpg",
         wallpaper_mode="stretch",
     ),
 ]
