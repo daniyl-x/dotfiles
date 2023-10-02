@@ -1,3 +1,23 @@
+doom_one = [
+    "#282c34", # color0
+    "#ff6c6b", # color1
+    "#799033", # color2
+    "#da8548", # color3
+    "#2257a0", # color4
+    "#c678dd", # color5
+    "#5699af", # color6
+    "#bbc2cf", # color7
+
+    "#3f444a", # color8
+    "#da8548", # color9
+    "#98be65", # color10
+    "#ecbe7b", # color11
+    "#51afef", # color12
+    "#a9a1e1", # color13
+    "#46d9ff", # color14
+    "#efefef", # color15
+]
+
 everforest = [
     "#232a2e", # color0
     "#e67e80", # color1

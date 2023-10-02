@@ -37,3 +37,5 @@ Colorschemes are ported from different sources and customized to look better in 
 ### Based on:
 - [Palenight VSCode theme](https://github.com/whizkydee/vscode-palenight-theme)
 - [Everforest Vim theme](https://github.com/sainnhe/everforest)
+- [Doom One Doom Emacs theme](https://github.com/doomemacs/themes)
+
