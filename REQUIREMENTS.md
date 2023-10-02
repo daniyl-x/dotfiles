@@ -3,6 +3,7 @@
 - [.vimrc](#vimrc)
 - [kitty](#kitty)
 - [micro](#micro)
+- [qtile](#qtile)
 
 
 # Requirements

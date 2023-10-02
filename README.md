@@ -9,6 +9,7 @@ Some of this dofiles (window managers configurations, for example) are configure
 ## Table of contents
 - [Requirements](REQUIREMENTS.md)
 - [Installation](#installation)
+- [Colorschemes](#colorschemes)
 &nbsp;
 
 
@@ -19,10 +20,20 @@ See [REQUIREMENTS.md](REQUIREMENTS.md) for detailed information.
 
 
 ## Installation
-> ### **Warning**
+> **Warning**
 > Make sure that all [requirements](REQUIREMENTS.md) for specific file are installed, except those marked with \*
 &nbsp;
 
 Just clone repo, copy required files or dirs to your `$HOME` and have fun!\
 Some configs may require to restart app or will have command to execute just under the ASCII art.
 &nbsp;
+
+
+## Colorschemes
+I'm trying to keep colorschemes consistent between applications (at least for window manager and terminal emulator).
+
+Colorschemes are ported from different sources and customized to look better in every application.
+
+### Based on:
+- [Palenight VSCode theme](https://github.com/whizkydee/vscode-palenight-theme)
+- [Everforest Vim theme](https://github.com/sainnhe/everforest)
