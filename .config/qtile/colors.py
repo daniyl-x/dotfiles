@@ -8,7 +8,7 @@ doom_one = [
     "#5699af", # color6
     "#bbc2cf", # color7
 
-    "#3f444a", # color8
+    "#4b5158", # color8
     "#da8548", # color9
     "#98be65", # color10
     "#ecbe7b", # color11
