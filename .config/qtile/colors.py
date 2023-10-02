@@ -38,6 +38,26 @@ everforest = [
     "#d3c6aa", # color15
 ]
 
+one_dark = [
+    "#21262d", # color0
+    "#e06c75", # color1
+    "#98c379", # color2
+    "#e5c07b", # color3
+    "#61afef", # color4
+    "#c678dd", # color5
+    "#56b6c2", # color6
+    "#abb2bf", # color7
+
+    "#5c6370", # color8
+    "#e06c75", # color9
+    "#98c379", # color10
+    "#e5c07b", # color11
+    "#61afef", # color12
+    "#c678dd", # color13
+    "#56b6c2", # color14
+    "#efefef", # color15
+]
+
 palenight = [
     "#0f111a", # color0
     "#f07178", # color1
