@@ -5,9 +5,21 @@
 # (_)_.__/ \__,_|___/_| |_|_|  \___|
                               
 
+### VARIABLES ###
+
 # PATH variable
-PATH="$HOME/.local/bin:$HOME/bin:/usr/bin:$PATH"
-export PATH
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/bin:$PATH"
+
+# History settings
+export HISTCONTROL=ignoredups 	# Ignore continuous duplicates
+export HISTSIZE=10000 		# Bash history size
+export HISTFILESIZE=$HISTSIZE 	# Bash history file size
+export HISTTIMEFORMAT="%F %T "	# Add date and timestamp to history
+
+export MANPAGER="nvim +Man!"    # Display manpages with neovim
+export EDITOR=nvim              # Default editor
+export CODEEDITOR=codium        # Default IDE
+export BAT_THEME=gruvbox-dark   # bat theme
 
 
 ### FUNCTIONS ###
@@ -82,13 +94,6 @@ alias nv="nvim"                 # nv for nvim
 
 # Installed
 alias speedtest="speedtest-cli"
-
-
-### VARIABLES ###
-export MANPAGER="nvim +Man!"    # Display manpages with neovim
-export EDITOR=nvim              # Default editor
-export CODEEDITOR=codium        # Default IDE
-export BAT_THEME=gruvbox-dark   # bat theme
 
 
 ### SCRIPTS EXECUTION ###
