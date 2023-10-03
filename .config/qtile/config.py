@@ -201,6 +201,7 @@ layouts = [
     layout.Max(**layout_defaults),
     layout.Columns(**layout_defaults),
     layout.Stack(**layout_defaults),
+    layout.Floating(**layout_defaults),
 ]
 
 # Mouse control for floating layouts.
@@ -337,7 +338,7 @@ screens = [
             24,
         ),
 
-        wallpaper="~/Pictures/wallpapers/nature/green-hill.jpg",
+        wallpaper="~/.config/qtile/wallpaper",
         wallpaper_mode="stretch",
     ),
 ]
