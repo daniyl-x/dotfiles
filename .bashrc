@@ -78,6 +78,10 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias rm="rm -i"
 
+# Set human-readable mode
+alias df="df -h"
+alias du="du -h"
+
 # Default commands flags
 alias cd..="cd .."              # cd up without space
 alias ll="ls -lAh"              # ls all long human-readable
