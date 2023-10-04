@@ -44,6 +44,8 @@ Most of listed software should be available in your distro's repositories. I've 
 - [**Blueman**](https://github.com/blueman-project/blueman) &mdash; GTK+ Bluetooth Manager
 - [**brightnessctl**](https://github.com/Hummer12007/brightnessctl) &mdash; CLI tool for controlling brightness
 - [**Flameshot**](https://flameshot.org) &mdash; screenshot tool that allows in-app editing
+- [**NetworkManager**](https://networkmanager.dev/) &mdash; standart network configuration tool suite
+- [**network-manager-applet**](https://gitlab.gnome.org/GNOME/network-manager-applet) &mdash; system tray applet for NetworkManager
 - [**Noto Nerd Font**](https://nerdfonts.com) &mdash; patched Noto fonts with multiple icons
 - [**playerctl**](https://github.com/altdesktop/playerctl) &mdash; CLI tool for controlling media players that implement the MPRIS D-Bus Interface Specification
 - [**Rofi**](https://github.com/DaveDavenport/rofi) &mdash; application launcher and dmenu replacement
