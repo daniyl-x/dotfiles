@@ -341,7 +341,7 @@ screens = [
                 ),
 
                 widget.CheckUpdates(
-                    colour_have_updates=colors[2],
+                    colour_have_updates=colors[10],
                     display_format="Up:{updates}",
                     distro="Fedora",
                     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -- sudo dnf update")},
