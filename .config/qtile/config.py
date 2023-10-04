@@ -78,7 +78,10 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="Toggle window floating"),
 
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    # Switch layouts
+    Key([mod], "Tab", lazy.next_layout(), desc="Switch next layout"),
+    Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Switch previous layout"),
+
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
 
