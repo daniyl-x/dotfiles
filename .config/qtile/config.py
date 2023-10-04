@@ -116,7 +116,12 @@ keys = [
     ),
 
     # Lock screen
-    Key([], "F9", lazy.spawn("xscreensaver-command --lock"), desc="Lock screen"),
+    Key(
+        [], "F9",
+        # Setting keyboard layout to EN before locking the screen to prevent self lockout
+        lazy.spawn("setxkbmap -layout us && xscreensaver-command --lock", shell=True),
+        desc="Lock screen"
+    ),
 
     # Volume
     Key([], "XF86AudioLowerVolume", lazy.widget["volume"].decrease_vol(), desc="Volume down"),
