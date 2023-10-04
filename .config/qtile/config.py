@@ -197,7 +197,7 @@ layout_defaults = {
 }
 
 layouts = [
-    layout.MonadTall(**layout_defaults, ratio=0.55),
+    layout.MonadTall(**layout_defaults, ratio=0.58),
     layout.Max(**layout_defaults),
     layout.Columns(**layout_defaults),
     layout.Stack(**layout_defaults),
