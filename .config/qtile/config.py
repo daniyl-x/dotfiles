@@ -93,12 +93,16 @@ keys = [
     ),
 
     # Touchpad toggle
-    Key([], "F6", lazy.spawn(os.path.expanduser("~/.config/qtile/toggle_touchpad.sh")), desc="Toggle touchpad"),
+    Key(
+        [], "F6",
+        lazy.spawn(os.path.expanduser("~/.config/qtile/toggle_touchpad.sh")),
+        desc="Toggle touchpad"
+    ),
 
     # Screenshot
     Key(
         [], "Print",
-        lazy.spawn("bash -c 'flameshot screen -p $HOME/Pictures'"),
+        lazy.spawn("flameshot screen -p $HOME/Pictures", shell=True),
         desc="Screenshot of full screen"
     ),
     Key(["control"], "Print", lazy.spawn("flameshot gui"), desc="Screenshot of area"),
@@ -161,7 +165,7 @@ keys = [
     ### SCRIPTS ###
     Key(
         [], "XF86Launch4",
-        lazy.spawn("bash -c '$HOME/Code/scripts/switch_powerprofile.sh'"),
+        lazy.spawn(os.path.expanduser("~/Code/scripts/switch_powerprofile.sh")),
         desc="Switch powerprofile"
     ),
 ]
