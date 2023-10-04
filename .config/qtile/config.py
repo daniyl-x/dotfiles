@@ -40,7 +40,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.widget import backlight
 
-from colors import everforest as colors
+from colors import doom_one as colors
 
 
 # Mod key
