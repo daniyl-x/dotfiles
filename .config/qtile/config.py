@@ -202,8 +202,8 @@ for i in groups:
 ### LAYOUTS ###
 
 layout_defaults = {
-    "border_width": 2,
-    "margin": 6,
+    "border_width": 3,
+    "margin": 5,
     "border_normal": colors[0],
     "border_focus": colors[4],
 }
