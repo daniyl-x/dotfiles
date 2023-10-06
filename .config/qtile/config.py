@@ -250,6 +250,7 @@ screens = [
 
                 widget.GroupBox(
                     active=widget_defaults["foreground"],
+                    disable_drag=True,
                     hide_unused=True,
                     highlight_color=widget_defaults["background"],
                     highlight_method="line",
