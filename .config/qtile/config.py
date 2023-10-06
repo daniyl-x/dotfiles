@@ -179,21 +179,21 @@ keys = [
 # Groups range and names
 groups = [Group(i) for i in "1234567890"]
 
-for i in groups:
+for group in groups:
     keys.extend(
         [
             # Switch to group
             Key(
-                [mod], i.name,
-                lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name),
+                [mod], group.name,
+                lazy.group[group.name].toscreen(),
+                desc="Switch to group {}".format(group.name),
             ),
 
             # Switch to & move focused window to group
             Key(
-                [mod, "shift"], i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
+                [mod, "shift"], group.name,
+                lazy.window.togroup(group.name, switch_group=True),
+                desc="Switch to & move focused window to group {}".format(group.name),
             ),
         ]
     )
