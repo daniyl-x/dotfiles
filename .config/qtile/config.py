@@ -243,7 +243,13 @@ screens = [
         # Top Bar
         top=bar.Bar(
             [
-                widget.CurrentLayoutIcon(),
+                widget.CurrentLayoutIcon(
+                    # Default way to switch previous layout is middle click
+                    mouse_callbacks={
+                        "Button2": None,
+                        "Button3": qtile.prev_layout,
+                    },
+                ),
                 widget.Prompt(
                     foreground=colors[1],
                 ),
