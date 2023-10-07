@@ -39,6 +39,7 @@ call plug#end()
 let g:gruvbox_contrast_dark = 'medium'      " gruvbox dark contrast
 
 set background=dark			                " dark mode
+set termguicolors                           " correct colors
 colorscheme everforest 		                " setting colorscheme
 
 
