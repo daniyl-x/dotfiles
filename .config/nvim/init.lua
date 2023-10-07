@@ -25,3 +25,6 @@ require("config.colorscheme")
 -- Lualine
 require("config.lualine")
 
+-- Gitsigns
+require("config.gitsigns")
+

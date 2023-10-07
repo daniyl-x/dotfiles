@@ -53,6 +53,9 @@ return require('packer').startup(function(use)
         requires = {'nvim-tree/nvim-web-devicons', opt = true}
     }
 
+    -- Gitsigns
+    use('lewis6991/gitsigns.nvim')
+
     -----------------------------------------------------------
     -- Automatically set up configuration after clonning packer
     if packer_bootstrap then
