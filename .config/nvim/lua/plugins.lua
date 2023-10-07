@@ -48,13 +48,13 @@ return require('packer').startup(function(use)
     use 'sainnhe/everforest'            -- Everforest
 
     -- Lualine
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {'nvim-tree/nvim-web-devicons', opt = true}
-    }
+    use {'nvim-lualine/lualine.nvim', requires = {'nvim-tree/nvim-web-devicons'}}
 
     -- Gitsigns
     use('lewis6991/gitsigns.nvim')
+
+    -- Trouble warnings list
+    use {'folke/trouble.nvim', requires = {'nvim-tree/nvim-web-devicons'}}
 
     -----------------------------------------------------------
     -- Automatically set up configuration after clonning packer
