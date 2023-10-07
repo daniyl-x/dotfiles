@@ -28,4 +28,5 @@ vim.opt.number = true			    -- show line numbers
 vim.opt.relativenumber = true	    -- show relative line numbers
 vim.opt.splitbelow = true		    -- open splits below
 vim.opt.splitright = true		    -- open vsplits right
+vim.opt.colorcolumn = "80"          -- vertical line on 80 column
 
