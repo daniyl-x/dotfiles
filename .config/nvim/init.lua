@@ -28,3 +28,9 @@ require("config.lualine")
 -- Gitsigns
 require("config.gitsigns")
 
+-- Nvim-Tree
+require("config.nvim-tree")
+
+-- Trouble
+require("config.trouble")
+

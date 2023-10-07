@@ -56,6 +56,9 @@ return require('packer').startup(function(use)
     -- Trouble warnings list
     use {'folke/trouble.nvim', requires = {'nvim-tree/nvim-web-devicons'}}
 
+    -- Nvim-Tree file explorer
+    use {'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}}
+
     -----------------------------------------------------------
     -- Automatically set up configuration after clonning packer
     if packer_bootstrap then
