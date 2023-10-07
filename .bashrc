@@ -12,7 +12,7 @@ export PATH="$HOME/.local/bin:$HOME/bin:/usr/bin:$PATH"
 
 # History settings
 export HISTCONTROL=ignoredups 	# Ignore continuous duplicates
-export HISTSIZE=10000 		# Bash history size
+export HISTSIZE=10000           # Bash history size
 export HISTFILESIZE=$HISTSIZE 	# Bash history file size
 export HISTTIMEFORMAT="%F %T "	# Add date and timestamp to history
 
@@ -95,6 +95,8 @@ alias edit="$EDITOR"            # edit for default editor
 alias code="$CODEEDITOR"        # code for default code editor
 alias vim="vimx"                # gvim: vim + system clipboard
 alias nv="nvim"                 # nv for nvim
+# "full" nvim with file explorer and warnings list
+alias nvf="nvim +NvimTreeOpen +Trouble"
 
 # Installed
 alias speedtest="speedtest-cli"
