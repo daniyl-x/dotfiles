@@ -1,3 +1,4 @@
+-- Mason settings
 require("mason").setup({
     ui = {
         icons = {
@@ -8,18 +9,6 @@ require("mason").setup({
     }
 })
 
-
-require("mason-lspconfig").setup({
-    -- Servers to install automatically
-    ensure_installed = {
-        "lua_ls",       -- lua
-        "pylsp",        -- python
-        "clangd",       -- c/c++
-    }
-})
-
-
-local lspconfig = require("lspconfig")
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -47,15 +36,33 @@ local on_attach = function(client, bufnr)
 end
 
 
-lspconfig.lua_ls.setup ({
-    on_attach = on_attach,
+-- Servers to install automatically
+local required_servers = {
+    "lua_ls",       -- lua
+    "pylsp",        -- python
+    "clangd",       -- c/c++
+}
+
+require("mason-lspconfig").setup({
+    ensure_installed = required_servers
 })
 
-lspconfig.pylsp.setup({
-    on_attach = on_attach,
-})
 
-lspconfig.clangd.setup({
-    on_attach = on_attach,
-})
+-- Servers to configure
+local servers = {
+    -- Insert optional servers before required
+    "zls",          -- zig
+
+    ---------------------------------
+    -- Inserting all required servers
+    table.unpack(required_servers)
+}
+
+-- Applying default settings for all servers
+local lspconfig = require("lspconfig")
+for _, server in ipairs(servers) do
+    lspconfig[server].setup {
+        on_attach = on_attach,
+    }
+end
 
