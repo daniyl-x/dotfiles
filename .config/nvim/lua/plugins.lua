@@ -44,8 +44,8 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
 
     -- Colorscheme
-    use 'olimorris/onedarkpro.nvim'     -- One Dark
-    use 'sainnhe/everforest'            -- Everforest
+    use 'sainnhe/everforest'                    -- Everforest
+    use {'catppuccin/nvim', as = 'catppuccin'}  -- Catppuccin
 
     -- Lualine
     use {'nvim-lualine/lualine.nvim', requires = {'nvim-tree/nvim-web-devicons'}}
