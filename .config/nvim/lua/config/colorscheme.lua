@@ -10,10 +10,3 @@ if not is_ok then
     return
 end
 
-
--- Everforest settings
-if colorscheme == 'everforest' then
-    vim.opt.termguicolors = true            -- correct colors
-    vim.opt.background = 'dark'             -- bg dark/light
-end
-
