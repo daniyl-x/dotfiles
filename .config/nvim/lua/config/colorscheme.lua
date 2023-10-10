@@ -1,6 +1,7 @@
 -- Define colorscheme
 --local colorscheme = 'everforest'
 local colorscheme = 'catppuccin-frappe'
+--local colorscheme = 'rose-pine-moon'
 
 
 -- Check if colorscheme installed
