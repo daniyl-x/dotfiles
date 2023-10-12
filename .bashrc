@@ -65,6 +65,15 @@ fi
 export PS1
 
 
+### INPUT ###
+
+# Shopt
+shopt -s cdspell                # autocorrect cd
+
+# Ignore completion case
+bind "set completion-ignore-case on"
+
+
 ### ALIASES ###
 
 # Colorization
