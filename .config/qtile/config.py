@@ -307,15 +307,15 @@ screens = [
                     type="line",
                 ),
 
-                widget.Memory(
-                    fmt=" {}",
-                    format="{MemUsed:.0f}{mm}",
-                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -- htop")},
-                ),
-                widget.CPU(
-                    fmt=" {}",
-                    format="{load_percent}%"
-                ),
+                # widget.Memory(
+                #     fmt=" {}",
+                #     format="{MemUsed:.0f}{mm}",
+                #     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -- htop")},
+                # ),
+                # widget.CPU(
+                #     fmt=" {}",
+                #     format="{load_percent}%"
+                # ),
                 
                 widget.Backlight(
                     fmt="󰃟 {}",
