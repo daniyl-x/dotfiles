@@ -1,4 +1,4 @@
 require("trouble").setup({
-    auto_fold = true,       -- fold files at startup
+    auto_fold = false,       -- fold files at startup
 })
 
