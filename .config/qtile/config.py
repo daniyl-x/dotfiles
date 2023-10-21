@@ -289,8 +289,8 @@ screens = [
                 ),
 
                 widget.WidgetBox(
-                    text_closed="",
-                    text_open="",
+                    text_closed="",
+                    text_open="",
                     widgets=[
                         widget.Systray(padding=4),
                     ]
