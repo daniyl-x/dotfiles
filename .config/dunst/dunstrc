@@ -1,0 +1,16 @@
+[global]
+    font = Noto Mono 12
+    width = (0, 450)
+    height = 1000
+
+    corner_radius = 5
+    separator_color = frame
+
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus-Dark, Mint-Y-Blue"
+    min_icon_size = 32
+    max_icon_size = 96
+
+    word_wrap = yes
+    ignore_newlines = no
+
