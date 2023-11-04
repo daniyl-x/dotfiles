@@ -51,18 +51,41 @@ require("mason-lspconfig").setup({
 -- Servers to configure
 local servers = {
     -- Insert optional servers before required
-    "zls",          -- zig
+    "texlab",       -- latex, tex
 
     ---------------------------------
     -- Inserting all required servers
     table.unpack(required_servers)
 }
 
--- Applying default settings for all servers
+-- LSP-specific configurations
+local texlab_settings = {
+    texlab = {
+        chktex = {
+            onEdit = true,
+            onOpenAndSave = true,
+        }
+    }
+}
+
+
 local lspconfig = require("lspconfig")
-for _, server in ipairs(servers) do
+
+-- Setup server with optional settings
+local function setup_server(server, server_settings)
     lspconfig[server].setup {
         on_attach = on_attach,
+        settings = server_settings or nil,
     }
+end
+
+
+-- Applying settings for all servers
+for _, server in ipairs(servers) do
+    if server == "texlab" then
+        setup_server(server, texlab_settings)
+    else
+        setup_server(server)
+    end
 end
 
