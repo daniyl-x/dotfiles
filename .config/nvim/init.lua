@@ -14,13 +14,13 @@ require("settings")
 require("plugins")
 
 -- LSP stuff
-require("config.lsp")
+require("lsp")
+
+-- Colorscheme
+require("colorscheme")
 
 -- Auto-completion
 require("config.nvim-cmp")
-
--- Colorscheme
-require("config.colorscheme")
 
 -- Lualine
 require("config.lualine")

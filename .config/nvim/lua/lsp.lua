@@ -58,16 +58,9 @@ local servers = {
     table.unpack(required_servers)
 }
 
--- LSP-specific configurations
+-- Server specific configurations
 local specific_settings = {
-    ["texlab"] = {
-        texlab = {
-            chktex = {
-                onEdit = true,
-                onOpenAndSave = true,
-            }
-        }
-    }
+    ["texlab"] = require("ls_specific.texlab"),
 }
 
 local lspconfig = require("lspconfig")
