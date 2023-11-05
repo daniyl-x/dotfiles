@@ -59,33 +59,24 @@ local servers = {
 }
 
 -- LSP-specific configurations
-local texlab_settings = {
-    texlab = {
-        chktex = {
-            onEdit = true,
-            onOpenAndSave = true,
+local specific_settings = {
+    ["texlab"] = {
+        texlab = {
+            chktex = {
+                onEdit = true,
+                onOpenAndSave = true,
+            }
         }
     }
 }
 
-
 local lspconfig = require("lspconfig")
-
--- Setup server with optional settings
-local function setup_server(server, server_settings)
-    lspconfig[server].setup {
-        on_attach = on_attach,
-        settings = server_settings or nil,
-    }
-end
-
 
 -- Applying settings for all servers
 for _, server in ipairs(servers) do
-    if server == "texlab" then
-        setup_server(server, texlab_settings)
-    else
-        setup_server(server)
-    end
+    lspconfig[server].setup {
+        on_attach = on_attach,
+        settings = specific_settings[server] or nil,
+    }
 end
 
