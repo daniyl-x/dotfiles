@@ -333,7 +333,7 @@ screens = [
                     channel="Capture",
                     foreground=colors[6],
                     emoji=True,
-                    emoji_list=["", "", "", ""],
+                    emoji_list=["", "󱦳", "", "󱦲"],
                 ),
 
                 widget.Battery(
