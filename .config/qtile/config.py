@@ -35,9 +35,8 @@ import os
 import subprocess
 
 from libqtile import bar, hook, layout, qtile, widget
-from libqtile.config import Click, Drag, EzKey, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 from libqtile.widget import backlight
 
 from colors import doom_one as colors
@@ -189,10 +188,10 @@ for group in groups:
                 desc="Switch to group {}".format(group.name),
             ),
 
-            # Switch to & move focused window to group
+            # Move focused window to group
             Key(
                 [mod, "shift"], group.name,
-                lazy.window.togroup(group.name, switch_group=True),
+                lazy.window.togroup(group.name),  # switch_group=True to switch
                 desc="Switch to & move focused window to group {}".format(group.name),
             ),
         ]
