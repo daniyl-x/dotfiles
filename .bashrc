@@ -8,7 +8,7 @@
 ### VARIABLES ###
 
 # PATH variable
-export PATH="$HOME/.local/bin:$HOME/bin:/usr/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
 # History settings
 export HISTCONTROL=ignoredups 	# Ignore continuous duplicates
