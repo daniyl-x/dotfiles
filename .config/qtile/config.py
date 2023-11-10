@@ -142,6 +142,13 @@ keys = [
     # Microphone
     Key([], "XF86AudioMicMute", lazy.spawn("amixer set Capture toggle"), desc="Toggle microphone"),
 
+    # Switch power profile (via power-profiles-daemon)
+    Key(
+        [], "XF86Launch4",
+        lazy.spawn(os.path.expanduser("~/.config/qtile/switch_powerprofile.sh")),
+        desc="Switch powerprofile"
+    ),
+
 
     ### ROFI ###
 
@@ -162,14 +169,6 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "f", lazy.spawn(file_manager), desc="Launch file manager"),
-    
-
-    ### SCRIPTS ###
-    Key(
-        [], "XF86Launch4",
-        lazy.spawn(os.path.expanduser("~/Code/scripts/switch_powerprofile.sh")),
-        desc="Switch powerprofile"
-    ),
 ]
 
 
