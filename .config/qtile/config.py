@@ -352,11 +352,11 @@ screens = [
                     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -- sudo dnf update")},
                 ),
                 widget.Wallpaper(
-                    label=" ",
+                    label="",
                     wallpaper_command=None,
                     random_selection=True,
                     directory="~/Pictures/wallpapers/fav/",
-                    option="fill",
+                    option="stretch",
                 ),
             ],
             24,
