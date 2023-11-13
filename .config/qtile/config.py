@@ -351,12 +351,16 @@ screens = [
                     distro="Fedora",
                     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -- sudo dnf update")},
                 ),
+                widget.Wallpaper(
+                    label=" ",
+                    wallpaper_command=None,
+                    random_selection=True,
+                    directory="~/Pictures/wallpapers/fav/",
+                    option="fill",
+                ),
             ],
             24,
         ),
-
-        wallpaper="~/.config/qtile/wallpaper",
-        wallpaper_mode="stretch",
     ),
 ]
 
