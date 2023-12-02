@@ -46,13 +46,13 @@ BOX_DR=$'\u250c'
 BOX_UR=$'\u2514'
 
 # Git Bash Style Prompt
-# PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
+#PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
 
 # One Long Line Prompt
-# PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
+#PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 
 # Fedora Style Prompt
-# PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
+#PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 
 # Two line, square boxes, time
 PS1='\n'$WHITE$BOX_DR$BOX_H$BLUE'['$PURPLE'\t'$BLUE'] ['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)\n'$WHITE$BOX_UR$BLUE'\$ '$WHITE
@@ -115,7 +115,6 @@ alias speedtest="speedtest-cli"
 
 # Enable fzf keybindings
 source /usr/share/fzf/shell/key-bindings.bash
-
 # Enable fzf bash completion
 source /usr/share/fzf/shell/completion.bash
 
