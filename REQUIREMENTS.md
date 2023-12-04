@@ -14,7 +14,7 @@
 Most of listed software should be available in your distro's repositories. I've also tried to provide all links so you can get software that isn't available in your distro's repository or if you're using other OS.
 
 ### **.bashrc**
-- [**bat**](https://github.com/sharkdp/bat) &mdash; cat alternative with syntax highlighting
+- [**bat\***](https://github.com/sharkdp/bat) &mdash; cat alternative with syntax highlighting
 - [**fzf**](https://github.com/junegunn/fzf) &mdash; fuzzy-finder for convenient search and auto-completion of commands from the terminal
 - [**git**](https://git-scm.com/) &mdash; a free and open source distributed version control system
 - **gvim (vim-gui)\*** &mdash; vim graphical mode & clipboard buffer integration
