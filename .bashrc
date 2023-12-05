@@ -46,7 +46,7 @@ BOX_DR=$'\u250c'
 BOX_UR=$'\u2514'
 
 # Git Bash Style Prompt
-#PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
+#PS1='\n'$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
 
 # One Long Line Prompt
 #PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
