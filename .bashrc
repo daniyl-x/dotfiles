@@ -55,8 +55,8 @@ BOX_UR=$'\u2514'
 # Fedora Style Prompt
 #PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 
-# Two line, square boxes, time
-PS1='\n'$WHITE$BOX_DR$BOX_H$BLUE'['$PURPLE'\t'$BLUE'] ['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)\n'$WHITE$BOX_UR$BLUE'\$ '$WHITE
+# Two line, square box
+PS1='\n'$WHITE$BOX_DR$BOX_H$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\w'$BLUE']'$PURPLE'$(get_git_branch)\n'$WHITE$BOX_UR$BLUE'\$ '$WHITE
 
 # Replace green color with red for root
 if [ "$(id -u)" -eq 0 ]; then
@@ -64,6 +64,7 @@ if [ "$(id -u)" -eq 0 ]; then
 fi
 
 export PS1
+export PROMPT_DIRTRIM=4         # trim \w in prompt to 'n' dirs 
 
 
 ### INPUT ###
