@@ -14,12 +14,11 @@
 Most of listed software should be available in your distro's repositories. I've also tried to provide all links so you can get software that isn't available in your distro's repository or if you're using other OS.
 
 ### **.bashrc**
-- [**bat\***](https://github.com/sharkdp/bat) &mdash; cat alternative with syntax highlighting
+- [**nvim**](https://github.com/neovim/neovim) &mdash; vim fork focused on extensibility and usability
 - [**fzf**](https://github.com/junegunn/fzf) &mdash; fuzzy-finder for convenient search and auto-completion of commands from the terminal
 - [**git**](https://git-scm.com/) &mdash; a free and open source distributed version control system
-- **gvim (vim-gui)\*** &mdash; vim graphical mode & clipboard buffer integration
-- [**micro\***](https://micro-editor.github.io/) &mdash; simple and convenient text editor for the terminal with syntax highlighting, plug-ins and flexible settings
-- [**speedtest-cli\***](https://www.speedtest.net/apps/cli) &mdash; a command-line tool for testing the speed of an Internet connection
+- **vim-gui (vim-X11)\*** &mdash; vim graphical mode & clipboard buffer integration (on some distros)
+- [**bat\***](https://github.com/sharkdp/bat) &mdash; cat alternative with syntax highlighting
 - [**vscodium\***](https://vscodium.com/) &mdash; community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code
 &nbsp;
 

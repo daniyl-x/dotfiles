@@ -17,8 +17,9 @@ export HISTFILESIZE=$HISTSIZE 	# Bash history file size
 export HISTTIMEFORMAT="%F %T "	# Add date and timestamp to history
 
 export MANPAGER="nvim +Man!"    # Display manpages with neovim
-export EDITOR=nvim              # Default editor
-export CODEEDITOR=codium        # Default IDE
+export VISUAL=nvim              # Fullscreen fancy editor
+export EDITOR=vi                # Default editor, should work everywhere
+
 export BAT_THEME=gruvbox-dark   # bat theme
 
 
@@ -101,15 +102,11 @@ alias diff="diff -s"            # report identical files
 
 # Editors
 alias edit="$EDITOR"            # edit for default editor
-alias code="$CODEEDITOR"        # code for default code editor
-alias vim="vimx"                # gvim: vim + system clipboard
+alias code="codium"             # code for vscodium
+#alias vim="vimx"                # vim w\ system clipboard (fedora)
 alias nv="nvim"                 # nv for nvim
 # "full" nvim with file explorer and warnings list
 alias nvf="nvim +NvimTreeOpen +Trouble"
-
-# Installed
-alias speedtest="speedtest-cli"
-
 
 ### SCRIPTS EXECUTION ###
 
