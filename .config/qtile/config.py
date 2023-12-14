@@ -1,10 +1,10 @@
-#        _   _ _      
-#   __ _| |_(_) | ___ 
+#        _   _ _
+#   __ _| |_(_) | ___
 #  / _` | __| | |/ _ \
 # | (_| | |_| | |  __/
 #  \__, |\__|_|_|\___|
-#     |_|             
- 
+#     |_|
+
 # Copyright (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
@@ -52,14 +52,14 @@ browser = "librewolf"
 
 
 keys = [
-    ### CONTROL KEYS ###
+    # CONTROL KEYS #
 
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(), desc="Focus on the next window"),
 
     # Move windows
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -81,12 +81,12 @@ keys = [
     Key([mod], "Tab", lazy.next_layout(), desc="Switch next layout"),
     Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Switch previous layout"),
 
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using prompt"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
 
 
-    ### SPECIAL KEYS ###
-    
+    # SPECIAL KEYS #
+
     # Keyboard layout
     Key(
         ["mod1"], "Shift_L",
@@ -107,16 +107,19 @@ keys = [
         lazy.spawn("flameshot screen -p $HOME/Pictures", shell=True),
         desc="Screenshot of full screen"
     ),
-    Key(["control"], "Print", lazy.spawn("flameshot gui"), desc="Screenshot of area"),
+    Key(
+        ["control"], "Print",
+        lazy.spawn("flameshot gui"), desc="Screenshot of area"
+    ),
 
     # Brightness
     Key(
-        [], "XF86MonBrightnessDown", 
+        [], "XF86MonBrightnessDown",
         lazy.widget["backlight"].change_backlight(backlight.ChangeDirection.DOWN),
         desc="Reduce brightness"
     ),
     Key(
-        [], "XF86MonBrightnessUp", 
+        [], "XF86MonBrightnessUp",
         lazy.widget["backlight"].change_backlight(backlight.ChangeDirection.UP),
         desc="Increase brightness"
     ),
@@ -124,7 +127,7 @@ keys = [
     # Lock screen
     Key(
         [], "F9",
-        # Setting keyboard layout to EN before locking the screen to prevent self lockout
+        # Set keyboard layout to EN before locking the screen to prevent lockout
         lazy.spawn("setxkbmap -layout us && xscreensaver-command --lock", shell=True),
         desc="Lock screen"
     ),
@@ -150,21 +153,25 @@ keys = [
     ),
 
 
-    ### ROFI ###
+    # ROFI #
 
     Key(
         [mod, "shift"], "Return",
-        lazy.spawn(f"rofi -show drun -show-icons"),
+        lazy.spawn("rofi -show drun -show-icons"),
         desc="Run launcher"
     ),
     Key(
         [mod, "control"], "q",
-        lazy.spawn("rofi -show power-menu -modi 'power-menu:rofi-power-menu --choices=lockscreen/logout/reboot/shutdown'"),
+        lazy.spawn(
+            "rofi -show power-menu"
+            " -modi 'power-menu:rofi-power-menu"
+            " --choices=lockscreen/logout/reboot/shutdown'"
+        ),
         desc="Run power menu"
     ),
 
 
-    ### APPS ###
+    # APPS #
 
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
@@ -172,7 +179,7 @@ keys = [
 ]
 
 
-### GROUPS ###
+# GROUPS #
 
 # Groups range and names
 groups = [Group(i) for i in "1234567890"]
@@ -191,13 +198,13 @@ for group in groups:
             Key(
                 [mod, "shift"], group.name,
                 lazy.window.togroup(group.name),  # switch_group=True to switch
-                desc="Switch to & move focused window to group {}".format(group.name),
+                desc=f"Switch to & move focused window to group {group.name}",
             ),
         ]
     )
 
 
-### LAYOUTS ###
+# LAYOUTS #
 
 layout_defaults = {
     "border_width": 3,
@@ -217,15 +224,21 @@ layouts = [
 # Mouse control for floating layouts.
 mouse = [
     # Move
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag(
+        [mod], "Button1",
+        lazy.window.set_position_floating(), start=lazy.window.get_position()
+    ),
     # Resize
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag(
+        [mod], "Button3",
+        lazy.window.set_size_floating(), start=lazy.window.get_size()
+    ),
     # Bring to front
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
 
-### SCREEN ###
+# SCREEN #
 
 widget_defaults = {
     "font": "NotoMono NF",
@@ -293,7 +306,7 @@ screens = [
                         widget.Systray(padding=4),
                     ]
                 ),
-                
+
                 widget.NetGraph(
                     border_width=1,
                     border_color=colors[8],
@@ -308,13 +321,17 @@ screens = [
                 # widget.Memory(
                 #     fmt=" {}",
                 #     format="{MemUsed:.0f}{mm}",
-                #     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -- htop")},
+                #     mouse_callbacks={
+                #         "Button1": lambda: qtile.cmd_spawn(
+                #             terminal + " -- htop"
+                #         )
+                #     },
                 # ),
                 # widget.CPU(
                 #     fmt=" {}",
                 #     format="{load_percent}%"
                 # ),
-                
+
                 widget.Backlight(
                     fmt="󰃟 {}",
                     backlight_name="nvidia_0",
@@ -327,7 +344,7 @@ screens = [
                     emoji=False
                 ),
 
-                # Volume widget uses amixer by default, so I just changed channel and look
+                # Using amixer to control micro via cpture channel
                 widget.Volume(
                     channel="Capture",
                     foreground=colors[6],
@@ -349,7 +366,11 @@ screens = [
                     colour_have_updates=colors[10],
                     display_format="Up:{updates}",
                     distro="Fedora",
-                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(terminal + " -- sudo dnf update")},
+                    mouse_callbacks={
+                        "Button1": lambda: qtile.cmd_spawn(
+                            terminal + " -- sudo dnf update"
+                        ),
+                    },
                 ),
                 widget.Wallpaper(
                     label="",
@@ -365,7 +386,7 @@ screens = [
 ]
 
 
-### HOOKS ###
+# HOOKS #
 
 @hook.subscribe.startup_once
 def autostart():
@@ -382,7 +403,7 @@ cursor_warp = False
 floating_layout = layout.Floating(
     **layout_defaults,
     float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
+        # Run the utility of xprop to see the wm class and name of an X client
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
@@ -412,4 +433,3 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
-
