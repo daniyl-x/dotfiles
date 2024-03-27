@@ -216,6 +216,7 @@ layout_defaults = {
 layouts = [
     layout.MonadTall(**layout_defaults, ratio=0.58),
     layout.Max(**layout_defaults),
+    layout.MonadTall(**layout_defaults, ratio=0.46),
     layout.Columns(**layout_defaults),
     layout.Floating(**layout_defaults),
 ]
