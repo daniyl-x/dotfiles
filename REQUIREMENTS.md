@@ -19,7 +19,6 @@ Most of listed software should be available in your distro's repositories. I've 
 - [**git**](https://git-scm.com/) &mdash; a free and open source distributed version control system
 - **vim-gui (vim-X11)\*** &mdash; vim graphical mode & clipboard buffer integration (on some distros)
 - [**bat\***](https://github.com/sharkdp/bat) &mdash; cat alternative with syntax highlighting
-- [**vscodium\***](https://vscodium.com/) &mdash; community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code
 &nbsp;
 
 ### **.vimrc**

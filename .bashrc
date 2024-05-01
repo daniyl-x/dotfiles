@@ -102,10 +102,7 @@ alias mkdir="mkdir -pv"         # mkdir make parents & verbose output
 alias diff="diff -s"            # report identical files
 
 # Editors
-alias edit="$EDITOR"            # edit for default editor
-alias code="codium"             # code for vscodium
 #alias vim="vimx"               # vim w\ system clipboard (fedora)
-alias nv="nvim"                 # nv for nvim
 
 
 ### SCRIPTS EXECUTION ###
