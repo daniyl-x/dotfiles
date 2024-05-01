@@ -104,15 +104,15 @@ alias diff="diff -s"            # report identical files
 # Editors
 alias edit="$EDITOR"            # edit for default editor
 alias code="codium"             # code for vscodium
-#alias vim="vimx"                # vim w\ system clipboard (fedora)
+#alias vim="vimx"               # vim w\ system clipboard (fedora)
 alias nv="nvim"                 # nv for nvim
-# "full" nvim with file explorer and warnings list
-alias nvf="nvim +NvimTreeOpen +Trouble"
+
 
 ### SCRIPTS EXECUTION ###
 
 # Enable fzf keybindings
 source /usr/share/fzf/shell/key-bindings.bash
+
 # Enable fzf bash completion
 source /usr/share/fzf/shell/completion.bash
 
