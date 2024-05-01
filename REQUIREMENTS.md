@@ -18,7 +18,6 @@ Most of listed software should be available in your distro's repositories. I've 
 - [**fzf**](https://github.com/junegunn/fzf) &mdash; fuzzy-finder for convenient search and auto-completion of commands from the terminal
 - [**git**](https://git-scm.com/) &mdash; a free and open source distributed version control system
 - **vim-gui (vim-X11)\*** &mdash; vim graphical mode & clipboard buffer integration (on some distros)
-- [**bat\***](https://github.com/sharkdp/bat) &mdash; cat alternative with syntax highlighting
 &nbsp;
 
 ### **.vimrc**

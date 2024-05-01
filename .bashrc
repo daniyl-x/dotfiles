@@ -20,8 +20,6 @@ export MANPAGER="nvim +Man!"    # Display manpages with neovim
 export VISUAL=nvim              # Fullscreen fancy editor
 export EDITOR=vi                # Default editor, should work everywhere
 
-export BAT_THEME=gruvbox-dark   # bat theme
-
 
 ### FUNCTIONS ###
 
