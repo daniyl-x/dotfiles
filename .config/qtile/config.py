@@ -54,6 +54,11 @@ browser = "librewolf"
 keys = [
     # CONTROL KEYS #
 
+    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using prompt"),
+    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="Toggle window floating"),
+
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
@@ -74,15 +79,9 @@ keys = [
     Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="Toggle window floating"),
-
     # Switch layouts
     Key([mod], "Tab", lazy.next_layout(), desc="Switch next layout"),
     Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Switch previous layout"),
-
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using prompt"),
-    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
 
 
     # SPECIAL KEYS #
