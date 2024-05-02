@@ -15,6 +15,10 @@ vim.opt.foldmethod = "syntax"       -- fold code by syntax
 vim.opt.foldlevel = 99              -- fold levels opened by default
 
 
+-- Remaps
+vim.g.mapleader = " "               -- leader key
+
+
 -- Search
 vim.opt.incsearch = true            -- search as characters are entered
 vim.opt.ignorecase = true           -- ignore case in searches

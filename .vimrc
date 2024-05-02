@@ -78,3 +78,7 @@ autocmd FileType python setlocal colorcolumn=81
 " HTML Tabulation
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
+
+""" REMAPS
+let mapleader = " "                         " space as a leader
+
