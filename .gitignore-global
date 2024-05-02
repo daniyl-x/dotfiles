@@ -34,5 +34,12 @@ __pycache__/
 *.py[cod]
 
 # Virtual environment
-*env/
+.env/
+.env.bak/
+env/
+env.bak/
+.venv/
+.venv.bak/
+venv/
+venv.bak/
 
