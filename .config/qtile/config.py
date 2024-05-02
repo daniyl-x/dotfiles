@@ -79,6 +79,12 @@ keys = [
     Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
+    # Change layout ratios
+    Key([mod], "i", lazy.layout.grow(), desc="Grow layout ratio"),
+    Key([mod], "m", lazy.layout.shrink(), desc="Shrink layout ratio"),
+    Key([mod, "shift"], "n", lazy.layout.reset(), desc="Reset layout ratio"),
+    Key([mod, "shift"], "space", lazy.layout.flip(), desc="Flip layout ratios"),
+
     # Switch layouts
     Key([mod], "Tab", lazy.next_layout(), desc="Switch next layout"),
     Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Switch previous layout"),
