@@ -1,4 +1,4 @@
-vim.opt.clipboard = "unnamedplus" 	-- use system clipboard
+-- vim.opt.clipboard = "unnamedplus" 	-- use system clipboard
 vim.opt.mouse = "a" 			    -- allow mouse
 
 
