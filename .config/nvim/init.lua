@@ -7,6 +7,9 @@
 
 -- ! You can simply comment options you don't want !
 
+-- Keybindings and remaps
+require("keybindings")
+
 -- Usual settings
 require("settings")
 
