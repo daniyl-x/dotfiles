@@ -37,4 +37,5 @@ vim.opt.colorcolumn = "80"          -- vertical line on 80 column
 vim.opt.cursorline = true           -- highlight current line
 vim.opt.termguicolors = true        -- correct colors
 vim.opt.linebreak = true            -- don't break words when wrapping lines
+vim.opt.wrap = false                -- disable line wrapping
 
