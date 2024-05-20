@@ -59,6 +59,9 @@ return require('packer').startup(function(use)
     -- Nvim-Tree file explorer
     use {'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}}
 
+    -- Oil.nvim file explorer
+    use {'stevearc/oil.nvim'}
+
     -----------------------------------------------------------
     -- Automatically set up configuration after clonning packer
     if packer_bootstrap then

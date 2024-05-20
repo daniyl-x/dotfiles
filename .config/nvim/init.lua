@@ -32,8 +32,11 @@ require("config.lualine")
 require("config.gitsigns")
 
 -- Nvim-Tree
-require("config.nvim-tree")
+-- require("config.nvim-tree")
 
 -- Trouble
 require("config.trouble")
+
+-- Oil
+require("config.oil")
 
