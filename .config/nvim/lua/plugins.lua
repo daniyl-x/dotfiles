@@ -46,7 +46,6 @@ return require('packer').startup(function(use)
     -- Colorscheme
     use 'sainnhe/everforest'                    -- Everforest
     use {'catppuccin/nvim', as = 'catppuccin'}  -- Catppuccin
-    use {'rose-pine/neovim', as = 'rose-pine'}  -- Rose Pine
 
     -- Lualine
     use {'nvim-lualine/lualine.nvim', requires = {'nvim-tree/nvim-web-devicons'}}
