@@ -39,3 +39,7 @@ vim.opt.termguicolors = true        -- correct colors
 vim.opt.linebreak = true            -- don't break words when wrapping lines
 vim.opt.wrap = false                -- disable line wrapping
 
+
+-- Ugly filetype specific options
+vim.cmd([[autocmd FileType html setlocal shiftwidth=2 tabstop=2]])
+
