@@ -73,6 +73,9 @@ shopt -s cdspell                # autocorrect cd
 # Ignore completion case
 bind "set completion-ignore-case on"
 
+# Set vi mode
+set -o vi
+
 
 ### ALIASES ###
 
