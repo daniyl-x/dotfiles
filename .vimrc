@@ -22,16 +22,16 @@ source $VIMRUNTIME/defaults.vim
 
 """ PLUGINS IMPORT
 call plug#begin()
-Plug 'vim-airline/vim-airline'              " airline statusbar
-Plug 'tpope/vim-commentary'                 " comment shortcut (gcc)
+    Plug 'vim-airline/vim-airline'              " airline statusbar
+    Plug 'tpope/vim-vinegar'                    " file manager
 
-" Git
-Plug 'airblade/vim-gitgutter'               " gitgutter diff
+    " Git
+    Plug 'airblade/vim-gitgutter'               " gitgutter diff
 
-" Themes
-Plug 'morhetz/gruvbox'			            " gruvbox
-Plug 'sainnhe/everforest'                   " everforest
-Plug 'dracula/vim',{'as':'dracula'}         " dracula
+    " Themes
+    Plug 'morhetz/gruvbox'			            " gruvbox
+    Plug 'sainnhe/everforest'                   " everforest
+    Plug 'dracula/vim',{'as':'dracula'}         " dracula
 call plug#end()
 
 
