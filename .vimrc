@@ -32,6 +32,7 @@ call plug#begin()
     Plug 'morhetz/gruvbox'			            " gruvbox
     Plug 'sainnhe/everforest'                   " everforest
     Plug 'dracula/vim',{'as':'dracula'}         " dracula
+    Plug 'catppuccin/vim',{'as':'catppuccin'}   " catppuccin
 call plug#end()
 
 
@@ -40,7 +41,7 @@ let g:gruvbox_contrast_dark = 'medium'      " gruvbox dark contrast
 
 set background=dark			                " dark mode
 set termguicolors                           " correct colors
-colorscheme everforest 		                " setting colorscheme
+colorscheme catppuccin_frappe               " setting colorscheme
 
 
 """ EDITOR SETTINGS
