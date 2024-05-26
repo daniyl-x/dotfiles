@@ -47,20 +47,18 @@ colorscheme everforest 		                " setting colorscheme
 set number relativenumber                   " display relative line numbers
 set splitbelow splitright                   " splits open at the bottom and right
 set hlsearch                                " highlight search results
+set cursorline                              " highlight the current line
+set colorcolumn=80
 
 " Tabulation
 set expandtab                               " tab to spaces
 set tabstop=4 softtabstop=4 shiftwidth=4    " tabulation size
 
-" Code folding :TODO, don't works now
-set foldmethod=syntax                       " fold by indent
-set nofoldenable                            " open files without folding
-
 " Autoindent
 set autoindent
 
 " Wrapping
-set wrap                                    " wrap at the edge of the screen
+set nowrap                                  " no line wrapping
 set linebreak                               " don't break words
 
 " Disable autocomment for new lines
@@ -71,9 +69,6 @@ set wildmode=list:full,list:full
 
 
 """ FILE SPECIFIC SETTINGS
-
-" Colorcolumn 81 for python
-autocmd FileType python setlocal colorcolumn=81
 
 " HTML Tabulation
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
