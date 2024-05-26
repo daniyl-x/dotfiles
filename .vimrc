@@ -76,4 +76,5 @@ autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 """ REMAPS
 let mapleader = " "                         " space as a leader
+nnoremap <Leader>q :confirm qall<CR>        " quit all with confirmation
 
