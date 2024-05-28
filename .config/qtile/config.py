@@ -149,6 +149,8 @@ keys = [
 
     # Microphone
     Key([], "XF86AudioMicMute", lazy.spawn("amixer set Capture toggle"), desc="Toggle microphone"),
+    # for my mechanical keyboard without XF86AudioMicMute
+    Key([], "XF86Tools", lazy.spawn("amixer set Capture toggle"), desc="Toggle microphone"),
 
     # Switch power profile (via power-profiles-daemon)
     Key(
