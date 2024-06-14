@@ -1,0 +1,58 @@
+color-link default "253,235"
+
+color-link comment "italic 243"
+color-link comment.bright "italic 176"
+color-link todo "221,237"
+
+color-link selection ",176"
+color-link hlsearch "237,209"
+color-link scrollbar ",176"
+
+color-link identifier "73"
+color-link identifier.class "221"
+color-link identifier.macro "203"
+color-link identifier.var "253"
+
+color-link constant "209"
+color-link constant.number "209"
+color-link constant.string "114"
+color-link constant.bool "209"
+color-link constant.specialChar "137"
+
+color-link statement "203"
+color-link symbol "114"
+color-link symbol.brackets "73"
+color-link symbol.tag "73"
+color-link symbol.operator "73"
+
+color-link preproc "221"
+
+color-link type "221"
+color-link type.keyword "68"
+color-link type.extended "221"
+
+color-link special "73"
+color-link underlined "underline 203"
+
+color-link statusline "237,243"
+color-link tabbar "243,237"
+
+color-link line-number "243,235"
+color-link current-line-number "243,237"
+
+color-link diff-added "bold 253,114"
+color-link diff-modified "243,237"
+color-link diff-deleted "bold 253,203"
+
+color-link gutter-error "203"
+color-link gutter-warning "209"
+
+color-link cursor-line "243,237"
+color-link color-column ",237"
+
+color-link error "bold 203"
+color-link message "bold 68"
+color-link error-message "bold 203,235"
+
+color-link ignore "68,235"
+color-link divider "235,240"
