@@ -9,6 +9,8 @@ Some of this dotfiles (window managers configurations, for example) are configur
 ## Table of contents
 - [Requirements](REQUIREMENTS.md)
 - [Installation](#installation)
+    - [Plain](#plain)
+    - [GNU Stow](#gnu-stow)
 - [Colorschemes](#colorschemes)
 &nbsp;
 
@@ -21,12 +23,26 @@ See [REQUIREMENTS.md](REQUIREMENTS.md) for detailed information.
 
 ## Installation
 > **Warning**
-> Make sure that all [requirements](REQUIREMENTS.md) for specific file are installed, except those marked with \*
-&nbsp;
+> Make sure that all [requirements](REQUIREMENTS.md) for specific program are
+installed, except those marked with \*\
 
-Just clone repo, copy required files or dirs to your `$HOME` and have fun!\
 Some configs may require to restart app or will have command to execute just under the ASCII art.
 &nbsp;
+
+
+### Plain
+Just clone repo, copy required files or dirs from inside of the corresponding
+directory to your `$HOME` and have fun!\
+&nbsp;
+
+
+### GNU Stow
+Execute the stow command with the `$HOME` as your target directory and the names
+of the programs you need dotfiles for.\
+Example for linking git, neovim, tmux and qtile dotfiles:
+```sh
+stow -t $HOME git nvim tmux qtile
+```
 
 
 ## Colorschemes
