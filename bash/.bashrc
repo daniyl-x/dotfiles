@@ -107,12 +107,9 @@ alias mkdir="mkdir -pv"         # mkdir make parents & verbose output
 
 ### SCRIPTS EXECUTION ###
 
-# Enable fzf keybindings
-source /usr/share/fzf/shell/key-bindings.bash
-
-# Enable fzf bash completion
-source /usr/share/fzf/shell/completion.bash
+# Enable fzf keybindings and completion
+eval "$(fzf --bash)"
 
 # Bash completion
-source /etc/profile.d/bash_completion.sh
+source /data/data/com.termux/files/usr/etc/profile.d/bash_completion.sh
 
