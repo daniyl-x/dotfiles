@@ -17,7 +17,7 @@ require("settings")
 require("plugins")
 
 -- LSP stuff
-require("lsp")
+-- require("lsp")
 
 -- Colorscheme
 require("colorscheme")
