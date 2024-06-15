@@ -11,6 +11,7 @@ them as a base or example.
 
 ## Table of contents
 - [Requirements](REQUIREMENTS.md)
+- [Branches](#branches)
 - [Installation](#installation)
     - [Plain](#plain)
     - [GNU Stow](#gnu-stow)
