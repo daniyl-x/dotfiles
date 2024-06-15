@@ -16,7 +16,6 @@ them as a base or example.
     - [Plain](#plain)
     - [GNU Stow](#gnu-stow)
     - [Post-install and headless installation](#post-install-and-headless-installation)
-- [Scripts](#scripts)
 - [Colorschemes](#colorschemes)
 
 
@@ -66,14 +65,6 @@ is optimized to work in scripts or tools like Ansible:
 ```sh
 vim -s ~/.vimrc +PlugUpdate +PlugClean +qa
 ```
-
-
-## Scripts
-This repo also contains my custom scripts that can be found in
-[this directory](scripts).
-They can be installed standalone or with any graphical environment,
-using GNU Stow or in any other way.\
-This is a separate stow package, because they're made to be portable.
 
 
 ## Colorschemes
