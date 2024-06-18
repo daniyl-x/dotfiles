@@ -22,6 +22,9 @@ that isn't available in your distro's repository or if you're using other OS.
 - [nvim](https://github.com/neovim/neovim)
 &mdash; vim fork focused on extensibility and usability
 
+- [bash-completion](https://github.com/scop/bash-completion)
+&mdash; a collection of command line command completions for the Bash shell
+
 - [fzf](https://github.com/junegunn/fzf)
 &mdash; fuzzy-finder for convenient search and auto-completion of commands
 from the terminal
