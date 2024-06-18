@@ -72,6 +72,9 @@ Also, used keys can be device-specific, so you probably should change them too
 - [NetworkManager](https://networkmanager.dev/)
 &mdash; standart network configuration tool suite
 
+- [NetworkManager-wifi](https://networkmanager.dev/)
+&mdash; NetworkManager module for WiFi support
+
 - [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet)
 &mdash; system tray applet for NetworkManager
 
