@@ -15,6 +15,7 @@ that isn't available in your distro's repository or if you're using other OS.
 - [Kitty](#kitty)
 - [Micro](#micro)
 - [Qtile](#qtile)
+- [Alacritty](#alacritty)
 
 
 
@@ -98,4 +99,8 @@ touchpads
 
 - [XScreenSaver](https://www.jwz.org/xscreensaver/)
 &mdash; X screen saver program and collection of screen savers
+
+
+## Alacritty
+- [IBM Plex\*](https://github.com/IBM/plex) &mdash; IBM Plex fonts
 
