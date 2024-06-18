@@ -53,7 +53,7 @@ of the programs you need dotfiles for.\
 Example for linking git, neovim, tmux and qtile dotfiles:
 ```sh
 # From this repo's directory
-stow -t $HOME git nvim tmux qtile
+mkdir $HOME/.config && stow -t $HOME git nvim tmux qtile
 ```
 
 
