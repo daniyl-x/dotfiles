@@ -347,7 +347,11 @@ screens = [
                 ),
                 widget.Volume(
                     fmt=" {}",
-                    emoji=False
+                    emoji=False,
+                    foreground=colors[7],
+                    mouse_callbacks={
+                        "Button1": lazy.widget["volume"].mute(),
+                    }
                 ),
 
                 # Using amixer to control micro via cpture channel
