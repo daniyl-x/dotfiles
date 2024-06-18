@@ -47,7 +47,7 @@ mod = "mod4"
 
 # Default programms
 terminal = "kitty"
-file_manager = "nemo"
+file_manager = "pcmanfm"
 browser = "librewolf"
 
 
