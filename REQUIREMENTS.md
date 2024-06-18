@@ -10,13 +10,19 @@ that isn't available in your distro's repository or if you're using other OS.
 
 
 ## Table of contents
+- [Alacritty](#alacritty)
 - [Bash](#bash)
-- [Vim](#vim)
+- [Dunst](#dunst)
+- [GTK](#gtk)
 - [Kitty](#kitty)
 - [Micro](#micro)
 - [Qtile](#qtile)
-- [Alacritty](#alacritty)
+- [Vim](#vim)
 
+
+
+## Alacritty
+- [IBM Plex](https://github.com/IBM/plex) &mdash; IBM Plex fonts
 
 
 ## Bash
@@ -37,9 +43,14 @@ from the terminal
 vim graphical mode & clipboard buffer integration (on some distros)
 
 
-## Vim
-- [vim-plug](https://github.com/junegunn/vim-plug)
-&mdash; a minimalist Vim plugin manager
+## Dunst
+- [Papirus Icons (dark)](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+&mdash; free and open source SVG icon theme for Linux
+
+
+## GTK
+- [Papirus Icons (dark)](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+&mdash; free and open source SVG icon theme for Linux
 
 
 ## Kitty
@@ -101,12 +112,8 @@ touchpads
 &mdash; X screen saver program and collection of screen savers
 
 
-## Alacritty
-- [IBM Plex\*](https://github.com/IBM/plex) &mdash; IBM Plex fonts
-
-
-## GTK
-- [Papirus Icons (dark)](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-&mdash; free and open source SVG icon theme for Linux
+## Vim
+- [vim-plug](https://github.com/junegunn/vim-plug)
+&mdash; a minimalist Vim plugin manager
 
 
