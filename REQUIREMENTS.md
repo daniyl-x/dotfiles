@@ -104,3 +104,9 @@ touchpads
 ## Alacritty
 - [IBM Plex\*](https://github.com/IBM/plex) &mdash; IBM Plex fonts
 
+
+## GTK
+- [Papirus Icons (dark)](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+&mdash; free and open source SVG icon theme for Linux
+
+
