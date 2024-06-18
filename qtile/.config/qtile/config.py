@@ -356,10 +356,14 @@ screens = [
 
                 # Using amixer to control micro via cpture channel
                 widget.Volume(
+                    fmt=" {}",
                     channel="Capture",
                     foreground=colors[6],
-                    emoji=True,
+                    emoji=False,
                     emoji_list=["", "󱦳", "", "󱦲"],
+                    mouse_callbacks={
+                        "Button1": lazy.spawn("amixer set Capture toggle"),
+                    }
                 ),
 
                 widget.Battery(
