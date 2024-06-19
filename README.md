@@ -24,8 +24,9 @@ See [REQUIREMENTS.md](REQUIREMENTS.md) for detailed information.
 
 
 ## Branches
-- main &mdash; the main branch, tested on Linux distros (Fedora, Debian, Mint),
-should work for the most Unix-like OS's
+- main &mdash; the main branch, **contains Xorg specific settings**, tested on
+Linux distros (Fedora, Debian, Mint), should work for the most Unix-like OS's
+
 - termux &mdash; the termux branch, unrelevant dotfiles are removed, path's are
 fixed, other fixes applied
 
