@@ -3,8 +3,8 @@
     width = (0, 450)
     height = 1000
 
-    corner_radius = 5
     separator_color = frame
+    corner_radius = 5
 
     enable_recursive_icon_lookup = true
     icon_theme = "Papirus-Dark, Mint-Y-Blue"
@@ -13,4 +13,28 @@
 
     word_wrap = yes
     ignore_newlines = no
+
+
+# One Dark
+[global]
+    # color0
+    background = "#21262d"
+
+[urgency_low]
+    # color8
+    frame_color = "#5c6370"
+    # color7
+    foreground = "#abb2bf"
+
+[urgency_normal]
+    # color12
+    frame_color ="#61afef"
+    # color12
+    foreground ="#61afef"
+
+[urgency_critical]
+   # color9
+    frame_color = "#e06c75"
+   # color9
+    foreground = "#e06c75"
 
