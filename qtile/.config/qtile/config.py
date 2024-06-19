@@ -46,7 +46,7 @@ from colors import doom_one as colors
 mod = "mod4"
 
 # Default programms
-terminal = "kitty"
+terminal = "alacritty"
 file_manager = "pcmanfm"
 browser = "librewolf"
 
@@ -102,7 +102,9 @@ keys = [
     # Touchpad toggle
     Key(
         [], "F6",
-        lazy.spawn(os.path.expanduser("~/.config/qtile/toggle_touchpad.sh")),
+        lazy.spawn(
+            os.path.expanduser("~/.config/qtile/scripts/toggle_touchpad.sh")
+        ),
         desc="Toggle touchpad"
     ),
 
@@ -155,7 +157,9 @@ keys = [
     # Switch power profile (via power-profiles-daemon)
     Key(
         [], "XF86Launch4",
-        lazy.spawn(os.path.expanduser("~/.config/qtile/switch_powerprofile.sh")),
+        lazy.spawn(
+            os.path.expanduser("~/.config/qtile/scripts/switch_powerprofile.sh")
+        ),
         desc="Switch powerprofile"
     ),
 
@@ -405,7 +409,7 @@ screens = [
 @hook.subscribe.startup_once
 def autostart():
     """Execute autostart script on the first Qtile starup"""
-    home = os.path.expanduser("~/.config/qtile/autostart.sh")
+    home = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
     subprocess.Popen([home])
 
 
