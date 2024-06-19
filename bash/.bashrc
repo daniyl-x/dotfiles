@@ -96,11 +96,10 @@ alias du="du -h"
 
 # Default commands flags
 alias cd..="cd .."              # cd up without space
-alias ll="ls -lAh"              # ls all long human-readable
-alias la="ls -A"                # ls w/ hidden files
+alias ll="ls -lh"               # ls all long human-readable
+alias la="ls -lAh"              # ls w/ hidden files
 alias l.="ls -d .*"             # ls only hidden
 alias mkdir="mkdir -pv"         # mkdir make parents & verbose output
-alias diff="diff -s"            # report identical files
 
 # Editors
 #alias vim="vimx"               # vim w\ system clipboard (fedora)

@@ -1,3 +1,6 @@
 # nvim plugins installed
 **/nvim/plugin/
 
+# python cache
+**/__pycache__/
+

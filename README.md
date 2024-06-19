@@ -24,8 +24,9 @@ See [REQUIREMENTS.md](REQUIREMENTS.md) for detailed information.
 
 
 ## Branches
-- main &mdash; the main branch, tested on Linux distros (Fedora, Debian, Mint),
-should work for the most Unix-like OS's
+- main &mdash; the main branch, **contains Xorg specific settings**, tested on
+Linux distros (Fedora, Debian, Mint), should work for the most Unix-like OS's
+
 - termux &mdash; the termux branch, unrelevant dotfiles are removed, path's are
 fixed, other fixes applied
 
@@ -53,7 +54,7 @@ of the programs you need dotfiles for.\
 Example for linking git, neovim, tmux and qtile dotfiles:
 ```sh
 # From this repo's directory
-stow -t $HOME git nvim tmux qtile
+mkdir $HOME/.config && stow -t $HOME git nvim tmux qtile
 ```
 
 
