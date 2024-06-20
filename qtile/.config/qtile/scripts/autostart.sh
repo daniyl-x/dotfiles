@@ -2,7 +2,7 @@
 
 
 # Disable touchpad on startup
-$HOME/.config/qtile/toggle_touchpad.sh
+$HOME/.config/qtile/scripts/toggle_touchpad.sh
 
 
 # Applications
