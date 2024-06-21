@@ -1,4 +1,4 @@
-# **Dotfiles**
+# Dotfiles
 *This repository contains my personal dotfiles and configurations that I use
 every day on my Linux machine.*
 
@@ -33,9 +33,9 @@ fixed, other fixes applied
 
 
 ## Installation
-> **Warning**
-> Make sure that all [requirements](REQUIREMENTS.md) for specific program are
-installed, except those marked with \*\
+> **Warning:**
+> Make sure that all [requirements](REQUIREMENTS.md) for specific program or
+script are installed, except those marked with \*\
 
 Some configs may require to restart app or will have command to execute just
 under the ASCII art.

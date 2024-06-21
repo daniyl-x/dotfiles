@@ -1,6 +1,6 @@
 # Requirements
-> **Note**
-> \*&mdash; Is not required, but is used and recommended
+> **Note:**
+> \* means is not required, but is used and recommended
 
 
 Most of listed software should be available in your linux distro's
@@ -71,7 +71,7 @@ vim graphical mode & clipboard buffer integration (on some distros)
 
 ## Scripts
 ### autostart.sh
-> **Note**
+> **Note:**
 > There is more programs in the script, but they're very user-specific
 > (syncthing, password manager, etc.)
 
@@ -102,7 +102,7 @@ touchpads
 
 
 ## Qtile
-> **Warning**
+> **Note:**
 > You should change default apps variables in
 [config.py](.config/qtile/config.py)\
 > Also, used keys can be device-specific, so you probably should change them too
