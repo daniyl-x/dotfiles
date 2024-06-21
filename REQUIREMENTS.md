@@ -19,6 +19,7 @@ that isn't available in your distro's repository or if you're using other OS.
 - [Scripts](#scripts)
     - [autostart.sh](#autostartsh)
     - [switch-powerprofile.sh](#switch-powerprofilesh)
+    - [tmux-fzf-picker.sh](#tmux-fzf-pickersh)
     - [toggle-touchpad.sh](#toggle-touchpadsh)
 - [Qtile](#qtile)
 - [Vim](#vim)
@@ -94,6 +95,14 @@ as defined in the org.freedesktop.Notifications Desktop Specification
 
 - [power-profiles-daemon](https://gitlab.freedesktop.org/upower/power-profiles-daemon)
 &mdash; makes power profiles handling available over D-Bus
+
+### tmux-fzf-picker.sh
+- [fzf](https://github.com/junegunn/fzf)
+&mdash; fuzzy-finder for convenient search and auto-completion of commands
+from the terminal
+
+- [tmux](https://github.com/tmux/tmux)
+&mdash; terminal multiplexer
 
 ### toggle-touchpad.sh
 - xinput
