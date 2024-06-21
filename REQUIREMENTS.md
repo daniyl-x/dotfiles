@@ -97,6 +97,9 @@ Also, used keys can be device-specific, so you probably should change them too
 &mdash; CLI tool for controlling media players that implement the MPRIS D-Bus
 Interface Specification
 
+- polkit-gnome
+&mdash; GNOME integration with polkit
+
 - [Rofi](https://github.com/DaveDavenport/rofi)
 &mdash; application launcher and dmenu replacement
 
