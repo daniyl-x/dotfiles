@@ -183,6 +183,10 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "f", lazy.spawn(file_manager), desc="Launch file manager"),
+    Key(
+        [mod], "t",
+        lazy.spawn(f"{terminal} -e tmux-fzf-picker.sh"),
+        desc="Run tmux fzf picker script"),
 ]
 
 
