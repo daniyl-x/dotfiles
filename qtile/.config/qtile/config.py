@@ -409,8 +409,8 @@ screens = [
 @hook.subscribe.startup_once
 def autostart():
     """Execute autostart script on the first Qtile starup"""
-    home = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
-    subprocess.Popen([home])
+    autostart = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
+    subprocess.run([autostart])
 
 
 dgroups_key_binder = None
