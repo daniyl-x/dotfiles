@@ -31,9 +31,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import os
-import subprocess
-
 from libqtile import bar, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -155,7 +152,7 @@ keys = [
     # Switch power profile (via power-profiles-daemon)
     Key(
         [], "XF86Launch4",
-        lazy.spawn(os.path.expanduser("switch-powerprofile.sh")),
+        lazy.spawn("switch-powerprofile.sh"),
         desc="Switch powerprofile"
     ),
 
@@ -202,7 +199,7 @@ for group in groups:
             Key(
                 [mod], group.name,
                 lazy.group[group.name].toscreen(),
-                desc="Switch to group {}".format(group.name),
+                desc=f"Switch to group {group.name}",
             ),
 
             # Move focused window to group
@@ -332,9 +329,7 @@ screens = [
                 #     fmt=" {}",
                 #     format="{MemUsed:.0f}{mm}",
                 #     mouse_callbacks={
-                #         "Button1": lambda: qtile.cmd_spawn(
-                #             terminal + " -- htop"
-                #         )
+                #         "Button1": lazy.spawn(f"{terminal} -e htop"),
                 #     },
                 # ),
                 # widget.CPU(
@@ -385,9 +380,7 @@ screens = [
                     display_format="Up:{updates}",
                     distro="Fedora",
                     mouse_callbacks={
-                        "Button1": lambda: qtile.cmd_spawn(
-                            terminal + " -- sudo dnf update"
-                        ),
+                        "Button1": lazy.spawn(f"{terminal} -e sudo dnf update"),
                     },
                 ),
                 widget.Wallpaper(
@@ -408,9 +401,8 @@ screens = [
 
 @hook.subscribe.startup_once
 def autostart():
-    """Execute autostart script on the first Qtile starup"""
-    autostart = os.path.expanduser("autostart.sh")
-    subprocess.run([autostart])
+    """Run autostart script on the first Qtile startup"""
+    qtile.cmd_spawn("autostart.sh")
 
 
 dgroups_key_binder = None
