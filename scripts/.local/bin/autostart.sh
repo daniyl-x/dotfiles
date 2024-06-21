@@ -5,7 +5,7 @@
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
 # Disable touchpad on startup
-$HOME/.config/qtile/scripts/toggle_touchpad.sh
+$HOME/.local/bin/toggle-touchpad.sh
 
 # Applications
 xscreensaver &

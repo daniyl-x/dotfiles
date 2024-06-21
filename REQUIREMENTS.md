@@ -16,6 +16,10 @@ that isn't available in your distro's repository or if you're using other OS.
 - [GTK](#gtk)
 - [Kitty](#kitty)
 - [Micro](#micro)
+- [Scripts](#scripts)
+    - [autostart.sh](#autostartsh)
+    - [switch-powerprofile.sh](#switch-powerprofilesh)
+    - [toggle-touchpad.sh](#toggle-touchpadsh)
 - [Qtile](#qtile)
 - [Vim](#vim)
 
@@ -65,15 +69,43 @@ vim graphical mode & clipboard buffer integration (on some distros)
 - quoter\* &mdash; plugin to add quotes or brackets around a text selection
 
 
-## Qtile
-> **Warning**
-> You should change default apps variables in
-[config.py](.config/qtile/config.py) and customize
-[autostart.sh](.config/qtile/autostart.sh) to run programs that you want.
-Also, used keys can be device-specific, so you probably should change them too
+## Scripts
+### autostart.sh
+> **Note**
+> There is more programs in the script, but they're very user-specific
+> (syncthing, password manager, etc.)
 
 - [Blueman](https://github.com/blueman-project/blueman)
 &mdash; GTK+ Bluetooth Manager
+
+- [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet)
+&mdash; system tray applet for NetworkManager
+
+- polkit-gnome
+&mdash; GNOME integration with polkit
+
+- [XScreenSaver](https://www.jwz.org/xscreensaver/)
+&mdash; X screen saver program and collection of screen savers
+
+### switch-powerprofile.sh
+- [libnotify](https://gitlab.gnome.org/GNOME/libnotify)
+&mdash; library for sending desktop notifications to a notification daemon,
+as defined in the org.freedesktop.Notifications Desktop Specification
+
+- [power-profiles-daemon](https://gitlab.freedesktop.org/upower/power-profiles-daemon)
+&mdash; makes power profiles handling available over D-Bus
+
+### toggle-touchpad.sh
+- xinput
+&mdash; utility to configure X input devices, such as mouses, keyboards, and
+touchpads
+
+
+## Qtile
+> **Warning**
+> You should change default apps variables in
+[config.py](.config/qtile/config.py)\
+> Also, used keys can be device-specific, so you probably should change them too
 
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl)
 &mdash; CLI tool for controlling brightness
@@ -87,18 +119,12 @@ Also, used keys can be device-specific, so you probably should change them too
 - [NetworkManager-wifi](https://networkmanager.dev/)
 &mdash; NetworkManager module for WiFi support
 
-- [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet)
-&mdash; system tray applet for NetworkManager
-
 - [Noto Nerd Font](https://nerdfonts.com)
 &mdash; patched Noto fonts with multiple icons
 
 - [playerctl](https://github.com/altdesktop/playerctl)
 &mdash; CLI tool for controlling media players that implement the MPRIS D-Bus
 Interface Specification
-
-- polkit-gnome
-&mdash; GNOME integration with polkit
 
 - [Rofi](https://github.com/DaveDavenport/rofi)
 &mdash; application launcher and dmenu replacement
@@ -107,12 +133,9 @@ Interface Specification
 &mdash; Rofi extension for basic power menu operations such as shutting down,
 logging out, rebooting and suspending
 
-- xinput
-&mdash; utility to configure X input devices, such as mouses, keyboards, and
-touchpads
-
-- [XScreenSaver](https://www.jwz.org/xscreensaver/)
-&mdash; X screen saver program and collection of screen savers
+- [Scripts\*](scripts)
+&mdash; My custom scripts that can be used standalone, or in a window manager.
+Their individual dependencies can be found in [Scripts](#scripts) block
 
 
 ## Vim

@@ -102,9 +102,7 @@ keys = [
     # Touchpad toggle
     Key(
         [], "F6",
-        lazy.spawn(
-            os.path.expanduser("~/.config/qtile/scripts/toggle_touchpad.sh")
-        ),
+        lazy.spawn("toggle-touchpad.sh"),
         desc="Toggle touchpad"
     ),
 
@@ -157,9 +155,7 @@ keys = [
     # Switch power profile (via power-profiles-daemon)
     Key(
         [], "XF86Launch4",
-        lazy.spawn(
-            os.path.expanduser("~/.config/qtile/scripts/switch_powerprofile.sh")
-        ),
+        lazy.spawn(os.path.expanduser("switch-powerprofile.sh")),
         desc="Switch powerprofile"
     ),
 
@@ -409,7 +405,7 @@ screens = [
 @hook.subscribe.startup_once
 def autostart():
     """Execute autostart script on the first Qtile starup"""
-    autostart = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
+    autostart = os.path.expanduser("autostart.sh")
     subprocess.run([autostart])
 
 

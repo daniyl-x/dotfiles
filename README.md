@@ -15,6 +15,7 @@ them as a base or example.
 - [Installation](#installation)
     - [Plain](#plain)
     - [GNU Stow](#gnu-stow)
+- [Scripts](#scripts)
 - [Colorschemes](#colorschemes)
 
 
@@ -56,6 +57,14 @@ Example for linking git, neovim, tmux and qtile dotfiles:
 # From this repo's directory
 mkdir $HOME/.config && stow -t $HOME git nvim tmux qtile
 ```
+
+
+## Scripts
+This repo also contains my custom scripts that can be found in
+[this directory](scripts).
+They can be installed standalone or with any graphical environment,
+using GNU Stow or in any other way.\
+This is a separate stow package, because they're made to be portable.
 
 
 ## Colorschemes

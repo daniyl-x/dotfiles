@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
-# Dependencies: libnotify, power-profiles-daemon
 
 current_powerprofile=$(powerprofilesctl get)
 
