@@ -150,11 +150,11 @@ keys = [
     Key([], "XF86Tools", lazy.spawn("amixer set Capture toggle"), desc="Toggle microphone"),
 
     # Switch power profile (via power-profiles-daemon)
-    Key(
-        [], "XF86Launch4",
-        lazy.spawn("switch-powerprofile.sh"),
-        desc="Switch powerprofile"
-    ),
+    # Key(
+    #     [], "XF86Launch4",
+    #     lazy.spawn("switch-powerprofile.sh"),
+    #     desc="Switch powerprofile"
+    # ),
 
 
     # ROFI #
