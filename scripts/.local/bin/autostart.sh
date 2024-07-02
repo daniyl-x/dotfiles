@@ -14,3 +14,6 @@ blueman-applet &
 syncthing serve --no-browser --logfile=default &
 keepassxc &
 
+# Update environment for D-Bus
+dbus-update-activation-environment
+
