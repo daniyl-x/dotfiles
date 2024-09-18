@@ -40,7 +40,19 @@ vim.opt.linebreak = true            -- don't break words when wrapping lines
 vim.opt.wrap = false                -- disable line wrapping
 
 
--- Ugly filetype specific options
-vim.cmd([[autocmd FileType html setlocal shiftwidth=2 tabstop=2]])
-vim.cmd([[autocmd FileType python setlocal foldmethod=indent]])
+-- Filetype specific options
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "html",
+    callback = function()
+        vim.opt_local.tabstop = 2
+        vim.opt_local.shiftwidth = 2
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "python",
+    callback = function()
+        vim.opt_local.foldmethod = "indent"
+    end,
+})
 
