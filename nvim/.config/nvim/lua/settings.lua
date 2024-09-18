@@ -42,4 +42,5 @@ vim.opt.wrap = false                -- disable line wrapping
 
 -- Ugly filetype specific options
 vim.cmd([[autocmd FileType html setlocal shiftwidth=2 tabstop=2]])
+vim.cmd([[autocmd FileType python setlocal foldmethod=indent]])
 
