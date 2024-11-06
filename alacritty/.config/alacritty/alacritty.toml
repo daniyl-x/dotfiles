@@ -6,6 +6,7 @@
 #                                    |___/ 
 
 
+[general]
 import = [
     "~/.config/alacritty/colorschemes/one-dark.toml",
 ]
