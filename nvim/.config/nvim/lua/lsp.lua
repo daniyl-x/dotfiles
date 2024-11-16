@@ -44,6 +44,7 @@ require("mason-lspconfig").setup({
 -- Servers to configure
 local servers = {
     -- Insert optional servers before required
+    "awk_ls",       -- awk
     "texlab",       -- latex, tex
     "tsserver",     -- typescript, javascript
 
