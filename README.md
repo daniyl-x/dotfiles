@@ -15,6 +15,7 @@ them as a base or example.
 - [Installation](#installation)
     - [Plain](#plain)
     - [GNU Stow](#gnu-stow)
+    - [Post-install and headless installation](#post-install-and-headless-installation)
 - [Scripts](#scripts)
 - [Colorschemes](#colorschemes)
 
@@ -56,6 +57,14 @@ Example for linking git, neovim, tmux and qtile dotfiles:
 ```sh
 # From this repo's directory
 mkdir $HOME/.config && stow -t $HOME git nvim tmux qtile
+```
+
+### Post-install and headless installation
+After installing Vim dotfiles, it's required to install plugins.
+It can be done by executing Vim commands manually but the next command
+is optimized to work in scripts or tools like Ansible:
+```sh
+vim -s ~/.vimrc +PlugUpdate +PlugClean +qa
 ```
 
 
