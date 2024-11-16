@@ -31,6 +31,7 @@ end
 
 -- Servers to install automatically
 local required_servers = {
+    "awk_ls",       -- awk
     "lua_ls",       -- lua
     "pylsp",        -- python
     "clangd",       -- c/c++
@@ -44,7 +45,6 @@ require("mason-lspconfig").setup({
 -- Servers to configure
 local servers = {
     -- Insert optional servers before required
-    "awk_ls",       -- awk
     "texlab",       -- latex, tex
     "tsserver",     -- typescript, javascript
 
