@@ -5,20 +5,8 @@
 # (_)_.__/ \__,_|___/_| |_|_|  \___|
                               
 
-### VARIABLES ###
-
-# PATH variable
+### PATH VARIABLE ###
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-
-# History settings
-export HISTCONTROL=ignoredups 	# Ignore continuous duplicates
-export HISTSIZE=10000           # Bash history size
-export HISTFILESIZE=$HISTSIZE 	# Bash history file size
-export HISTTIMEFORMAT="%F %T "	# Add date and timestamp to history
-
-export MANPAGER="nvim +Man!"    # Custom manpage viewer
-export VISUAL=nvim              # Fullscreen fancy editor
-export EDITOR=vi                # Default editor, should work everywhere
 
 
 ### FUNCTIONS ###
@@ -27,6 +15,31 @@ export EDITOR=vi                # Default editor, should work everywhere
 get_git_branch(){
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
+
+is_present(){
+    which $1 &> /dev/null; echo $?
+}
+
+
+### VARIABLES ###
+
+# History settings
+export HISTCONTROL=ignoredups 	# Ignore continuous duplicates
+export HISTSIZE=10000           # Bash history size
+export HISTFILESIZE=$HISTSIZE 	# Bash history file size
+export HISTTIMEFORMAT="%F %T "	# Add date and timestamp to history
+
+# Set VISUAL to available vim and MANPAGER to Neovim if present
+if [ "$(is_present nvim)" -eq 0 ]; then
+    MANPAGER="nvim +Man!"
+    VISUAL=nvim
+elif [ "$(is_present vim)" -eq 0 ]; then
+    VISUAL=vim
+fi
+
+export MANPAGER                 # Custom manpage viewer
+export VISUAL                   # Fullscreen fancy editor
+export EDITOR=vi                # Default editor, should work everywhere
 
 
 ### PROMPT ###
