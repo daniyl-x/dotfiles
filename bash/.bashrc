@@ -45,16 +45,16 @@ BOX_DR=$'\u250c'
 BOX_UR=$'\u2514'
 
 # Git Bash Style Prompt
-#PS1='\n'$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
-
+GIT_BASH_PS1='\n'$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
 # One Long Line Prompt
-#PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
-
+ONE_LINE_PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 # Fedora Style Prompt
-#PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
-
+FEDORA_PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
 # Two line, square box
-PS1='\n'$WHITE$BOX_DR$BOX_H$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\w'$BLUE']'$PURPLE'$(get_git_branch)\n'$WHITE$BOX_UR$BLUE'\$ '$WHITE
+TWO_LINE_SQUARE_PS1='\n'$WHITE$BOX_DR$BOX_H$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\w'$BLUE']'$PURPLE'$(get_git_branch)\n'$WHITE$BOX_UR$BLUE'\$ '$WHITE
+
+# Choose PS1 from above options
+PS1="$TWO_LINE_SQUARE_PS1"
 
 # Replace green color with red for root
 if [ "$(id -u)" -eq 0 ]; then
