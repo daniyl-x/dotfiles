@@ -16,7 +16,7 @@ export HISTSIZE=10000           # Bash history size
 export HISTFILESIZE=$HISTSIZE 	# Bash history file size
 export HISTTIMEFORMAT="%F %T "	# Add date and timestamp to history
 
-export MANPAGER="nvim +Man!"    # Display manpages with neovim
+export MANPAGER="nvim +Man!"    # Custom manpage viewer
 export VISUAL=nvim              # Fullscreen fancy editor
 export EDITOR=vi                # Default editor, should work everywhere
 
