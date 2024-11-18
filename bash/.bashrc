@@ -120,12 +120,11 @@ alias mkdir="mkdir -pv"         # mkdir make parents & verbose output
 
 ### SCRIPTS EXECUTION ###
 
-# Enable fzf keybindings
-source /usr/share/fzf/shell/key-bindings.bash
-
-# Enable fzf bash completion
-source /usr/share/fzf/shell/completion.bash
-
 # Bash completion
 source /etc/profile.d/bash_completion.sh
 
+# Execute fzf scripts if installed
+if [ "$(is_present fzf)" -eq 0 ]; then
+    source /usr/share/fzf/shell/key-bindings.bash
+    source /usr/share/fzf/shell/completion.bash
+fi
