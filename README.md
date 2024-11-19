@@ -18,6 +18,7 @@ them as a base or example.
     - [Post-install and headless installation](#post-install-and-headless-installation)
 - [Scripts](#scripts)
 - [Colorschemes](#colorschemes)
+- [Credits](#credits)
 
 
 
@@ -88,4 +89,9 @@ in every application.
 - [Everforest Vim theme](https://github.com/sainnhe/everforest)
 - [Doom One Doom Emacs theme](https://github.com/doomemacs/themes)
 - [One Dark Vim theme](https://github.com/joshdick/onedark.vim)
+
+
+## Credits
+- DistroTube for inspiration to create this repo
+- typecraft for his [GNU Stow guide](https://youtu.be/NoFiYOqnC4o?si=wD7fsb7WJtI_Na1u)
 
