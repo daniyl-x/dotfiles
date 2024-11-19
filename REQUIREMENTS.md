@@ -112,8 +112,7 @@ touchpads
 
 ## Qtile
 > **Note:**
-> You should change default apps variables in
-[config.py](.config/qtile/config.py)\
+> You should change default apps variables in the config.py file
 > Also, used keys can be device-specific, so you probably should change them too
 
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl)

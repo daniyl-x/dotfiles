@@ -70,8 +70,8 @@ vim -s ~/.vimrc +PlugUpdate +PlugClean +qa
 
 
 ## Scripts
-This repo also contains my custom scripts that can be found in
-[this directory](scripts).
+This repo also contains my custom scripts that can be found
+in the scripts directory.
 They can be installed standalone or with any graphical environment,
 using GNU Stow or in any other way.\
 This is a separate stow package, because they're made to be portable.
