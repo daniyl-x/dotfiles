@@ -1,3 +1,9 @@
+-- SPDX-License-Identifier: MIT
+
+-- Original code from packer.nvim
+-- Source: https://github.com/wbthomason/packer.nvim
+
+
 -- Install Packer if it's not installed
 local ensure_packer = function()
     local fn = vim.fn

@@ -1,3 +1,15 @@
+-- SPDX-License-Identifier: Apache-2.0
+
+-- Original code from mason.nvim
+-- Source: https://github.com/williamboman/mason.nvim
+
+-- Original code from mason-lspconfig.nvim
+-- Source: https://github.com/williamboman/mason-lspconfig.nvim
+
+-- Modifications:
+-- Copyright (c) 2023-2024, daniyl-x
+
+
 -- Mason settings
 require("mason").setup({
     ui = {

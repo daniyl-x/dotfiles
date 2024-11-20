@@ -1,3 +1,12 @@
+-- SPDX-License-Identifier: MIT
+
+-- Original code from nvim-cmp
+-- Source: https://github.com/hrsh7th/nvim-cmp
+
+-- Modifications:
+-- Copyright (c) 2023, daniyl-x
+
+
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
