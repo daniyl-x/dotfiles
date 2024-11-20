@@ -1,77 +1,81 @@
--- SPDX-License-Identifier: MIT
+-- SPDX-License-Identifier: Apache-2.0
 
--- Original code from packer.nvim
--- Source: https://github.com/wbthomason/packer.nvim
+-- Original code from lazy.nvim
+-- Source: https://github.com/folke/lazy.nvim
+
+-- Modifications:
+-- Copyright (c) 2023-2024, daniyl-x
 
 
--- Install Packer if it's not installed
-local ensure_packer = function()
-    local fn = vim.fn
-    local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
-        vim.cmd [[packadd packer.nvim]]
-        return true
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+    local out = vim.fn.system({ "git", "clone", "--filter=blob:none",
+    lazyrepo, lazypath })
+    if vim.v.shell_error ~= 0 then
+        vim.api.nvim_echo({
+            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+            { out, "WarningMsg" },
+            { "\nPress any key to exit..." },
+        }, true, {})
+        vim.fn.getchar()
+        os.exit(1)
     end
-    return false
 end
-local packer_bootstrap = ensure_packer()
+vim.opt.rtp:prepend(lazypath)
 
 
--- Reload config if we modify plugins.lua
+-- Sync packages after editing this file
 vim.cmd([[
-    augroup packer_user_config
+    augroup lazy_user_config
         autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerSync
+        autocmd BufWritePost plugins.lua Lazy sync
     augroup end
 ]])
 
 
--- Plugins installation
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use('wbthomason/packer.nvim')
+-- Setup lazy.nvim
+require("lazy").setup({
+    -- Insert plugins below
+    -------------------------
 
     -- Treesitter syntax highlighting
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
 
     -- LSP stuff
-    use('williamboman/mason.nvim')
-    use('williamboman/mason-lspconfig.nvim')
-    use('neovim/nvim-lspconfig')
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
 
     -- Auto-completion
-    use {'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]]}
-    use {'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp'}     -- built-in
-    use {'hrsh7th/cmp-buffer', after = 'nvim-cmp'}       -- buffer
-    use {'hrsh7th/cmp-path', after = 'nvim-cmp'}         -- path
-    use {'hrsh7th/cmp-cmdline', after = 'nvim-cmp'}      -- cmdline
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
+    'hrsh7th/nvim-cmp',
+    {'hrsh7th/cmp-nvim-lsp', dependencies = {'nvim-cmp'}},     -- built-in
+    {'hrsh7th/cmp-buffer', dependencies = {'nvim-cmp'}},       -- buffer
+    {'hrsh7th/cmp-path', dependencies = {'nvim-cmp'}},         -- path
+    {'hrsh7th/cmp-cmdline', dependencies = {'nvim-cmp'}},      -- cmdline
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
 
     -- Colorscheme
-    use 'sainnhe/everforest'                    -- Everforest
-    use {'catppuccin/nvim', as = 'catppuccin'}  -- Catppuccin
+    'sainnhe/everforest',                    -- Everforest
+    {'catppuccin/nvim', name = 'catppuccin'},  -- Catppuccin
 
     -- Lualine
-    use {'nvim-lualine/lualine.nvim', requires = {'nvim-tree/nvim-web-devicons'}}
+    {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
 
     -- Gitsigns
-    use('lewis6991/gitsigns.nvim')
+    'lewis6991/gitsigns.nvim',
 
     -- Trouble warnings list
-    use {'folke/trouble.nvim', requires = {'nvim-tree/nvim-web-devicons'}}
+    {'folke/trouble.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
 
     -- Nvim-Tree file explorer
-    use {'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}}
+    {'nvim-tree/nvim-tree.lua', dependencies = {'nvim-tree/nvim-web-devicons'}},
 
     -- Oil.nvim file explorer
-    use {'stevearc/oil.nvim'}
+    'stevearc/oil.nvim',
 
-    -----------------------------------------------------------
-    -- Automatically set up configuration after clonning packer
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-end)
+    -------------------------
+})
 

@@ -1,5 +1,5 @@
-# nvim plugins installed
-**/nvim/plugin/
+# nvim lazy.nvim
+**/nvim/lazy-lock.json
 
 # python cache
 **/__pycache__/
