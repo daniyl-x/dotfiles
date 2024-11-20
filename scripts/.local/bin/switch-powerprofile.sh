@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# SPDX-License-Identifier: BSD-2-Clause
+
+# Copyright (c) 2023, daniyl-x
+
 
 current_powerprofile=$(powerprofilesctl get)
 

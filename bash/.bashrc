@@ -3,6 +3,10 @@
 #   | '_ \ / _` / __| '_ \| '__/ __|
 #  _| |_) | (_| \__ \ | | | | | (__ 
 # (_)_.__/ \__,_|___/_| |_|_|  \___|
+
+# SPDX-License-Identifier: BSD-2-Clause
+
+# Copyright (c) 2023-2024, daniyl-x
                               
 
 ### PATH VARIABLE ###

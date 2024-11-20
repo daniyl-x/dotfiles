@@ -19,6 +19,7 @@ them as a base or example.
 - [Scripts](#scripts)
 - [Colorschemes](#colorschemes)
 - [Credits](#credits)
+- [License](#license)
 
 
 
@@ -94,4 +95,14 @@ in every application.
 ## Credits
 - DistroTube for inspiration to create this repo
 - typecraft for his [GNU Stow guide](https://youtu.be/NoFiYOqnC4o?si=wD7fsb7WJtI_Na1u)
+
+
+## License
+- All the original code and configuration files written by me are licensed
+under BSD-2-Clause License, which can be found in the [LICENSE](LICENSE) file.
+
+- All the 3rd-party code and configuration files contain explicit license
+and either copyright notices or an attribution to the original source.
+Detailed information on specific files or directories can be found in
+the [LICENSE-3RD-PARTY.md](LICENSE-3RD-PARTY.md) file.
 

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# SPDX-License-Identifier: BSD-2-Clause
+
+# Copyright (c) 2023, daniyl-x
+
+
 # Dependencies: awk, tmux, fzf
 
 windows="$(tmux list-windows -a | awk '{print $1,$2,$3,$4}')"
