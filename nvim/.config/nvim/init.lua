@@ -5,38 +5,14 @@
 -- |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 
 
--- ! You can simply comment options you don't want !
+-- Core stuff (lua/) --
+require("keybindings")          -- Keybindings and remaps
+require("settings")             -- Regular settings
+require("plugins")              -- Plugin management
 
--- Keybindings and remaps
-require("keybindings")
+-- ! Plugins stored in after/plugin/ are loaded automatically !
 
--- Usual settings
-require("settings")
-
--- Plugin management
-require("plugins")
-
--- LSP stuff
-require("lsp")
-
--- Colorscheme
-require("colorscheme")
-
--- Auto-completion
-require("config.nvim-cmp")
-
--- Lualine
-require("config.lualine")
-
--- Gitsigns
-require("config.gitsigns")
-
--- Nvim-Tree
--- require("config.nvim-tree")
-
--- Trouble
-require("config.trouble")
-
--- Oil
-require("config.oil")
+-- Optional plugins (lua/plugins/) --
+require("plugins.lsp")          -- LSP stuff
+-- require("plugins.nvim-tree")    -- Nvim-Tree
 
