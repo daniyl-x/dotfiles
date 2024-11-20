@@ -1,12 +1,9 @@
--- Define colorscheme
---local colorscheme = 'everforest'
-local colorscheme = 'catppuccin-frappe'
+-- Define available colorschemes
+local colorscheme = {
+    "everforest",
+    "catppuccin-frappe",
+}
 
-
--- Check if colorscheme installed
-local is_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not is_ok then
-    vim.notify('Colorscheme ' .. colorscheme .. ' not found!')
-    return
-end
+-- Choose and setup one
+vim.cmd(string.format("colorscheme %s", colorscheme[2]))
 
