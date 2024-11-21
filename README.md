@@ -5,7 +5,7 @@ every day on my Linux machine.*
 All text editors configurations may contain language-specific settings and/or
 plugins. Some of this dotfiles (window managers configurations, for example)
 are configured specifically for my needs and convinience, so you should use
-them as a base or example.
+them rather as a base or an example.
 
 
 
@@ -29,7 +29,7 @@ See [REQUIREMENTS.md](REQUIREMENTS.md) for detailed information.
 
 ## Branches
 - main &mdash; the main branch, **contains Xorg specific settings**, tested on
-Linux distros (Fedora, Debian, Mint), should work for the most Linux distros
+multiple Linux distros (Fedora, Debian, Mint)
 
 - termux &mdash; the termux branch, unrelevant dotfiles are removed, path's are
 fixed, other fixes applied
@@ -38,7 +38,7 @@ fixed, other fixes applied
 ## Installation
 > **Warning:**
 > Make sure that all [requirements](REQUIREMENTS.md) for specific program or
-script are installed, except those marked with \*\
+script are installed, except those marked with \*
 
 Some configs may require to restart app or will have command to execute just
 under the ASCII art.
@@ -75,7 +75,7 @@ This repo also contains my custom scripts that can be found
 in the scripts directory.
 They can be installed standalone or with any graphical environment,
 using GNU Stow or in any other way.\
-This is a separate stow package, because they're made to be portable.
+This is a separate stow package, so thwy can be ibstalled independently.
 
 
 ## Colorschemes
