@@ -56,3 +56,10 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "yaml",
+    callback = function()
+        vim.opt_local.foldmethod = "indent"
+    end,
+})
+
