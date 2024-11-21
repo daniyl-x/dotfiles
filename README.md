@@ -8,7 +8,6 @@ are configured specifically for my needs and convinience, so you should use
 them rather as a base or an example.
 
 
-
 ## Table of contents
 - [Requirements](REQUIREMENTS.md)
 - [Branches](#branches)
@@ -20,7 +19,6 @@ them rather as a base or an example.
 - [Colorschemes](#colorschemes)
 - [Credits](#credits)
 - [License](#license)
-
 
 
 ## Requirements

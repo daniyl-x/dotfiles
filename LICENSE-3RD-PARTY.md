@@ -5,19 +5,16 @@ See the license section of the README.md file for project licensing structure
 description.
 
 
-
 ## Table of contents
 - [Apache-2.0](#apache-20)
 - [GPL-3.0](#gpl-30)
 - [MIT](#mit)
 
 
-
 ## Apache-2.0
 - nvim/.config/nvim/lua/plugins/lsp.lua
 - nvim/.config/nvim/lua/plugins.lua
 - nvim/.config/nvim/after/plugin/trouble.lua
-
 
 ```
                                  Apache License
@@ -224,11 +221,9 @@ description.
 ```
 
 
-
 ## GPL-3.0
 - kitty/.config/kitty/kitty.conf
 - nvim/.config/nvim/lua/plugins/nvim-tree.lua
-
 
 ```
                     GNU GENERAL PUBLIC LICENSE
@@ -908,14 +903,12 @@ Public License instead of this License.  But first, please read
 ```
 
 
-
 ## MIT
 - qtile/.config/qtile/config.py
 - nvim/.config/nvim/after/plugin/lualine.lua
 - nvim/.config/nvim/after/plugin/oil.lua
 - nvim/.config/nvim/after/plugin/nvim-cmp.lua
 - nvim/.config/nvim/after/plugin/gitsigns.lua
-
 
 ```
 MIT License
