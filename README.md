@@ -9,8 +9,8 @@ them rather as a base or an example.
 
 
 ## Table of contents
-- [Requirements](REQUIREMENTS.md)
 - [Branches](#branches)
+- [Requirements](REQUIREMENTS.md)
 - [Installation](#installation)
     - [Plain](#plain)
     - [GNU Stow](#gnu-stow)
@@ -19,10 +19,6 @@ them rather as a base or an example.
 - [Colorschemes](#colorschemes)
 - [Credits](#credits)
 - [License](#license)
-
-
-## Requirements
-See [REQUIREMENTS.md](REQUIREMENTS.md) for detailed information.
 
 
 ## Branches
@@ -35,7 +31,7 @@ fixed, other fixes applied
 
 ## Installation
 > **Warning:**
-> Make sure that all [requirements](REQUIREMENTS.md) for specific program or
+> Make sure that all [requirements](REQUIREMENTS.md) for specific software or
 script are installed, except those marked with \*
 
 Some configs may require to restart app or will have command to execute just
