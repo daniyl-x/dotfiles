@@ -5,12 +5,13 @@
 -- |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 
 
+-- ! Plugins stored in after/plugin/ are loaded automatically !
+-- ! Filetype-specific settings are located in after/ftplugin/[filetype].lua !
+
 -- Core stuff (lua/) --
 require("keybindings")          -- Keybindings and remaps
 require("settings")             -- Regular settings
 require("plugins")              -- Plugin management
-
--- ! Plugins stored in after/plugin/ are loaded automatically !
 
 -- Optional plugins (lua/plugin/) --
 require("plugin.lsp")          -- LSP stuff

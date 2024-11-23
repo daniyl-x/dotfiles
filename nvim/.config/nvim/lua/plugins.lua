@@ -41,40 +41,40 @@ require("lazy").setup({
     -------------------------
 
     -- Treesitter syntax highlighting
-    {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+    {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
 
     -- LSP stuff
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig',
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
 
     -- Auto-completion
-    'hrsh7th/nvim-cmp',
-    {'hrsh7th/cmp-nvim-lsp', dependencies = {'nvim-cmp'}},     -- built-in
-    {'hrsh7th/cmp-buffer', dependencies = {'nvim-cmp'}},       -- buffer
-    {'hrsh7th/cmp-path', dependencies = {'nvim-cmp'}},         -- path
-    {'hrsh7th/cmp-cmdline', dependencies = {'nvim-cmp'}},      -- cmdline
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
+    "hrsh7th/nvim-cmp",
+    {"hrsh7th/cmp-nvim-lsp", dependencies = {"nvim-cmp"}},     -- built-in
+    {"hrsh7th/cmp-buffer", dependencies = {"nvim-cmp"}},       -- buffer
+    {"hrsh7th/cmp-path", dependencies = {"nvim-cmp"}},         -- path
+    {"hrsh7th/cmp-cmdline", dependencies = {"nvim-cmp"}},      -- cmdline
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
 
     -- Colorscheme
-    'sainnhe/everforest',                    -- Everforest
-    {'catppuccin/nvim', name = 'catppuccin'},  -- Catppuccin
+    "sainnhe/everforest",                       -- Everforest
+    {"catppuccin/nvim", name = "catppuccin"},   -- Catppuccin
 
     -- Lualine
-    {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
+    {"nvim-lualine/lualine.nvim", dependencies = {"nvim-tree/nvim-web-devicons"}},
 
     -- Gitsigns
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
 
     -- Trouble warnings list
-    {'folke/trouble.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
+    {"folke/trouble.nvim", dependencies = {"nvim-tree/nvim-web-devicons"}},
 
     -- Nvim-Tree file explorer
-    {'nvim-tree/nvim-tree.lua', dependencies = {'nvim-tree/nvim-web-devicons'}},
+    {"nvim-tree/nvim-tree.lua", dependencies = {"nvim-tree/nvim-web-devicons"}},
 
     -- Oil.nvim file explorer
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
 
     -------------------------
 })
