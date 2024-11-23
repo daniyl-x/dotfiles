@@ -39,27 +39,3 @@ vim.opt.termguicolors = true        -- correct colors
 vim.opt.linebreak = true            -- don't break words when wrapping lines
 vim.opt.wrap = false                -- disable line wrapping
 
-
--- Filetype specific options
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "html",
-    callback = function()
-        vim.opt_local.tabstop = 2
-        vim.opt_local.shiftwidth = 2
-    end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "python",
-    callback = function()
-        vim.opt_local.foldmethod = "indent"
-    end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "yaml",
-    callback = function()
-        vim.opt_local.foldmethod = "indent"
-    end,
-})
-
