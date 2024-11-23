@@ -12,7 +12,7 @@ require("plugins")              -- Plugin management
 
 -- ! Plugins stored in after/plugin/ are loaded automatically !
 
--- Optional plugins (lua/plugins/) --
-require("plugins.lsp")          -- LSP stuff
--- require("plugins.nvim-tree")    -- Nvim-Tree
+-- Optional plugins (lua/plugin/) --
+require("plugin.lsp")          -- LSP stuff
+-- require("plugin.nvim-tree")    -- Nvim-Tree
 
