@@ -9,7 +9,11 @@
 " Copyright (c) 2023-2024, daniyl-x
 
 
-" Backup management
+" Get the defaults that most users want.
+source $VIMRUNTIME/defaults.vim
+
+
+""" BACKUP MANAGEMENT
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
@@ -19,9 +23,11 @@ else
   endif
 endif
 
-
-" Get the defaults that most users want.
-source $VIMRUNTIME/defaults.vim
+" Backup files location
+call mkdir($HOME . "/.vim/backup", "p", 0700)
+set backupdir=$HOME/.vim/backup//
+set directory=$HOME/.vim/backup//
+set undodir=$HOME/.vim/backup//
 
 
 """ PLUGINS IMPORT
