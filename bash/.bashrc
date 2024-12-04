@@ -45,6 +45,8 @@ export MANPAGER                 # Custom manpage viewer
 export VISUAL                   # Fullscreen fancy editor
 export EDITOR=vi                # Default editor, should work everywhere
 
+export GPG_TTY=$(tty)           # gpg-agent tty
+
 
 ### PROMPT ###
 
