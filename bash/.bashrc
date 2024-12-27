@@ -9,10 +9,6 @@
 # Copyright (c) 2023-2024, daniyl-x
                               
 
-### PATH VARIABLE ###
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-
-
 ### FUNCTIONS ###
 
 # Git branch function for prompt
@@ -32,18 +28,6 @@ export HISTCONTROL=ignoredups 	# Ignore continuous duplicates
 export HISTSIZE=10000           # Bash history size
 export HISTFILESIZE=$HISTSIZE 	# Bash history file size
 export HISTTIMEFORMAT="%F %T "	# Add date and timestamp to history
-
-# Set VISUAL to available vim and MANPAGER to Neovim if present
-if [ "$(is_present nvim)" -eq 0 ]; then
-    MANPAGER="nvim +Man!"
-    VISUAL=nvim
-elif [ "$(is_present vim)" -eq 0 ]; then
-    VISUAL=vim
-fi
-
-export MANPAGER                 # Custom manpage viewer
-export VISUAL                   # Fullscreen fancy editor
-export EDITOR=vi                # Default editor, should work everywhere
 
 export GPG_TTY=$(tty)           # gpg-agent tty
 
