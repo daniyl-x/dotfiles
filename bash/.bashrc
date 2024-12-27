@@ -11,13 +11,15 @@
 
 ### FUNCTIONS ###
 
-# Git branch function for prompt
-get_git_branch(){
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+is_present(){
+    command -v $1 &> /dev/null
 }
 
-is_present(){
-    which $1 &> /dev/null; echo $?
+# Git branch function for prompt
+get_git_branch(){
+    if $(is_present git); then
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    fi
 }
 
 
@@ -104,9 +106,6 @@ alias la="ls -lAh"              # ls w/ hidden files
 alias l.="ls -d .*"             # ls only hidden
 alias mkdir="mkdir -pv"         # mkdir make parents & verbose output
 
-# Editors
-#alias vim="vimx"               # vim w\ system clipboard (fedora)
-
 
 ### SCRIPTS EXECUTION ###
 
@@ -114,7 +113,7 @@ alias mkdir="mkdir -pv"         # mkdir make parents & verbose output
 source /etc/profile.d/bash_completion.sh
 
 # Execute fzf scripts if installed
-if [ "$(is_present fzf)" -eq 0 ]; then
+if $(is_present fzf); then
     source /usr/share/fzf/shell/key-bindings.bash
     source /usr/share/fzf/shell/completion.bash
 fi
