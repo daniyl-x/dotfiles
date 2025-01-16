@@ -13,17 +13,18 @@
 # Add user's bin directories to PATH
 export PATH="$HOME/.local/bin:$HOME/bin:${PATH}"
 
-# Set VISUAL to available vim, and PAGER to less, or nvim if installed
-PAGER=less
+# Set VISUAL to available vim, and MANPAGER to nvim if present
 if [ -x "$(command -v nvim)" ]; then
-    PAGER="nvim +Man!"
+    MANPAGER="nvim +Man!"
     VISUAL=nvim
 elif [ -x "$(command -v vim)" ]; then
     VISUAL=vim
 fi
 
-export PAGER                 	# Custom pager (for man, etc)
+export MANPAGER                 # Custom manpager
 export VISUAL                   # Fullscreen fancy editor
+
+export PAGER=less            	# Custom pager
 export EDITOR=vi                # Default editor, should work everywhere
 
 # Configure shell to use .shrc if present
