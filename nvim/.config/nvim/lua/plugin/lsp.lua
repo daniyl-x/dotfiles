@@ -64,7 +64,7 @@ local lspconfig = require("lspconfig")
 -- Applying settings for all servers
 for _, server in ipairs(servers) do
     -- Include server specific settings if any
-    local module_name = string.format("ls_specific.%s", server)
+    local module_name = string.format("plugin.ls_specific.%s", server)
     local status, specific_settings = pcall(require, module_name)
     specific_settings = status and specific_settings or nil
 
