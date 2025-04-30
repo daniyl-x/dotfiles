@@ -14,7 +14,7 @@
 # Copyright (c) 2012 Craig Barnes
 # Copyright (c) 2013 horsik
 # Copyright (c) 2013 Tao Sauvage
-# Copyright (c) 2023-2024, daniyl-x
+# Copyright (c) 2023-2025, daniyl-x
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -265,7 +265,6 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(
-                    # Default way to switch previous layout is middle click
                     mouse_callbacks={
                         "Button2": None,
                         "Button3": qtile.prev_layout,
