@@ -224,10 +224,14 @@ layout_defaults = {
     "border_focus": colors[4],
 }
 
+# Custom margin for "Columns" layout
+columns_defaults = layout_defaults.copy()
+columns_defaults["margin"] = 2
+
 layouts = [
     layout.MonadTall(**layout_defaults, ratio=0.46),
     layout.Max(**layout_defaults),
-    layout.Columns(**layout_defaults),
+    layout.Columns(**columns_defaults),
     layout.Floating(**layout_defaults),
 ]
 
