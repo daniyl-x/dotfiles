@@ -39,6 +39,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.widget import backlight
 
+import keycodes as kc
 from colors import doom_one as colors
 
 
@@ -54,35 +55,35 @@ browser = "librewolf"
 keys = [
     # CONTROL KEYS #
 
-    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using prompt"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="Toggle window floating"),
+    Key([mod, "control"], kc.r, lazy.reload_config(), desc="Reload the config"),
+    Key([mod], kc.r, lazy.spawncmd(), desc="Spawn a command using prompt"),
+    Key([mod], kc.w, lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "shift"], kc.f, lazy.window.toggle_floating(), desc="Toggle window floating"),
 
     # Switch between windows
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
+    Key([mod], kc.h, lazy.layout.left(), desc="Move focus to left"),
+    Key([mod], kc.j, lazy.layout.down(), desc="Move focus down"),
+    Key([mod], kc.k, lazy.layout.up(), desc="Move focus up"),
+    Key([mod], kc.l, lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "space", lazy.layout.next(), desc="Focus on the next window"),
 
     # Move windows
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], kc.h, lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], kc.j, lazy.layout.shuffle_down(), desc="Move window down"),
+    Key([mod, "shift"], kc.k, lazy.layout.shuffle_up(), desc="Move window up"),
+    Key([mod, "shift"], kc.l, lazy.layout.shuffle_right(), desc="Move window to the right"),
 
     # Grow windows
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], kc.h, lazy.layout.grow_left(), desc="Grow window to the left"),
+    Key([mod, "control"], kc.j, lazy.layout.grow_down(), desc="Grow window down"),
+    Key([mod, "control"], kc.k, lazy.layout.grow_up(), desc="Grow window up"),
+    Key([mod, "control"], kc.l, lazy.layout.grow_right(), desc="Grow window to the right"),
+    Key([mod], kc.n, lazy.layout.normalize(), desc="Reset all window sizes"),
 
     # Change layout ratios
-    Key([mod], "i", lazy.layout.grow(), desc="Grow layout ratio"),
-    Key([mod], "m", lazy.layout.shrink(), desc="Shrink layout ratio"),
-    Key([mod, "shift"], "n", lazy.layout.reset(), desc="Reset layout ratio"),
+    Key([mod], kc.i, lazy.layout.grow(), desc="Grow layout ratio"),
+    Key([mod], kc.m, lazy.layout.shrink(), desc="Shrink layout ratio"),
+    Key([mod, "shift"], kc.n, lazy.layout.reset(), desc="Reset layout ratio"),
     Key([mod, "shift"], "space", lazy.layout.flip(), desc="Flip layout ratios"),
 
     # Switch layouts
@@ -168,7 +169,7 @@ keys = [
         desc="Run launcher"
     ),
     Key(
-        [mod, "control"], "q",
+        [mod, "control"], kc.q,
         lazy.spawn(
             "rofi -show power-menu"
             " -modi 'power-menu:rofi-power-menu"
@@ -181,10 +182,10 @@ keys = [
     # APPS #
 
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
-    Key([mod], "f", lazy.spawn(file_manager), desc="Launch file manager"),
+    Key([mod], kc.b, lazy.spawn(browser), desc="Launch browser"),
+    Key([mod], kc.f, lazy.spawn(file_manager), desc="Launch file manager"),
     Key(
-        [mod], "t",
+        [mod], kc.t,
         lazy.spawn(f"{terminal} -e tmux-fzf-picker.sh"),
         desc="Run tmux fzf picker script"),
 ]
