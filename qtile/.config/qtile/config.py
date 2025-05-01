@@ -372,6 +372,12 @@ screens = [
                     }
                 ),
 
+                widget.DoNotDisturb(
+                    foreground=colors[2],
+                    enabled_icon="󰂛",
+                    disabled_icon="󰂚",
+                ),
+
                 widget.Battery(
                     charge_char="",
                     discharge_char="",
