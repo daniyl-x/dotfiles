@@ -46,7 +46,7 @@ from colors import doom_one as colors
 # Mod key
 mod = "mod4"
 
-# Default programms
+# Default programs
 terminal = "alacritty"
 file_manager = "pcmanfm"
 browser = "librewolf"
@@ -58,37 +58,36 @@ keys = [
     Key([mod, "control"], kc.r, lazy.reload_config(), desc="Reload the config"),
     Key([mod], kc.r, lazy.spawncmd(), desc="Spawn a command using prompt"),
     Key([mod], kc.w, lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "shift"], kc.f, lazy.window.toggle_floating(), desc="Toggle window floating"),
+    Key([mod, "control"], kc.f, lazy.window.toggle_floating(), desc="Toggle window floating"),
 
-    # Switch between windows
-    Key([mod], kc.h, lazy.layout.left(), desc="Move focus to left"),
+    # Switch focus
+    Key([mod], kc.h, lazy.layout.left(), desc="Move focus left"),
     Key([mod], kc.j, lazy.layout.down(), desc="Move focus down"),
     Key([mod], kc.k, lazy.layout.up(), desc="Move focus up"),
-    Key([mod], kc.l, lazy.layout.right(), desc="Move focus to right"),
+    Key([mod], kc.l, lazy.layout.right(), desc="Move focus right"),
     Key([mod], "space", lazy.layout.next(), desc="Focus on the next window"),
 
     # Move windows
-    Key([mod, "shift"], kc.h, lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], kc.h, lazy.layout.shuffle_left(), desc="Move window left"),
     Key([mod, "shift"], kc.j, lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], kc.k, lazy.layout.shuffle_up(), desc="Move window up"),
-    Key([mod, "shift"], kc.l, lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], kc.l, lazy.layout.shuffle_right(), desc="Move window right"),
 
     # Grow windows
-    Key([mod, "control"], kc.h, lazy.layout.grow_left(), desc="Grow window to the left"),
+    Key([mod, "control"], kc.h, lazy.layout.grow_left(), desc="Grow window left"),
     Key([mod, "control"], kc.j, lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], kc.k, lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod, "control"], kc.l, lazy.layout.grow_right(), desc="Grow window to the right"),
-    Key([mod], kc.n, lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], kc.l, lazy.layout.grow_right(), desc="Grow window right"),
+    Key([mod], kc.n, lazy.layout.normalize(), lazy.layout.reset(), desc="Reset window sizes"),
 
     # Change layout ratios
     Key([mod], kc.i, lazy.layout.grow(), desc="Grow layout ratio"),
     Key([mod], kc.m, lazy.layout.shrink(), desc="Shrink layout ratio"),
-    Key([mod, "shift"], kc.n, lazy.layout.reset(), desc="Reset layout ratio"),
     Key([mod, "shift"], "space", lazy.layout.flip(), desc="Flip layout ratios"),
 
     # Switch layouts
     Key([mod], "Tab", lazy.next_layout(), desc="Switch next layout"),
-    Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Switch previous layout"),
+    Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Switch layout back"),
 
 
     # SPECIAL KEYS #
@@ -97,15 +96,11 @@ keys = [
     Key(
         ["mod1"], "Shift_L",
         lazy.widget["keyboardlayout"].next_keyboard(),
-        desc="Next keyboard layout"
+        desc="Switch keyboard layout"
     ),
 
     # Touchpad toggle
-    Key(
-        [], "F6",
-        lazy.spawn("toggle-touchpad.sh"),
-        desc="Toggle touchpad"
-    ),
+    Key([], "F6", lazy.spawn("toggle-touchpad.sh"), desc="Toggle touchpad"),
 
     # Screenshot
     Key(
@@ -113,10 +108,7 @@ keys = [
         lazy.spawn("flameshot screen -p $HOME/Pictures", shell=True),
         desc="Screenshot of full screen"
     ),
-    Key(
-        ["control"], "Print",
-        lazy.spawn("flameshot gui"), desc="Screenshot of area"
-    ),
+    Key(["control"], "Print",lazy.spawn("flameshot gui"), desc="Screenshot of area"),
 
     # Brightness
     Key(
@@ -153,13 +145,6 @@ keys = [
     # for my mechanical keyboard without XF86AudioMicMute
     Key([], "XF86Tools", lazy.spawn("amixer set Capture toggle"), desc="Toggle microphone"),
 
-    # Switch power profile (via power-profiles-daemon)
-    # Key(
-    #     [], "XF86Launch4",
-    #     lazy.spawn("switch-powerprofile.sh"),
-    #     desc="Switch powerprofile"
-    # ),
-
 
     # ROFI #
 
@@ -179,15 +164,26 @@ keys = [
     ),
 
 
-    # APPS #
+    # SOFTWARE #
 
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], kc.b, lazy.spawn(browser), desc="Launch browser"),
     Key([mod], kc.f, lazy.spawn(file_manager), desc="Launch file manager"),
+
+
+    # SCRIPTS #
+
     Key(
         [mod], kc.t,
         lazy.spawn(f"{terminal} -e tmux-fzf-picker.sh"),
-        desc="Run tmux fzf picker script"),
+        desc="Run tmux fzf picker script"
+    ),
+
+    # Key(
+    #     [], "XF86Launch4",
+    #     lazy.spawn("switch-powerprofile.sh"),
+    #     desc="Switch powerprofile"
+    # ),
 ]
 
 
