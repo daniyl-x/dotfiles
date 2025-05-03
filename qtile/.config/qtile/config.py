@@ -59,6 +59,7 @@ keys = [
     Key([mod], kc.r, lazy.spawncmd(), desc="Spawn a command using prompt"),
     Key([mod], kc.w, lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], kc.f, lazy.window.toggle_floating(), desc="Toggle window floating"),
+    Key([mod, "mod1"], kc.f, lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
 
     # Switch focus
     Key([mod], kc.h, lazy.layout.left(), desc="Move focus left"),
@@ -223,11 +224,14 @@ layout_defaults = {
 
 # Custom margin for "Columns" layout
 columns_defaults = layout_defaults.copy()
-columns_defaults["margin"] = 2
+columns_defaults["margin"] = [3, 2, 3, 2]
 
 layouts = [
-    layout.MonadTall(**layout_defaults, ratio=0.46),
-    layout.Max(**layout_defaults),
+    layout.MonadTall(
+        **layout_defaults,
+        ratio=0.46,
+        single_border_width=0,
+    ),
     layout.Columns(**columns_defaults),
     layout.Floating(**layout_defaults),
 ]
