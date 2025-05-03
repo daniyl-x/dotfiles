@@ -294,6 +294,8 @@ screens = [
                 ),
                 widget.WindowName(
                     fontsize=widget_defaults["fontsize"]-2,
+                    scroll=True,
+                    width=300,
                 ),
 
                 widget.Spacer(),
