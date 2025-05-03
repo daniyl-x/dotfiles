@@ -270,6 +270,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(
+                    scale=0.85,
                     mouse_callbacks={
                         "Button2": None,
                         "Button3": qtile.prev_layout,
@@ -297,7 +298,8 @@ screens = [
 
                 widget.Spacer(),
                 widget.Clock(
-                    format=" %a, %d.%m.%y   %H:%M",
+                    #format=" %a, %d.%m.%y   %H:%M",
+                    format="%a %d.%m.%y %H:%M",
                 ),
                 widget.Spacer(),
 
@@ -321,16 +323,16 @@ screens = [
                     ]
                 ),
 
-                widget.NetGraph(
-                    border_width=1,
-                    border_color=colors[8],
-                    fill_color=colors[4],
-                    graph_color=colors[4],
-                    line_width=2,
-                    margin_x=1,
-                    samples=75,
-                    type="line",
-                ),
+                # widget.NetGraph(
+                #     border_width=1,
+                #     border_color=colors[8],
+                #     fill_color=colors[4],
+                #     graph_color=colors[4],
+                #     line_width=2,
+                #     margin_x=1,
+                #     samples=75,
+                #     type="line",
+                # ),
 
                 # widget.Memory(
                 #     fmt=" {}",
@@ -379,10 +381,10 @@ screens = [
                 ),
 
                 widget.Battery(
-                    charge_char="",
-                    discharge_char="",
+                    charge_char=" ",
+                    discharge_char=" ",
                     fmt="󱐋 {}",
-                    format="{percent:2.0%} {char} {hour:d}h{min:02d}m",
+                    format="{percent:2.0%} {char}{hour:d}h{min:02d}m",
                     low_foreground=colors[1],
                     low_percentage=0.2,
                     update_interval=6,
