@@ -52,6 +52,25 @@ file_manager = "pcmanfm"
 browser = "librewolf"
 
 
+# FUNCTIONS #
+
+def get_dnd_status():
+    current_icon = qtile.widgets_map["donotdisturb"].poll()
+    if current_icon == qtile.widgets_map["donotdisturb"].enabled_icon:
+        return True
+    return False
+
+
+def toggle_dnd():
+    qtile.widgets_map["donotdisturb"].button_press(x=0, y=0, button=1)
+
+
+def should_impact_dnd(window):
+    if "chrom" in window.get_wm_class()[0] and window.name[:5] != "Chrom":
+        return True
+    return False
+
+
 keys = [
     # CONTROL KEYS #
 
@@ -420,6 +439,20 @@ screens = [
 def autostart():
     """Run autostart script on the first Qtile startup"""
     qtile.cmd_spawn("autostart.sh")
+
+
+@hook.subscribe.client_managed
+def enable_dnd(window):
+    """Enable DoNotDisturb when specific programs are started"""
+    if should_impact_dnd(window) and get_dnd_status() is False:
+        toggle_dnd()
+
+
+@hook.subscribe.client_killed
+def disable_dnd(window):
+    """Disable DoNotDisturb when specific programs are closed"""
+    if should_impact_dnd(window) and get_dnd_status() is True:
+        toggle_dnd()
 
 
 dgroups_key_binder = None
