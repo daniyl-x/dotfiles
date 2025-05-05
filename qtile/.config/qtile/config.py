@@ -455,6 +455,18 @@ def disable_dnd(window):
         toggle_dnd()
 
 
+@hook.subscribe.setgroup
+def pip_follow():
+    """Move Picture-in-Picture window to the current group,
+    keep it on top, and return focus to the last window"""
+    for window in list(qtile.windows_map.values()):
+        if window.name == "Picture-in-Picture":
+            group = qtile.current_group
+            window.togroup(group.name)
+            window.keep_above([True])
+            group.focus_back()
+
+
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
