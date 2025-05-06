@@ -1,11 +1,8 @@
 # Dotfiles
-*This repository contains my personal dotfiles and configurations that I use
-every day on my Linux machine.*
+*This repository contains my personal configuration files (dotfiles).*
 
-All text editors configurations may contain language-specific settings and/or
-plugins. Some of this dotfiles (window managers configurations, for example)
-are configured specifically for my needs and convinience, so you should use
-them rather as a base or an example.
+All dotfiles are configured for my needs and convinience, and should be used
+rather as a base or an example.
 
 
 ## Table of contents
@@ -25,51 +22,48 @@ them rather as a base or an example.
 - main &mdash; the main branch, **contains Xorg specific settings**, tested on
 multiple Linux distros (Fedora, Debian, Mint)
 
-- termux &mdash; the termux branch, unrelevant dotfiles are removed, path's are
+- termux &mdash; the termux branch, unrelevant dotfiles are removed, paths are
 fixed, other fixes applied
 
 
 ## Installation
 > **Warning:**
 > Make sure that all [requirements](REQUIREMENTS.md) for specific software or
-script are installed, except those marked with \*
+script are installed (except those marked with \*).
 
-Some configs may require to restart app or will have command to execute just
-under the ASCII art.
+Some configs may require to restart program or will have command to execute just
+under their ASCII banner.
 
 ### Plain
-Just clone repo, copy required files or dirs from inside of the corresponding
-directory to your `$HOME` and have fun!\
-Example for neovim dotfiles:
+Just clone the repo, copy required files or directories to your `$HOME`
+and have fun!\
+Example of installation for Neovim dotfiles:
 ```sh
 # From this repo's directory
 cp -r nvim/* $HOME
 ```
 
 ### GNU Stow
-Execute the stow command with the `$HOME` as your target directory and the names
+Execute the stow command with `$HOME` as your target directory and the names
 of the programs you need dotfiles for.\
-Example for linking git, neovim, tmux and qtile dotfiles:
+Example for linking Git, Neovim, tmux and Qtile dotfiles:
 ```sh
 # From this repo's directory
 mkdir $HOME/.config && stow -t $HOME git nvim tmux qtile
 ```
 
 ### Post-install and headless installation
-After installing Vim dotfiles, it's required to install plugins.
-It can be done by executing Vim commands manually but the next command
-is optimized to work in scripts or tools like Ansible:
+After installing my Vim dotfiles, it's required to install plugins.\
+This can be done with the next command (can be used in scripts):
 ```sh
 vim -s ~/.vimrc +PlugUpdate +PlugClean +qa
 ```
 
 
 ## Scripts
-This repo also contains my custom scripts that can be found
-in the scripts directory.
-They can be installed standalone or with any graphical environment,
-using GNU Stow or in any other way.\
-This is a separate stow package, so thwy can be ibstalled independently.
+This repo also contains my custom scripts that can be found in the `scripts`
+directory.\
+This is a separate Stow package, so they can be installed independently.
 
 
 ## Colorschemes

@@ -1,11 +1,7 @@
 # Requirements
 > **Note:**
-> \* means is not required, but is used and recommended
-
-
-Most of listed software should be available in your linux distro's
-repositories. I've also tried to provide all links so you can get software
-that isn't available in your distro's repository or if you're using other OS.
+> *thing*\* means the *thing* is not strictly required, but is used with
+these dotfiles (icons, fonts, etc.).
 
 
 
@@ -60,8 +56,8 @@ that isn't available in your distro's repository or if you're using other OS.
 ## Scripts
 ### autostart.sh
 > **Note:**
-> There is more programs in the script, but they're very user-specific
-> (syncthing, password manager, etc.)
+> There is more programs in this script, but they're very user-specific
+> (syncthing, password manager, etc.).
 
 - [Blueman](https://github.com/blueman-project/blueman)
 &mdash; GTK+ Bluetooth Manager
@@ -99,8 +95,7 @@ touchpads
 
 ## Qtile
 > **Note:**
-> You should change default apps variables in the config.py file
-> Also, used keys can be device-specific, so you probably should change them too
+> You should change default app variables in the config.py file.
 
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl)
 &mdash; CLI tool for controlling brightness

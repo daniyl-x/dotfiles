@@ -383,7 +383,7 @@ screens = [
                     }
                 ),
 
-                # Using amixer to control micro via cpture channel
+                # Using amixer to control micro via capture channel
                 widget.Volume(
                     fmt=" {}",
                     channel="Capture",
