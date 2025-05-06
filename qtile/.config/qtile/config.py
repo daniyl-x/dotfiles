@@ -43,6 +43,8 @@ import keycodes as kc
 from colors import doom_one as colors
 
 
+# DEFAULTS & VARIABLES #
+
 # Mod key
 mod = "mod4"
 
@@ -71,9 +73,44 @@ def should_impact_dnd(window):
     return False
 
 
-keys = [
-    # CONTROL KEYS #
+# HOOKS #
 
+@hook.subscribe.startup_once
+def autostart():
+    """Run autostart script on the first Qtile startup"""
+    qtile.cmd_spawn("autostart.sh")
+
+
+@hook.subscribe.client_managed
+def enable_dnd(window):
+    """Enable DoNotDisturb when specific programs are started"""
+    if should_impact_dnd(window) and get_dnd_status() is False:
+        toggle_dnd()
+
+
+@hook.subscribe.client_killed
+def disable_dnd(window):
+    """Disable DoNotDisturb when specific programs are closed"""
+    if should_impact_dnd(window) and get_dnd_status() is True:
+        toggle_dnd()
+
+
+@hook.subscribe.setgroup
+def pip_follow():
+    """Move Picture-in-Picture window to the current group,
+    keep it on top, and return focus to the last window"""
+    for window in list(qtile.windows_map.values()):
+        if window.name == "Picture-in-Picture":
+            group = qtile.current_group
+            window.togroup(group.name)
+            window.keep_above([True])
+            group.focus_back()
+
+
+# KEYS #
+
+keys = [
+    # Control & misc
     Key([mod, "control"], kc.r, lazy.reload_config(), desc="Reload the config"),
     Key([mod], kc.r, lazy.spawncmd(), desc="Spawn a command using prompt"),
     Key([mod], kc.w, lazy.window.kill(), desc="Kill focused window"),
@@ -108,9 +145,6 @@ keys = [
     # Switch layouts
     Key([mod], "Tab", lazy.next_layout(), desc="Switch next layout"),
     Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Switch layout back"),
-
-
-    # SPECIAL KEYS #
 
     # Keyboard layout
     Key(
@@ -165,9 +199,7 @@ keys = [
     # for my mechanical keyboard without XF86AudioMicMute
     Key([], "XF86Tools", lazy.spawn("amixer set Capture toggle"), desc="Toggle microphone"),
 
-
-    # ROFI #
-
+    # Rofi
     Key(
         [mod, "shift"], "Return",
         lazy.spawn("rofi -show drun -show-icons"),
@@ -184,21 +216,18 @@ keys = [
     ),
 
 
-    # SOFTWARE #
-
+    # Software
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], kc.b, lazy.spawn(browser), desc="Launch browser"),
     Key([mod], kc.f, lazy.spawn(file_manager), desc="Launch file manager"),
 
 
-    # SCRIPTS #
-
+    # Scripts
     Key(
         [mod], kc.t,
         lazy.spawn(f"{terminal} -e tmux-fzf-picker.sh"),
         desc="Run tmux fzf picker script"
     ),
-
     # Key(
     #     [], "XF86Launch4",
     #     lazy.spawn("switch-powerprofile.sh"),
@@ -207,72 +236,7 @@ keys = [
 ]
 
 
-# GROUPS #
-
-# Groups range and names
-groups = [Group(i) for i in "1234567890"]
-
-for group in groups:
-    keys.extend(
-        [
-            # Switch to group
-            Key(
-                [mod], group.name,
-                lazy.group[group.name].toscreen(),
-                desc=f"Switch to group {group.name}",
-            ),
-
-            # Move focused window to group
-            Key(
-                [mod, "shift"], group.name,
-                lazy.window.togroup(group.name),  # switch_group=True to switch
-                desc=f"Switch to & move focused window to group {group.name}",
-            ),
-        ]
-    )
-
-
-# LAYOUTS #
-
-layout_defaults = {
-    "border_width": 3,
-    "margin": 5,
-    "border_normal": colors[0],
-    "border_focus": colors[4],
-}
-
-# Custom margin for "Columns" layout
-columns_defaults = layout_defaults.copy()
-columns_defaults["margin"] = [3, 2, 3, 2]
-
-layouts = [
-    layout.MonadTall(
-        **layout_defaults,
-        ratio=0.46,
-        single_border_width=0,
-    ),
-    layout.Columns(**columns_defaults),
-    layout.Floating(**layout_defaults),
-]
-
-# Mouse control for floating layouts.
-mouse = [
-    # Move
-    Drag(
-        [mod], "Button1",
-        lazy.window.set_position_floating(), start=lazy.window.get_position()
-    ),
-    # Resize
-    Drag(
-        [mod], "Button3",
-        lazy.window.set_size_floating(), start=lazy.window.get_size()
-    ),
-    # Bring to front
-    Click([mod], "Button2", lazy.window.bring_to_front()),
-]
-
-
-# SCREEN #
+# SCREENS #
 
 widget_defaults = {
     "font": "NotoMono NF",
@@ -285,7 +249,6 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        # Top Bar
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(
@@ -433,49 +396,32 @@ screens = [
 ]
 
 
-# HOOKS #
+# LAYOUTS #
 
-@hook.subscribe.startup_once
-def autostart():
-    """Run autostart script on the first Qtile startup"""
-    qtile.cmd_spawn("autostart.sh")
+layout_defaults = {
+    "border_width": 3,
+    "margin": 5,
+    "border_normal": colors[0],
+    "border_focus": colors[4],
+}
 
+# Custom margin for "Columns" layout
+columns_defaults = layout_defaults.copy()
+columns_defaults["margin"] = [3, 2, 3, 2]
 
-@hook.subscribe.client_managed
-def enable_dnd(window):
-    """Enable DoNotDisturb when specific programs are started"""
-    if should_impact_dnd(window) and get_dnd_status() is False:
-        toggle_dnd()
+layouts = [
+    layout.MonadTall(
+        **layout_defaults,
+        ratio=0.46,
+        single_border_width=0,
+    ),
+    layout.Columns(**columns_defaults),
+    layout.Floating(**layout_defaults),
+]
 
-
-@hook.subscribe.client_killed
-def disable_dnd(window):
-    """Disable DoNotDisturb when specific programs are closed"""
-    if should_impact_dnd(window) and get_dnd_status() is True:
-        toggle_dnd()
-
-
-@hook.subscribe.setgroup
-def pip_follow():
-    """Move Picture-in-Picture window to the current group,
-    keep it on top, and return focus to the last window"""
-    for window in list(qtile.windows_map.values()):
-        if window.name == "Picture-in-Picture":
-            group = qtile.current_group
-            window.togroup(group.name)
-            window.keep_above([True])
-            group.focus_back()
-
-
-dgroups_key_binder = None
-dgroups_app_rules = []  # type: list
-follow_mouse_focus = True
-bring_front_click = False
-cursor_warp = False
 floating_layout = layout.Floating(
     **layout_defaults,
     float_rules=[
-        # Run the utility of xprop to see the wm class and name of an X client
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
@@ -485,6 +431,54 @@ floating_layout = layout.Floating(
         Match(title="pinentry"),  # GPG key password entry
     ]
 )
+
+# Mouse control for floating layouts.
+mouse = [
+    # Move
+    Drag(
+        [mod], "Button1",
+        lazy.window.set_position_floating(), start=lazy.window.get_position()
+    ),
+    # Resize
+    Drag(
+        [mod], "Button3",
+        lazy.window.set_size_floating(), start=lazy.window.get_size()
+    ),
+    # Bring to front
+    Click([mod], "Button2", lazy.window.bring_to_front()),
+]
+
+
+# GROUPS #
+
+groups = [Group(i) for i in "1234567890"]
+
+for group in groups:
+    keys.extend(
+        [
+            Key(
+                [mod], group.name,
+                lazy.group[group.name].toscreen(),
+                desc=f"Switch to group {group.name}",
+            ),
+
+            # Move focused window to group
+            Key(
+                [mod, "shift"], group.name,
+                lazy.window.togroup(group.name),  # switch_group=True to switch
+                desc=f"Move focused window to group {group.name}",
+            ),
+        ]
+    )
+
+
+# MISC #
+
+dgroups_key_binder = None
+dgroups_app_rules = []  # type: list
+follow_mouse_focus = True
+bring_front_click = False
+cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
