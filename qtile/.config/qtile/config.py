@@ -68,8 +68,11 @@ def toggle_dnd():
 
 
 def should_impact_dnd(window):
-    if "chrom" in window.get_wm_class()[0] and window.name[:5] != "Chrom":
-        return True
+    try:
+        if "chrom" in window.get_wm_class()[0] and window.name[:5] != "Chrom":
+            return True
+    except BaseException:
+        pass
     return False
 
 
@@ -92,14 +95,15 @@ def enable_dnd(window):
 def disable_dnd(window):
     """Disable DoNotDisturb when specific programs are closed"""
     if should_impact_dnd(window) and get_dnd_status() is True:
-        toggle_dnd()
+        if not any(should_impact_dnd(w) for w in qtile.windows_map.values()):
+            toggle_dnd()
 
 
 @hook.subscribe.setgroup
 def pip_follow():
     """Move Picture-in-Picture window to the current group,
     keep it on top, and return focus to the last window"""
-    for window in list(qtile.windows_map.values()):
+    for window in qtile.windows_map.values():
         if window.name == "Picture-in-Picture":
             group = qtile.current_group
             window.togroup(group.name)
