@@ -35,6 +35,7 @@
 # SOFTWARE.
 
 import os
+import json
 from datetime import datetime, UTC
 
 from libqtile import bar, hook, layout, qtile, widget
@@ -119,23 +120,20 @@ def focus_log():
     """Log focus changes into file"""
     last_window = qtile.current_group.last_focused
     data = {
-            "time": datetime.now(UTC).replace(microsecond=0),
+            "time": datetime.now(UTC).isoformat(),
             "window_name": last_window.name,
-            "window_class": last_window.get_wm_class(),
+            "wm_class": last_window.get_wm_class(),
     }
-    entry = (
-            f"{data['time']} \"{data['window_name']}\" "
-            f"{data['window_class'][0]} {data['window_class'][1]}\n"
-    )
 
-    log_path = f"/tmp/qtile-focus-{os.getuid()}.log"
+    log_path = f"/tmp/qtile-focus-log-{os.getuid()}.json"
     log_fd = os.open(
             log_path,
             os.O_CREAT | os.O_WRONLY | os.O_APPEND,
             mode=0o600
         )
     with os.fdopen(log_fd, "a") as log_file:
-        log_file.write(entry)
+        json.dump(data, log_file)
+        log_file.write("\n")
 
     log_size = os.path.getsize(log_path)
     if log_size >= (1024**2):
