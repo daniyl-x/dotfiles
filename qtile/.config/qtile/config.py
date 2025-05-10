@@ -34,6 +34,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import os
+from datetime import datetime, UTC
+
 from libqtile import bar, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -109,6 +112,34 @@ def pip_follow():
             window.togroup(group.name)
             window.keep_above([True])
             group.focus_back()
+
+
+@hook.subscribe.focus_change
+def focus_log():
+    """Log focus changes into file"""
+    last_window = qtile.current_group.last_focused
+    data = {
+            "time": datetime.now(UTC).replace(microsecond=0),
+            "window_name": last_window.name,
+            "window_class": last_window.get_wm_class(),
+    }
+    entry = (
+            f"{data['time']} \"{data['window_name']}\" "
+            f"{data['window_class'][0]} {data['window_class'][1]}\n"
+    )
+
+    log_path = f"/tmp/qtile-focus-{os.getuid()}.log"
+    log_fd = os.open(
+            log_path,
+            os.O_CREAT | os.O_WRONLY | os.O_APPEND,
+            mode=0o600
+        )
+    with os.fdopen(log_fd, "a") as log_file:
+        log_file.write(entry)
+
+    log_size = os.path.getsize(log_path)
+    if log_size >= (1024**2):
+        os.remove(log_path)
 
 
 # KEYS #
