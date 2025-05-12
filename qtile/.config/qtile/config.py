@@ -123,14 +123,14 @@ def focus_log():
             "time": datetime.now(UTC).isoformat(),
             "window_name": last_window.name,
             "wm_class": last_window.get_wm_class(),
-    }
+            }
 
     log_path = f"/tmp/qtile-focus-log-{os.getuid()}.json"
     log_fd = os.open(
             log_path,
             os.O_CREAT | os.O_WRONLY | os.O_APPEND,
             mode=0o600
-        )
+            )
     with os.fdopen(log_fd, "a") as log_file:
         json.dump(data, log_file)
         log_file.write("\n")
@@ -143,79 +143,79 @@ def focus_log():
 # KEYS #
 
 keys = [
-    # Control & misc
-    Key([mod, "control"], kc.r, lazy.reload_config(), desc="Reload the config"),
-    Key([mod], kc.r, lazy.spawncmd(), desc="Spawn a command using prompt"),
-    Key([mod], kc.w, lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "control"], kc.f, lazy.window.toggle_floating(), desc="Toggle window floating"),
-    Key([mod, "mod1"], kc.f, lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+        # Control & misc
+        Key([mod, "control"], kc.r, lazy.reload_config(), desc="Reload the config"),
+        Key([mod], kc.r, lazy.spawncmd(), desc="Spawn a command using prompt"),
+        Key([mod], kc.w, lazy.window.kill(), desc="Kill focused window"),
+        Key([mod, "control"], kc.f, lazy.window.toggle_floating(), desc="Toggle window floating"),
+        Key([mod, "mod1"], kc.f, lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
 
-    # Switch focus
-    Key([mod], kc.h, lazy.layout.left(), desc="Move focus left"),
-    Key([mod], kc.j, lazy.layout.down(), desc="Move focus down"),
-    Key([mod], kc.k, lazy.layout.up(), desc="Move focus up"),
-    Key([mod], kc.l, lazy.layout.right(), desc="Move focus right"),
-    Key([mod], "space", lazy.layout.next(), desc="Focus on the next window"),
+        # Switch focus
+        Key([mod], kc.h, lazy.layout.left(), desc="Move focus left"),
+        Key([mod], kc.j, lazy.layout.down(), desc="Move focus down"),
+        Key([mod], kc.k, lazy.layout.up(), desc="Move focus up"),
+        Key([mod], kc.l, lazy.layout.right(), desc="Move focus right"),
+        Key([mod], "space", lazy.layout.next(), desc="Focus on the next window"),
 
-    # Move windows
-    Key([mod, "shift"], kc.h, lazy.layout.shuffle_left(), desc="Move window left"),
-    Key([mod, "shift"], kc.j, lazy.layout.shuffle_down(), desc="Move window down"),
-    Key([mod, "shift"], kc.k, lazy.layout.shuffle_up(), desc="Move window up"),
-    Key([mod, "shift"], kc.l, lazy.layout.shuffle_right(), desc="Move window right"),
+        # Move windows
+        Key([mod, "shift"], kc.h, lazy.layout.shuffle_left(), desc="Move window left"),
+        Key([mod, "shift"], kc.j, lazy.layout.shuffle_down(), desc="Move window down"),
+        Key([mod, "shift"], kc.k, lazy.layout.shuffle_up(), desc="Move window up"),
+        Key([mod, "shift"], kc.l, lazy.layout.shuffle_right(), desc="Move window right"),
 
-    # Grow windows
-    Key([mod, "control"], kc.h, lazy.layout.grow_left(), desc="Grow window left"),
-    Key([mod, "control"], kc.j, lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], kc.k, lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod, "control"], kc.l, lazy.layout.grow_right(), desc="Grow window right"),
-    Key([mod], kc.n, lazy.layout.normalize(), lazy.layout.reset(), desc="Reset window sizes"),
+        # Grow windows
+        Key([mod, "control"], kc.h, lazy.layout.grow_left(), desc="Grow window left"),
+        Key([mod, "control"], kc.j, lazy.layout.grow_down(), desc="Grow window down"),
+        Key([mod, "control"], kc.k, lazy.layout.grow_up(), desc="Grow window up"),
+        Key([mod, "control"], kc.l, lazy.layout.grow_right(), desc="Grow window right"),
+        Key([mod], kc.n, lazy.layout.normalize(), lazy.layout.reset(), desc="Reset window sizes"),
 
-    # Change layout ratios
-    Key([mod], kc.i, lazy.layout.grow(), desc="Grow layout ratio"),
-    Key([mod], kc.m, lazy.layout.shrink(), desc="Shrink layout ratio"),
-    Key([mod, "shift"], "space", lazy.layout.flip(), desc="Flip layout ratios"),
+        # Change layout ratios
+        Key([mod], kc.i, lazy.layout.grow(), desc="Grow layout ratio"),
+        Key([mod], kc.m, lazy.layout.shrink(), desc="Shrink layout ratio"),
+        Key([mod, "shift"], "space", lazy.layout.flip(), desc="Flip layout ratios"),
 
-    # Switch layouts
-    Key([mod], "Tab", lazy.next_layout(), desc="Switch next layout"),
-    Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Switch layout back"),
+        # Switch layouts
+        Key([mod], "Tab", lazy.next_layout(), desc="Switch next layout"),
+        Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Switch layout back"),
 
-    # Keyboard layout
-    Key(
-        ["mod1"], "Shift_L",
-        lazy.widget["keyboardlayout"].next_keyboard(),
-        desc="Switch keyboard layout"
-    ),
+        # Keyboard layout
+        Key(
+            ["mod1"], "Shift_L",
+            lazy.widget["keyboardlayout"].next_keyboard(),
+            desc="Switch keyboard layout"
+            ),
 
-    # Touchpad toggle
-    Key([], "F6", lazy.spawn("toggle-touchpad.sh"), desc="Toggle touchpad"),
+        # Touchpad toggle
+        Key([], "F6", lazy.spawn("toggle-touchpad.sh"), desc="Toggle touchpad"),
 
-    # Screenshot
-    Key(
-        [], "Print",
-        lazy.spawn("flameshot screen -p $HOME/Pictures", shell=True),
-        desc="Screenshot of full screen"
-    ),
+        # Screenshot
+        Key(
+            [], "Print",
+            lazy.spawn("flameshot screen -p $HOME/Pictures", shell=True),
+            desc="Screenshot of full screen"
+            ),
     Key(["control"], "Print",lazy.spawn("flameshot gui"), desc="Screenshot of area"),
 
     # Brightness
     Key(
-        [], "XF86MonBrightnessDown",
-        lazy.widget["backlight"].change_backlight(backlight.ChangeDirection.DOWN),
-        desc="Reduce brightness"
-    ),
+            [], "XF86MonBrightnessDown",
+            lazy.widget["backlight"].change_backlight(backlight.ChangeDirection.DOWN),
+            desc="Reduce brightness"
+            ),
     Key(
-        [], "XF86MonBrightnessUp",
-        lazy.widget["backlight"].change_backlight(backlight.ChangeDirection.UP),
-        desc="Increase brightness"
-    ),
+            [], "XF86MonBrightnessUp",
+            lazy.widget["backlight"].change_backlight(backlight.ChangeDirection.UP),
+            desc="Increase brightness"
+            ),
 
     # Lock screen
     Key(
-        [], "F9",
-        # Set keyboard layout to EN before locking the screen to prevent lockout
-        lazy.spawn("setxkbmap -layout us && xscreensaver-command --lock", shell=True),
-        desc="Lock screen"
-    ),
+            [], "F9",
+            # Set keyboard layout to EN before locking the screen to prevent lockout
+            lazy.spawn("setxkbmap -layout us && xscreensaver-command --lock", shell=True),
+            desc="Lock screen"
+            ),
 
     # Volume
     Key([], "XF86AudioLowerVolume", lazy.widget["volume"].decrease_vol(), desc="Volume down"),
@@ -234,19 +234,19 @@ keys = [
 
     # Rofi
     Key(
-        [mod, "shift"], "Return",
-        lazy.spawn("rofi -show drun -show-icons"),
-        desc="Run launcher"
-    ),
+            [mod, "shift"], "Return",
+            lazy.spawn("rofi -show drun -show-icons"),
+            desc="Run launcher"
+            ),
     Key(
-        [mod, "control"], kc.q,
-        lazy.spawn(
-            "rofi -show power-menu"
-            " -modi 'power-menu:rofi-power-menu"
-            " --choices=lockscreen/logout/reboot/shutdown'"
-        ),
-        desc="Run power menu"
-    ),
+            [mod, "control"], kc.q,
+            lazy.spawn(
+                "rofi -show power-menu"
+                " -modi 'power-menu:rofi-power-menu"
+                " --choices=lockscreen/logout/reboot/shutdown'"
+                ),
+            desc="Run power menu"
+            ),
 
 
     # Software
@@ -257,229 +257,229 @@ keys = [
 
     # Scripts
     Key(
-        [mod], kc.t,
-        lazy.spawn(f"{terminal} -e tmux-fzf-picker.sh"),
-        desc="Run tmux fzf picker script"
-    ),
+            [mod], kc.t,
+            lazy.spawn(f"{terminal} -e tmux-fzf-picker.sh"),
+            desc="Run tmux fzf picker script"
+            ),
     # Key(
     #     [], "XF86Launch4",
     #     lazy.spawn("switch-powerprofile.sh"),
     #     desc="Switch powerprofile"
-    # ),
+    #     ),
 ]
 
 
 # SCREENS #
 
 widget_defaults = {
-    "font": "NotoMono NF",
-    "fontsize": 16,
-    "padding": 5,
-    "foreground": colors[7],
-    "background": colors[0],
-}
+        "font": "NotoMono NF",
+        "fontsize": 16,
+        "padding": 5,
+        "foreground": colors[7],
+        "background": colors[0],
+        }
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(
-        top=bar.Bar(
-            [
-                widget.CurrentLayoutIcon(
-                    scale=0.85,
-                    mouse_callbacks={
-                        "Button2": None,
-                        "Button3": qtile.prev_layout,
-                    },
-                ),
-                widget.Prompt(
-                    foreground=colors[1],
-                ),
+        Screen(
+            top=bar.Bar(
+                [
+                    widget.CurrentLayoutIcon(
+                        scale=0.85,
+                        mouse_callbacks={
+                            "Button2": None,
+                            "Button3": qtile.prev_layout,
+                            },
+                        ),
+                    widget.Prompt(
+                        foreground=colors[1],
+                        ),
 
-                widget.GroupBox(
-                    active=widget_defaults["foreground"],
-                    disable_drag=True,
-                    hide_unused=True,
-                    highlight_color=widget_defaults["background"],
-                    highlight_method="line",
-                    inactive=colors[8],
-                    this_current_screen_border=colors[4],
-                    this_screen_border=colors[4],
-                    urgent_border=colors[1],
-                    urgent_text=colors[1],
-                ),
-                widget.WindowName(
-                    fontsize=widget_defaults["fontsize"]-2,
-                    scroll=True,
-                    width=300,
-                ),
+                    widget.GroupBox(
+                        active=widget_defaults["foreground"],
+                        disable_drag=True,
+                        hide_unused=True,
+                        highlight_color=widget_defaults["background"],
+                        highlight_method="line",
+                        inactive=colors[8],
+                        this_current_screen_border=colors[4],
+                        this_screen_border=colors[4],
+                        urgent_border=colors[1],
+                        urgent_text=colors[1],
+                        ),
+                    widget.WindowName(
+                        fontsize=widget_defaults["fontsize"]-2,
+                        scroll=True,
+                        width=300,
+                        ),
 
-                widget.Spacer(),
-                widget.Clock(
-                    #format=" %a, %d.%m.%y   %H:%M",
-                    format="%a %d.%m.%y %H:%M",
-                ),
-                widget.Spacer(),
+                    widget.Spacer(),
+                    widget.Clock(
+                        # format=" %a, %d.%m.%y   %H:%M",
+                        format="%a %d.%m.%y %H:%M",
+                        ),
+                    widget.Spacer(),
 
-                widget.KeyboardLayout(
-                    fmt="󰥻 {}",
-                    configured_keyboards=["us", "ru", "ua"],
-                    display_map={"us": "EN", "ua": "UK"},
-                ),
-                widget.Clipboard(
-                    foreground=colors[3],
-                    fmt="󱉨 {}",
-                    blacklist=["keepassxc"],
-                    timeout=None,
-                ),
+                    widget.KeyboardLayout(
+                        fmt="󰥻 {}",
+                        configured_keyboards=["us", "ru", "ua"],
+                        display_map={"us": "EN", "ua": "UK"},
+                        ),
+                    widget.Clipboard(
+                        foreground=colors[3],
+                        fmt="󱉨 {}",
+                        blacklist=["keepassxc"],
+                        timeout=None,
+                        ),
 
-                widget.WidgetBox(
-                    text_closed="",
-                    text_open="",
-                    widgets=[
-                        widget.Systray(padding=4),
-                    ]
-                ),
+                    widget.WidgetBox(
+                        text_closed="",
+                        text_open="",
+                        widgets=[
+                            widget.Systray(padding=4),
+                            ]
+                        ),
 
-                # widget.NetGraph(
-                #     border_width=1,
-                #     border_color=colors[8],
-                #     fill_color=colors[4],
-                #     graph_color=colors[4],
-                #     line_width=2,
-                #     margin_x=1,
-                #     samples=75,
-                #     type="line",
-                # ),
+                    # widget.NetGraph(
+                    #     border_width=1,
+                    #     border_color=colors[8],
+                    #     fill_color=colors[4],
+                    #     graph_color=colors[4],
+                    #     line_width=2,
+                    #     margin_x=1,
+                    #     samples=75,
+                    #     type="line",
+                    #     ),
 
-                # widget.Memory(
-                #     fmt=" {}",
-                #     format="{MemUsed:.0f}{mm}",
-                #     mouse_callbacks={
-                #         "Button1": lazy.spawn(f"{terminal} -e htop"),
-                #     },
-                # ),
-                # widget.CPU(
-                #     fmt=" {}",
-                #     format="{load_percent}%"
-                # ),
+                    # widget.Memory(
+                    #     fmt=" {}",
+                    #     format="{MemUsed:.0f}{mm}",
+                    #     mouse_callbacks={
+                    #         "Button1": lazy.spawn(f"{terminal} -e htop"),
+                    #         },
+                    #     ),
+                    # widget.CPU(
+                    #     fmt=" {}",
+                    #     format="{load_percent}%"
+                    #     ),
 
-                widget.Backlight(
-                    fmt="󰃟 {}",
-                    backlight_name="nvidia_0",
-                    brigtness_file="actual_brightness",
-                    change_command="brightnessctl set {:.0f}",
-                    step=1,
-                ),
-                widget.Volume(
-                    fmt=" {}",
-                    emoji=False,
-                    foreground=colors[7],
-                    mouse_callbacks={
-                        "Button1": lazy.widget["volume"].mute(),
-                    }
-                ),
+                    widget.Backlight(
+                        fmt="󰃟 {}",
+                        backlight_name="nvidia_0",
+                        brigtness_file="actual_brightness",
+                        change_command="brightnessctl set {:.0f}",
+                        step=1,
+                        ),
+                    widget.Volume(
+                        fmt=" {}",
+                        emoji=False,
+                        foreground=colors[7],
+                        mouse_callbacks={
+                            "Button1": lazy.widget["volume"].mute(),
+                            }
+                        ),
 
-                # Using amixer to control micro via capture channel
-                widget.Volume(
-                    fmt=" {}",
-                    channel="Capture",
-                    foreground=colors[6],
-                    emoji=False,
-                    emoji_list=["", "󱦳", "", "󱦲"],
-                    mouse_callbacks={
-                        "Button1": lazy.spawn("amixer set Capture toggle"),
-                    }
-                ),
+                    # Using amixer to control micro via capture channel
+                    widget.Volume(
+                        fmt=" {}",
+                        channel="Capture",
+                        foreground=colors[6],
+                        emoji=False,
+                        emoji_list=["", "󱦳", "", "󱦲"],
+                        mouse_callbacks={
+                            "Button1": lazy.spawn("amixer set Capture toggle"),
+                            }
+                        ),
 
-                widget.DoNotDisturb(
-                    foreground=colors[2],
-                    enabled_icon="󰂛",
-                    disabled_icon="󰂚",
-                ),
+                    widget.DoNotDisturb(
+                        foreground=colors[2],
+                        enabled_icon="󰂛",
+                        disabled_icon="󰂚",
+                        ),
 
-                widget.Battery(
-                    charge_char=" ",
-                    discharge_char=" ",
-                    fmt="󱐋 {}",
-                    format="{percent:2.0%} {char}{hour:d}h{min:02d}m",
-                    low_foreground=colors[1],
-                    low_percentage=0.2,
-                    update_interval=6,
-                ),
+                    widget.Battery(
+                        charge_char=" ",
+                        discharge_char=" ",
+                        fmt="󱐋 {}",
+                        format="{percent:2.0%} {char}{hour:d}h{min:02d}m",
+                        low_foreground=colors[1],
+                        low_percentage=0.2,
+                        update_interval=6,
+                        ),
 
-                widget.CheckUpdates(
-                    colour_have_updates=colors[10],
-                    display_format="Up:{updates}",
-                    distro="Fedora",
-                    mouse_callbacks={
-                        "Button1": lazy.spawn(f"{terminal} -e sudo dnf update"),
-                    },
-                ),
-                widget.Wallpaper(
-                    label="",
-                    wallpaper_command=None,
-                    random_selection=True,
-                    directory="~/Pictures/wallpapers/fav/",
-                    option="stretch",
-                ),
-            ],
-            24,
+                    widget.CheckUpdates(
+                        colour_have_updates=colors[10],
+                        display_format="Up:{updates}",
+                        distro="Fedora",
+                        mouse_callbacks={
+                            "Button1": lazy.spawn(f"{terminal} -e sudo dnf update"),
+                            },
+                        ),
+                    widget.Wallpaper(
+                        label="",
+                        wallpaper_command=None,
+                        random_selection=True,
+                        directory="~/Pictures/wallpapers/fav/",
+                        option="stretch",
+                        ),
+                ],
+                24,
+            ),
         ),
-    ),
 ]
 
 
 # LAYOUTS #
 
 layout_defaults = {
-    "border_width": 3,
-    "margin": 5,
-    "border_normal": colors[0],
-    "border_focus": colors[4],
-}
+        "border_width": 3,
+        "margin": 5,
+        "border_normal": colors[0],
+        "border_focus": colors[4],
+        }
 
 # Custom margin for "Columns" layout
 columns_defaults = layout_defaults.copy()
 columns_defaults["margin"] = [3, 2, 3, 2]
 
 layouts = [
-    layout.MonadTall(
-        **layout_defaults,
-        ratio=0.46,
-        single_border_width=0,
-    ),
-    layout.Columns(**columns_defaults),
-    layout.Floating(**layout_defaults),
-]
+        layout.MonadTall(
+            **layout_defaults,
+            ratio=0.46,
+            single_border_width=0,
+            ),
+        layout.Columns(**columns_defaults),
+        layout.Floating(**layout_defaults),
+        ]
 
 floating_layout = layout.Floating(
-    **layout_defaults,
-    float_rules=[
-        *layout.Floating.default_float_rules,
-        Match(wm_class="confirmreset"),  # gitk
-        Match(wm_class="makebranch"),  # gitk
-        Match(wm_class="maketag"),  # gitk
-        Match(wm_class="ssh-askpass"),  # ssh-askpass
-        Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
-    ]
-)
+        **layout_defaults,
+        float_rules=[
+            *layout.Floating.default_float_rules,
+            Match(wm_class="confirmreset"),  # gitk
+            Match(wm_class="makebranch"),  # gitk
+            Match(wm_class="maketag"),  # gitk
+            Match(wm_class="ssh-askpass"),  # ssh-askpass
+            Match(title="branchdialog"),  # gitk
+            Match(title="pinentry"),  # GPG key password entry
+            ]
+        )
 
 # Mouse control for floating layouts.
 mouse = [
-    # Move
-    Drag(
-        [mod], "Button1",
-        lazy.window.set_position_floating(), start=lazy.window.get_position()
-    ),
-    # Resize
-    Drag(
-        [mod], "Button3",
-        lazy.window.set_size_floating(), start=lazy.window.get_size()
-    ),
-    # Bring to front
-    Click([mod], "Button2", lazy.window.bring_to_front()),
-]
+        # Move
+        Drag(
+            [mod], "Button1",
+            lazy.window.set_position_floating(), start=lazy.window.get_position()
+            ),
+        # Resize
+        Drag(
+            [mod], "Button3",
+            lazy.window.set_size_floating(), start=lazy.window.get_size()
+            ),
+        # Bring to front
+        Click([mod], "Button2", lazy.window.bring_to_front()),
+        ]
 
 
 # GROUPS #
@@ -488,21 +488,22 @@ groups = [Group(i) for i in "1234567890"]
 
 for group in groups:
     keys.extend(
-        [
-            Key(
-                [mod], group.name,
-                lazy.group[group.name].toscreen(),
-                desc=f"Switch to group {group.name}",
-            ),
+            [
+                Key(
+                    [mod], group.name,
+                    lazy.group[group.name].toscreen(),
+                    desc=f"Switch to group {group.name}",
+                    ),
 
-            # Move focused window to group
-            Key(
-                [mod, "shift"], group.name,
-                lazy.window.togroup(group.name),  # switch_group=True to switch
-                desc=f"Move focused window to group {group.name}",
-            ),
-        ]
-    )
+                # Move focused window to group
+                Key(
+                    [mod, "shift"], group.name,
+                    # switch_group=True to switch
+                    lazy.window.togroup(group.name),
+                    desc=f"Move focused window to group {group.name}",
+                    ),
+                ]
+            )
 
 
 # MISC #
