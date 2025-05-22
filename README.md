@@ -67,8 +67,8 @@ This is a separate Stow package, so they can be installed independently.
 
 
 ## Colorschemes
-I'm trying to keep colorschemes consistent between applications (at least for
-window manager and terminal emulator).
+I try to keep colorschemes consistent between applications (at least for window
+manager and terminal emulator).
 
 Colorschemes are ported from different sources and customized to look better
 in every application.

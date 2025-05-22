@@ -30,6 +30,10 @@ these dotfiles (icons, fonts, etc.).
 - [bash-completion](https://github.com/scop/bash-completion)
 &mdash; a collection of command line command completions for the Bash shell
 
+- [sh dotfiles](sh/)
+&mdash; my dotfiles package that I try to keep compatible with plain POSIX Shell
+and reuse in other shells' dotfiles to simplify their management
+
 
 ## Dunst
 - [Papirus Icons (dark)](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
