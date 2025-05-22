@@ -84,27 +84,7 @@ set -o vi
 
 ### ALIASES ###
 
-# Colorization
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
-alias ip="ip --color=auto"
-alias tree="tree -C"
-
-# Set interactive mode
-alias mv="mv -i"
-alias cp="cp -i"
-alias rm="rm -i"
-
-# Set human-readable mode
-alias df="df -h"
-alias du="du -h"
-
-# Default commands flags
-alias cd..="cd .."              # cd up without space
-alias ll="ls -lh"               # ls all long human-readable
-alias la="ls -lAh"              # ls w/ hidden files
-alias l.="ls -d .*"             # ls only hidden
-alias mkdir="mkdir -pv"         # mkdir make parents & verbose output
+source "$HOME/.aliases"
 
 
 ### SCRIPTS EXECUTION ###
