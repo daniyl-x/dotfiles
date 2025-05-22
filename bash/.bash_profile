@@ -1,10 +1,10 @@
 # Source shared profile
-if  [ -f ~/.profile ]; then
+if  [ -f "$HOME/.profile" ]; then
     . ~/.profile
 fi
 
 # Source .bashrc if interactive
-if  [[ -t 0 && -f ~/.bashrc ]]; then
+if  [[ -t 0 && -f "$HOME/.bashrc" ]]; then
     . ~/.bashrc
 fi
 
