@@ -27,8 +27,16 @@ export VISUAL                   # Fullscreen fancy editor
 export PAGER=less            	# Custom pager
 export EDITOR=vi                # Default editor, should work everywhere
 
-# Configure shell to use .shrc if present
-if [ -f "$HOME/.shrc" ]; then
-    export ENV="$HOME/.shrc"
+# Configure shell to use appropriate .*rc if present
+if [ -n "$BASH_VERSION" ]; then
+    ENV=
+elif [ -n "$KSH_VERSION" ]; then
+    ENV="$HOME/.kshrc"
+else
+    ENV="$HOME/.shrc"
+fi
+
+if [ -f "$ENV" ]; then
+    export ENV
 fi
 
