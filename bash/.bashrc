@@ -16,9 +16,9 @@ is_present(){
 }
 
 # Git branch function for prompt
-get_git_branch(){
+git_branch(){
     if $(is_present git); then
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+        git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/ (\1)/"
     fi
 }
 
@@ -37,12 +37,12 @@ export GPG_TTY=$(tty)           # gpg-agent tty
 ### PROMPT ###
 
 # Colors
-WHITE='\[\033[0m\]'
-RED='\[\033[31m\]'
-GREEN='\[\033[32m\]'
-BLUE='\[\033[34m\]'
-PURPLE='\[\033[35m\]'
-CYAN='\[\033[36m\]'
+WHITE="\[\033[0m\]"
+RED="\[\033[31m\]"
+GREEN="\[\033[32m\]"
+BLUE="\[\033[34m\]"
+PURPLE="\[\033[35m\]"
+CYAN="\[\033[36m\]"
 
 # Unicode symbols
 BOX_H=$'\u2500'
@@ -50,13 +50,13 @@ BOX_DR=$'\u250c'
 BOX_UR=$'\u2514'
 
 # Git Bash Style Prompt
-GIT_BASH_PS1='\n'$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\n\$ '
+GIT_BASH_PS1="\n${GREEN}\u@\h${WHITE}:${CYAN}\w${PURPLE}$(git_branch)${WHITE}\n\$ "
 # One Long Line Prompt
-ONE_LINE_PS1=$GREEN'\u@\h'$WHITE':'$CYAN'\w'$PURPLE'$(get_git_branch)'$WHITE'\$ '
+ONE_LINE_PS1="${GREEN}\u@\h${WHITE}:${CYAN}\w${PURPLE}$(git_branch)${WHITE}\$ "
 # Fedora Style Prompt
-FEDORA_PS1=$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\W'$BLUE']'$PURPLE'$(get_git_branch)'$WHITE'\$ '
+FEDORA_PS1="${BLUE}[${GREEN}\u@\h${WHITE}: ${CYAN}\W${BLUE}]${PURPLE}$(git_branch)${WHITE}\$ "
 # Two line, square box
-TWO_LINE_SQUARE_PS1='\n'$WHITE$BOX_DR$BOX_H$BLUE'['$GREEN'\u@\h'$WHITE': '$CYAN'\w'$BLUE']'$PURPLE'$(get_git_branch)\n'$WHITE$BOX_UR$BLUE'\$ '$WHITE
+TWO_LINE_SQUARE_PS1="\n${WHITE}${BOX_DR}${BOX_H}${BLUE}[${GREEN}\u@\h${WHITE}: ${CYAN}\w${BLUE}]${PURPLE}\$(git_branch)\n${WHITE}${BOX_UR}${BLUE}\$ ${WHITE}"
 
 # Choose PS1 from above options
 PS1="$TWO_LINE_SQUARE_PS1"
