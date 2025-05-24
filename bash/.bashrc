@@ -44,27 +44,28 @@ BLUE="\[\033[34m\]"
 PURPLE="\[\033[35m\]"
 CYAN="\[\033[36m\]"
 
+# Set prompt identifier color for root and non-root
+IDCOL=$GREEN
+if [ "$(id -u)" -eq 0 ]; then
+    IDCOL=$RED
+fi
+
 # Unicode symbols
 BOX_H=$'\u2500'
 BOX_DR=$'\u250c'
 BOX_UR=$'\u2514'
 
 # Git Bash Style Prompt
-GIT_BASH_PS1="\n${GREEN}\u@\h${WHITE}:${CYAN}\w${PURPLE}$(git_branch)${WHITE}\n\$ "
+GIT_BASH_PS1="\n${IDCOL}\u@\h${WHITE}:${CYAN}\w${PURPLE}$(git_branch)${WHITE}\n\$ "
 # One Long Line Prompt
-ONE_LINE_PS1="${GREEN}\u@\h${WHITE}:${CYAN}\w${PURPLE}$(git_branch)${WHITE}\$ "
+ONE_LINE_PS1="${IDCOL}\u@\h${WHITE}:${CYAN}\w${PURPLE}$(git_branch)${WHITE}\$ "
 # Fedora Style Prompt
-FEDORA_PS1="${BLUE}[${GREEN}\u@\h${WHITE}: ${CYAN}\W${BLUE}]${PURPLE}$(git_branch)${WHITE}\$ "
+FEDORA_PS1="${BLUE}[${IDCOL}\u@\h${WHITE}: ${CYAN}\W${BLUE}]${PURPLE}$(git_branch)${WHITE}\$ "
 # Two line, square box
-TWO_LINE_SQUARE_PS1="\n${WHITE}${BOX_DR}${BOX_H}${BLUE}[${GREEN}\u@\h${WHITE}: ${CYAN}\w${BLUE}]${PURPLE}\$(git_branch)\n${WHITE}${BOX_UR}${BLUE}\$ ${WHITE}"
+TWO_LINE_SQUARE_PS1="\n${WHITE}${BOX_DR}${BOX_H}${BLUE}[${IDCOL}\u@\h${WHITE}: ${CYAN}\w${BLUE}]${PURPLE}\$(git_branch)\n${WHITE}${BOX_UR}${BLUE}\$ ${WHITE}"
 
 # Choose PS1 from above options
 PS1="$TWO_LINE_SQUARE_PS1"
-
-# Replace green color with red for root
-if [ "$(id -u)" -eq 0 ]; then
-    PS1=$(tr $GREEN $RED <<< $PS1)
-fi
 
 export PS1
 export PROMPT_DIRTRIM=4         # trim \w in prompt to 'n' dirs 
@@ -72,8 +73,8 @@ export PROMPT_DIRTRIM=4         # trim \w in prompt to 'n' dirs
 
 ### INPUT ###
 
-# Shopt
-shopt -s cdspell                # autocorrect cd
+# Autocorrect cd
+shopt -s cdspell
 
 # Ignore completion case
 bind "set completion-ignore-case on"
