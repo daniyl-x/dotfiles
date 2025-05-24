@@ -6,13 +6,13 @@
 
 # SPDX-License-Identifier: BSD-2-Clause
 
-# Copyright (c) 2023-2024, daniyl-x
+# Copyright (c) 2023-2025, daniyl-x
                               
 
 ### FUNCTIONS ###
 
 is_present(){
-    command -v $1 &> /dev/null
+    command -v $1 > /dev/null 2>&1
 }
 
 # Git branch function for prompt
@@ -51,13 +51,9 @@ if [ "$(id -u)" -eq 0 ]; then
 fi
 
 # Unicode symbols
-#BOX_H=$'\u2500'
-#BOX_DR=$'\u250c'
-#BOX_UR=$'\u2514'
-
-BOX_H='\342\224\200'
-BOX_DR='\342\224\214'
-BOX_UR='\342\224\224'
+BOX_H="\342\224\200"
+BOX_DR="\342\224\214"
+BOX_UR="\342\224\224"
 
 # Git Bash Style Prompt
 GIT_BASH_PS1="\n${IDCOL}\u@\h${WHITE}:${CYAN}\w${PURPLE}$(git_branch)${WHITE}\n\$ "
