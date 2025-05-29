@@ -9,15 +9,28 @@
 # Copyright (c) 2023-2025, daniyl-x
                               
 
-# Using shared POSIX sh config
-source "${HOME}/.shrc"
+### FUNCTIONS ###
+
+is_present(){
+    command -v $1 > /dev/null 2>&1
+}
+
+# Git branch function for prompt
+git_branch(){
+    if is_present git; then
+        git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/ (\1)/"
+    fi
+}
 
 
 ### VARIABLES ###
 
+export HISTSIZE=10000           # history size
 export HISTCONTROL=ignoredups 	# Ignore continuous duplicates
 export HISTFILESIZE=$HISTSIZE 	# Bash history file size
 export HISTTIMEFORMAT="%F %T "	# Add date and timestamp to history
+
+export GPG_TTY=$(tty)           # gpg-agent tty
 
 
 ### PROMPT ###
@@ -58,13 +71,19 @@ export PS1="$TWO_LINE_PS1"
 export PROMPT_DIRTRIM=4
 
 
-### INPUT ###
+### INPUT & MISC ###
+
+# Set vi mode
+set -o vi
 
 # Autocorrect cd
 shopt -s cdspell
 
 # Ignore completion case
 bind "set completion-ignore-case on"
+
+# Aliases
+source "${HOME}/.aliases"
 
 
 ### SCRIPTS EXECUTION ###
@@ -77,3 +96,4 @@ if $(is_present fzf); then
     source /usr/share/fzf/shell/key-bindings.bash
     source /usr/share/fzf/shell/completion.bash
 fi
+
