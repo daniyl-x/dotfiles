@@ -22,32 +22,32 @@ cwd(){
 
 # Replace $HOME in path with ~
 spwd(){
-    local spwd="${PWD#$HOME}"
-    [ "$spwd" != "$PWD" ] && printf "~%s" "$spwd" || printf "%s" "$PWD"
+    _spwd="${PWD#$HOME}"
+    [ "$_spwd" != "$PWD" ] && printf "~%s" "$_spwd" || printf "%s" "$PWD"
 }
 
 # Trim path $1 to length $2 replacing the rest with ... and preserving ~
 dirtrim(){
     if [ "$1" = "~" ] || [ "$1" = "/" ]; then printf "%s" "$1"; return 0; fi
 
-    local has_home=0
-    [ "${1#"~"}" != "$1" ] && has_home=1
-    local depth=${2:-4}
-    local trimmed="$(printf '%s' $1 | rev | cut -d / -f -$depth | rev)"
+    _has_home=0
+    [ "${1#"~"}" != "$1" ] && _has_home=1
+    _depth=${2:-4}
+    _trimmed="$(printf '%s' $1 | rev | cut -d / -f -$_depth | rev)"
 
     set -f
-    local old_ifs=$IFS
+    _old_ifs=$IFS
     IFS="/"
     set -- $1
-    IFS=$old_ifs
+    IFS=$_old_ifs
     set +f
 
-    trimmed="${trimmed##"~"}"; trimmed="${trimmed##"/"}"
-    trimmed="/${trimmed}"
-    [ "$#" -gt $((depth + 1)) ] && trimmed="/...${trimmed}"
-    [ "$has_home" -eq 1 ] && trimmed="~${trimmed}"
+    _trimmed="${_trimmed##"~"}"; _trimmed="${_trimmed##"/"}"
+    _trimmed="/${_trimmed}"
+    [ "$#" -gt $((_depth + 1)) ] && _trimmed="/...${_trimmed}"
+    [ "$_has_home" -eq 1 ] && _trimmed="~${_trimmed}"
 
-    printf "%s" "$trimmed"
+    printf "%s" "$_trimmed"
 }
 
 is_present(){
