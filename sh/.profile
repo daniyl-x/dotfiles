@@ -15,28 +15,20 @@ export PATH="$HOME/.local/bin:$HOME/bin:${PATH}"
 
 # Set VISUAL to available vim, and MANPAGER to nvim if present
 if [ -x "$(command -v nvim)" ]; then
-    MANPAGER="nvim +Man!"
-    VISUAL=nvim
+    export MANPAGER="nvim +Man!"
+    export VISUAL=nvim
 elif [ -x "$(command -v vim)" ]; then
-    VISUAL=vim
+    export VISUAL=vim
 fi
-
-export MANPAGER                 # Custom manpager
-export VISUAL                   # Fullscreen fancy editor
 
 export PAGER=less            	# Custom pager
 export EDITOR=vi                # Default editor, should work everywhere
 
-# Configure shell to use appropriate .*rc if present
-if [ -n "$BASH_VERSION" ]; then
-    ENV=
-elif [ -n "$KSH_VERSION" ]; then
-    ENV="$HOME/.kshrc"
-else
-    ENV="$HOME/.shrc"
-fi
 
-if [ -f "$ENV" ]; then
-    export ENV
+# Configure shell to use appropriate .*rc if present
+if [ -n "$KSH_VERSION" ]; then
+    export ENV="$HOME/.kshrc"
+else
+    export ENV="$HOME/.shrc"
 fi
 
