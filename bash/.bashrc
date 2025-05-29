@@ -20,6 +20,44 @@ export HISTFILESIZE=$HISTSIZE 	# Bash history file size
 export HISTTIMEFORMAT="%F %T "	# Add date and timestamp to history
 
 
+### PROMPT ###
+
+# Colors
+ESC="\033[0;"
+RST="\[${ESC}0m\]"
+RED="\[${ESC}31m\]"
+GREEN="\[${ESC}32m\]"
+BLUE="\[${ESC}34m\]"
+PURPLE="\[${ESC}35m\]"
+CYAN="\[${ESC}36m\]"
+
+# Unicode symbols
+BOX_H="\342\224\200"
+BOX_DR="\342\224\214"
+BOX_UR="\342\224\224"
+
+# Set of 'user@host' and prompt symbol for root/non-root
+IDCOL=$GREEN
+IDSYM="\$"
+if [ "$(id -u)" -eq 0 ]; then
+    IDCOL=$RED
+    IDSYM="#"
+fi
+
+# Git Bash Style Prompt
+GIT_BASH_PS1="\n${IDCOL}\u@\h${RST}:${CYAN}\w${PURPLE}\$(git_branch)${RST}\n${IDSYM} "
+# One Long Line Prompt
+ONE_LINE_PS1="${IDCOL}\u@\h${RST}:${CYAN}\w${PURPLE}\$(git_branch)${RST}${IDSYM} "
+# Fedora Style Prompt
+FEDORA_PS1="${BLUE}[${IDCOL}\u@\h${RST}: ${CYAN}\W${BLUE}]${PURPLE}\$(git_branch)${RST}${IDSYM} "
+# Two line, square box
+TWO_LINE_PS1="\n${BOX_DR}${BOX_H}${BLUE}[${IDCOL}\u@\h${RST}: ${CYAN}\w${BLUE}]${PURPLE}\$(git_branch)\n${RST}${BOX_UR}${BLUE}${IDSYM}${RST} "
+
+# Choose PS1 from above options
+export PS1="$TWO_LINE_PS1"
+export PROMPT_DIRTRIM=4
+
+
 ### INPUT ###
 
 # Autocorrect cd
