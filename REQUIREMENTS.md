@@ -57,6 +57,10 @@ and reuse in other shells' dotfiles to simplify their management
 - quoter\* &mdash; plugin to add quotes or brackets around a text selection
 
 
+## Rofi
+- [IBM Plex](https://github.com/IBM/plex) &mdash; IBM Plex fonts
+
+
 ## Scripts
 ### autostart.sh
 > **Note:**
