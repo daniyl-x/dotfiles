@@ -395,6 +395,7 @@ screens = [
                         foreground=colors[2],
                         enabled_icon="󰂛",
                         disabled_icon="󰂚",
+                        update_interval=0.5,
                         ),
 
                     widget.Battery(
@@ -410,6 +411,7 @@ screens = [
                     widget.CheckUpdates(
                         colour_have_updates=colors[10],
                         display_format="Up:{updates}",
+                        update_interval=30,
                         distro="Fedora",
                         mouse_callbacks={
                             "Button1": lazy.spawn(f"{terminal} -e sudo dnf update"),
