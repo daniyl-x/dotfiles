@@ -59,8 +59,6 @@ local servers = {
     table.unpack(required_servers)
 }
 
-local lspconfig = require("lspconfig")
-
 -- Applying settings for all servers
 for _, server in ipairs(servers) do
     -- Include server specific settings if any
@@ -68,9 +66,10 @@ for _, server in ipairs(servers) do
     local status, specific_settings = pcall(require, module_name)
     specific_settings = status and specific_settings or nil
 
-    lspconfig[server].setup {
+    vim.lsp.config(server, {
         on_attach = on_attach,
         settings = specific_settings,
-    }
+    })
+    vim.lsp.enable(server)
 end
 
