@@ -40,7 +40,8 @@ local required_servers = {
     "awk_ls",       -- awk
     "clangd",       -- c/c++
     "lua_ls",       -- lua
-    "pylsp",        -- python
+    "ty",           -- python type checker
+    "ruff",         -- python linter
 }
 
 require("mason-lspconfig").setup({
