@@ -7,7 +7,7 @@
 -- Source: https://github.com/williamboman/mason-lspconfig.nvim
 
 -- Modifications:
--- Copyright (c) 2023-2024, daniyl-x
+-- Copyright (c) 2023-2025, daniyl-x
 
 
 -- Mason settings
