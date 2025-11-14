@@ -2,5 +2,5 @@ line-length = 79
 
 [lint]
 preview = true
-select = ["C90", "E", "F", "W"]
+select = ["C90", "E", "F", "PLR", "W"]
 
